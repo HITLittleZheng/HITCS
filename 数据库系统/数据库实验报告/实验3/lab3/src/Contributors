@@ -1,0 +1,22 @@
+/*
+	 Contributors.strings
+	 BadgerDB
+
+	 Copyright (c) 2014 Database Group, Computer Sciences Department, University of Wisconsin-Madison.
+
+	License: https://www.gnu.org/licenses/gpl.html
+	See the attached license file. 
+
+	Note: this code is provided AS IS and without ANY WARRANTY.
+ */
+
+OVERVIEW: The BadgerDB project is a mini database engine that is designed for teaching database systems principles. It provides a framework for students to build parts of an data processing engine, such as a buffer manager, index organization, query operator algorithms (e.g. scan-based select, index-based select, hash join, sort merge, sort merge join, etc.).
+
+HISTORY: BADGERDB is used at the University of Wisconsin-Madison for the undergraduate database course (CS564). It replaces the Minirel project that had been used here for over two decades. BadgerDB was first used in CS564 Spring 2012 taught by Jignesh M. Patel.
+
+CODE CONTRIBUTORS:
+Sandeep Dhoot
+Ian Rae
+Jignesh M. Patel
+Sangmin Shin
+Lichao Yin
