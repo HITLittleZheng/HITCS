@@ -11,7 +11,7 @@
 [![Github Watchers](https://img.shields.io/github/watchers/HITLittleZheng/HITCS.svg?style=flat&label=watchers&color=blue)](https://github.com/HITLittleZheng/HITCS/watchers)  [![Github Repository Size](https://img.shields.io/github/repo-size/HITLittleZheng/HITCS.svg?style=flat&label=repo-size&color=orange)](https://github.com/HITLittleZheng/HITCS)</h1>
 
 
-<p align="center">受 [浙江大学相关项目](https://github.com/QSCTech/zju-icicles) 、 [清华大学相关项目](https://github.com/PKUanonym/REKCARC-TSC-UHT) 、 [哈工大（深圳）相关项目](https://github.com/HITSZ-OpenCS/HITSZ-OpenCS)和 [哈工大相关项目](https://github.com/HIT-FC-OpenCS/CS_Courses)启发，创立了本项目。</p>
+受 [浙江大学相关项目](https://github.com/QSCTech/zju-icicles) 、 [清华大学相关项目](https://github.com/PKUanonym/REKCARC-TSC-UHT) 、 [哈工大（深圳）相关项目](https://github.com/HITSZ-OpenCS/HITSZ-OpenCS)和 [哈工大相关项目](https://github.com/HIT-FC-OpenCS/CS_Courses)启发，创立了本项目。
 
 ## :sparkles: 愿景 | Vision
 
