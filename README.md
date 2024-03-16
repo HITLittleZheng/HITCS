@@ -207,3 +207,6 @@
 - 2025王道计算机网络复习指导
 - 2024王道计算机组成原理考研复习指导
 - 2024王道计算机计算机网络考研复习指导
+## :star2: 关注 | Star History
+
+![Star History Chart](https://api.star-history.com/svg?repos=HITLittleZheng/HITCS&type=Date)
