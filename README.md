@@ -17,7 +17,15 @@
   <a href="https://github.com/HITLittleZheng/HITCS">
     <img src="https://img.shields.io/github/repo-size/HITLittleZheng/HITCS.svg?style=flat&label=repo-size&color=orange" alt="Github Repository Size">
   </a></h1>
-![摄图网_600306527_宫崎骏动漫卡通人物（非企业商用） (2)](https://github.com/HITLittleZheng/HITCS/assets/156521939/2c4da6af-553a-4a4d-a846-8fee7f3a48f1)
+  <!-- knock code pictures 敲代码的图片 -->
+  <picture>
+    <source media="(prefers-color-scheme: dark)" srcset="https://cdn.jsdelivr.net/gh/sun0225SUN/sun0225SUN/assets/images/coding.gif" />
+    <source media="(prefers-color-scheme: light)" srcset="https://cdn.jsdelivr.net/gh/sun0225SUN/sun0225SUN/assets/images/developer.svg" height="225px" />
+    <img src="https://cdn.jsdelivr.net/gh/sun0225SUN/sun0225SUN/assets/images/coding.gif" />
+  </picture>
+
+  <!-- for beauty 留个空行好看点 -->
+  <div>&nbsp;</div>
 
 受 [浙江大学相关项目](https://github.com/QSCTech/zju-icicles) 、 [清华大学相关项目](https://github.com/PKUanonym/REKCARC-TSC-UHT) 、 [哈工大（深圳）相关项目](https://github.com/HITSZ-OpenCS/HITSZ-OpenCS)和 [哈工大相关项目](https://github.com/HIT-FC-OpenCS/CS_Courses)启发，创立了本项目。
 
