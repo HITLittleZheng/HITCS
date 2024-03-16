@@ -1,5 +1,15 @@
-# 哈工大计算机专业 | 课程资料共享
-[![Github Watchers](https://img.shields.io/github/watchers/HITLittleZheng/HITCS.svg?style=flat&label=watchers&color=blue)](https://github.com/HITLittleZheng/HITCS/watchers)  [![Github Stars](https://img.shields.io/github/stars/HITLittleZheng/HITCS.svg?style=flat&label=stars&color=yellow)](https://github.com/HITLittleZheng/HITCS/stargazers)  [![Github Forks](https://img.shields.io/github/forks/HITLittleZheng/HITCS.svg?style=flat&label=forks&color=green)](https://github.com/HITLittleZheng/HITCS/network/members)  [![Github Repository Size](https://img.shields.io/github/repo-size/HITLittleZheng/HITCS.svg?style=flat&label=repo-size&color=orange)](https://github.com/HITLittleZheng/HITCS)
+<h1 align="center">哈工大计算机专业 | 课程资料共享
+
+<div align="center">
+
+
+<a href="https://github.com/HITLittleZheng/HITCS/stargazers"><img src="https://img.shields.io/github/stars/HITLittleZheng/HITCS" alt="Stars Badge"/></a>
+<a href="https://github.com/HITLittleZheng/HITCS/network/members"><img src="https://img.shields.io/github/forks/HITLittleZheng/HITCS" alt="Forks Badge"/></a>
+<a href="https://github.com/HITLittleZheng/HITCS/pulls"><img src="https://img.shields.io/github/issues-pr/HITLittleZheng/HITCS" alt="Pull Requests Badge"/></a>
+<a href="https://github.com/HITLittleZheng/HITCS/issues"><img src="https://img.shields.io/github/issues/HITLittleZheng/HITCS" alt="Issues Badge"/></a>
+<a href="https://github.com/HITLittleZheng/HITCS/graphs/contributors"><img alt="GitHub contributors" src="https://img.shields.io/github/contributors/HITLittleZheng/HITCS?color=2b9348"></a>
+[![Github Watchers](https://img.shields.io/github/watchers/HITLittleZheng/HITCS.svg?style=flat&label=watchers&color=blue)](https://github.com/HITLittleZheng/HITCS/watchers)  [![Github Repository Size](https://img.shields.io/github/repo-size/HITLittleZheng/HITCS.svg?style=flat&label=repo-size&color=orange)](https://github.com/HITLittleZheng/HITCS)
+
 
 受 [浙江大学相关项目](https://github.com/QSCTech/zju-icicles) 、 [清华大学相关项目](https://github.com/PKUanonym/REKCARC-TSC-UHT) 、 [哈工大（深圳）相关项目](https://github.com/HITSZ-OpenCS/HITSZ-OpenCS)和 [哈工大相关项目](https://github.com/HIT-FC-OpenCS/CS_Courses)启发，创立了本项目。
 
