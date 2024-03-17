@@ -1,12 +1,14 @@
 <h1 align="center">哈工大计算机专业 | 课程资料共享</h1>
 
-<p align="center">
 
-    <a href="https://github.com/HITLittleZheng/HITCS/stargazers"><img
-            src="https://img.shields.io/github/stars/HITLittleZheng/HITCS" alt="Stars Badge" /></a>
-    <a href="https://github.com/HITLittleZheng/HITCS/network/members"><img
-            src="https://img.shields.io/github/forks/HITLittleZheng/HITCS" alt="Forks Badge" /></a>
+<p align="center">
+    
+<a href="https://github.com/HITLittleZheng/HITCS/stargazers"><img src="https://img.shields.io/github/stars/HITLittleZheng/HITCS" alt="Stars Badge"/></a>
+<a href="https://github.com/HITLittleZheng/HITCS/network/members"><img src="https://img.shields.io/github/forks/HITLittleZheng/HITCS" alt="Forks Badge"/></a>
+ 
 </p>
+
+
 <p align="center">
     <a href="https://github.com/HITLittleZheng/HITCS/issues"><img
             src="https://img.shields.io/github/issues/HITLittleZheng/HITCS" alt="Issues Badge" /></a>
@@ -32,7 +34,9 @@
 
 <img width="120%" src="https://repobeats.axiom.co/api/embed/dd42bad8effa7ab44d2f3124414ee110611e044a.svg" />
 
-
+<div>
+    
+</div>
 
 受 [浙江大学相关项目](https://github.com/QSCTech/zju-icicles) 、 [清华大学相关项目](https://github.com/PKUanonym/REKCARC-TSC-UHT) 、
 [哈工大（深圳）相关项目](https://github.com/HITSZ-OpenCS/HITSZ-OpenCS)和
