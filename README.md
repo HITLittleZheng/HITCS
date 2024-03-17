@@ -1,31 +1,32 @@
-<h1 align="center">哈工大计算机专业 | 课程资料共享
+<h1 align="center">哈工大计算机专业 | 课程资料共享</h1>
 
-    <div align="center">
+<p align="center">
 
-        <a href="https://github.com/HITLittleZheng/HITCS/stargazers"><img
-                src="https://img.shields.io/github/stars/HITLittleZheng/HITCS" alt="Stars Badge" /></a>
-        <a href="https://github.com/HITLittleZheng/HITCS/network/members"><img
-                src="https://img.shields.io/github/forks/HITLittleZheng/HITCS" alt="Forks Badge" /></a>
-
-        <a href="https://github.com/HITLittleZheng/HITCS/issues"><img
-                src="https://img.shields.io/github/issues/HITLittleZheng/HITCS" alt="Issues Badge" /></a>
-        <a href="https://github.com/HITLittleZheng/HITCS/graphs/contributors">
-            <img alt="GitHub contributors"
-                src="https://img.shields.io/github/contributors/HITLittleZheng/HITCS?color=2b9348">
-        </a>
-        <a href="https://github.com/HITLittleZheng/HITCS/commits/main/">
-            <img src="https://img.shields.io/github/last-commit/HITLittleZheng/HITCS.svg?style=flat&label=last-commit&color=teal"
-                alt="GitHub last commit">
-        </a>
-        <a href="https://github.com/HITLittleZheng/HITCS/watchers">
-            <img src="https://img.shields.io/github/watchers/HITLittleZheng/HITCS.svg?style=flat&label=watchers&color=blue"
-                alt="Github Watchers">
-        </a>
-        <a href="https://github.com/HITLittleZheng/HITCS">
-            <img src="https://img.shields.io/github/repo-size/HITLittleZheng/HITCS.svg?style=flat&label=repo-size&color=orange"
-                alt="Github Repository Size">
-        </a>
-</h1>
+    <a href="https://github.com/HITLittleZheng/HITCS/stargazers"><img
+            src="https://img.shields.io/github/stars/HITLittleZheng/HITCS" alt="Stars Badge" /></a>
+    <a href="https://github.com/HITLittleZheng/HITCS/network/members"><img
+            src="https://img.shields.io/github/forks/HITLittleZheng/HITCS" alt="Forks Badge" /></a>
+</p>
+<p align="center">
+    <a href="https://github.com/HITLittleZheng/HITCS/issues"><img
+            src="https://img.shields.io/github/issues/HITLittleZheng/HITCS" alt="Issues Badge" /></a>
+    <a href="https://github.com/HITLittleZheng/HITCS/graphs/contributors">
+        <img alt="GitHub contributors"
+            src="https://img.shields.io/github/contributors/HITLittleZheng/HITCS?color=2b9348">
+    </a>
+    <a href="https://github.com/HITLittleZheng/HITCS/commits/main/">
+        <img src="https://img.shields.io/github/last-commit/HITLittleZheng/HITCS.svg?style=flat&label=last-commit&color=teal"
+            alt="GitHub last commit">
+    </a>
+    <a href="https://github.com/HITLittleZheng/HITCS/watchers">
+        <img src="https://img.shields.io/github/watchers/HITLittleZheng/HITCS.svg?style=flat&label=watchers&color=blue"
+            alt="Github Watchers">
+    </a>
+    <a href="https://github.com/HITLittleZheng/HITCS">
+        <img src="https://img.shields.io/github/repo-size/HITLittleZheng/HITCS.svg?style=flat&label=repo-size&color=orange"
+            alt="Github Repository Size">
+    </a>
+</p>
 
 
 
