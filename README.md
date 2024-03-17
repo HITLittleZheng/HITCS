@@ -7,8 +7,7 @@
 </div>
 
 
-
-<p align="center">
+<div align="center">
     <a href="https://github.com/HITLittleZheng/HITCS/issues"><img
             src="https://img.shields.io/github/issues/HITLittleZheng/HITCS" alt="Issues Badge" /></a>
     <a href="https://github.com/HITLittleZheng/HITCS/graphs/contributors">
@@ -27,14 +26,11 @@
         <img src="https://img.shields.io/github/repo-size/HITLittleZheng/HITCS.svg?style=flat&label=repo-size&color=orange"
             alt="Github Repository Size">
     </a>
-</p>
+</div>
 
 
-
+<div>   
 <img width="120%" src="https://repobeats.axiom.co/api/embed/dd42bad8effa7ab44d2f3124414ee110611e044a.svg" />
-
-<div>
-    
 </div>
 
 受 [浙江大学相关项目](https://github.com/QSCTech/zju-icicles) 、 [清华大学相关项目](https://github.com/PKUanonym/REKCARC-TSC-UHT) 、
