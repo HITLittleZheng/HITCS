@@ -6,6 +6,7 @@
     <a href="https://github.com/HITLittleZheng/HITCS/network/members"><img src="https://img.shields.io/github/forks/HITLittleZheng/HITCS" alt="Forks Badge"/></a>
 </div>
 
+<br>
 
 <div align="center">
     <a href="https://github.com/HITLittleZheng/HITCS/issues"><img
@@ -28,10 +29,13 @@
     </a>
 </div>
 
+<br>
 
 <div>   
 <img width="120%" src="https://repobeats.axiom.co/api/embed/dd42bad8effa7ab44d2f3124414ee110611e044a.svg" />
 </div>
+
+<br>
 
 受 [浙江大学相关项目](https://github.com/QSCTech/zju-icicles) 、 [清华大学相关项目](https://github.com/PKUanonym/REKCARC-TSC-UHT) 、
 [哈工大（深圳）相关项目](https://github.com/HITSZ-OpenCS/HITSZ-OpenCS)和
