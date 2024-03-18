@@ -1,5 +1,9 @@
-<h1 align="center">哈工大计算机专业 | 课程资料共享</h1>
+<h1 align="center">哈工大计算机专业 | 课程资料共享</h1> 
 
+<div align="center">
+
+[![Visits Badge](https://badges.strrl.dev/visits/HITLittleZheng/HITCS)](https://badges.strrl.dev)
+</div>
 
 <div align="center">
     <a href="https://github.com/HITLittleZheng/HITCS/stargazers"><img src="https://img.shields.io/github/stars/HITLittleZheng/HITCS" alt="Stars Badge"/></a>
@@ -27,6 +31,7 @@
         <img src="https://img.shields.io/github/repo-size/HITLittleZheng/HITCS.svg?style=flat&label=repo-size&color=orange"
             alt="Github Repository Size">
     </a>
+   
 </div>
 
 <br>
