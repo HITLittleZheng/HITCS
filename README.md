@@ -42,9 +42,6 @@
 
 <br>
 
-受 [浙江大学相关项目](https://github.com/QSCTech/zju-icicles) 、 [清华大学相关项目](https://github.com/PKUanonym/REKCARC-TSC-UHT) 、
-[哈工大（深圳）相关项目](https://github.com/HITSZ-OpenCS/HITSZ-OpenCS)和
-[哈工大相关项目](https://github.com/HIT-FC-OpenCS/CS_Courses)启发，创立了本项目。
 
 
 ## :sparkles: 愿景 | Vision
@@ -52,7 +49,11 @@
 此仓库主要包括本人学习过程中的资料，主要包括实验、期末往年题及复习笔记等资料
 
 如果有同学想参与到本项目，可联系QQ3565989732，让我们一起帮助同学们打破信息壁垒，减少同学对课程学习的不熟悉，找到合适的学习方法及资料。**同时，也希望同学们多给仓库点点star，您的支持，是我坚持本项目的最佳动力！！！**
-![image](https://github.com/HITLittleZheng/HITCS/assets/156521939/bb3a1835-a2a2-40ee-b2b5-6decac218290)
+<div style="text-align:center;">
+    <img src="https://github.com/HITLittleZheng/HITCS/assets/156521939/bb3a1835-a2a2-40ee-b2b5-6decac218290" alt="image">
+</div>
+
+
 
 ## :raised_hands: 贡献 | Contribution
 
