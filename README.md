@@ -49,9 +49,9 @@
 此仓库主要包括本人学习过程中的资料，主要包括实验、期末往年题及复习笔记等资料
 
 如果同学们有任何问题，可联系QQ3565989732。**同时，也希望同学们多给仓库点点star，您的支持，是我坚持本项目的最佳动力！！！**
-<div style="text-align:center;">
-    <img src="https://github.com/HITLittleZheng/HITCS/assets/156521939/bb3a1835-a2a2-40ee-b2b5-6decac218290" alt="image">
-</div>
+<p align="center">
+    <img src="https://github.com/HITLittleZheng/HITCS/assets/156521939/bb3a1835-a2a2-40ee-b2b5-6decac218290" alt="image" width="110%">
+</p>
 
 
 
@@ -62,9 +62,11 @@
 如果您如果有好的资料，也可分享到此仓库，Issue、PR、纠错、复习资料、学习笔记，完全欢迎！来自大家的关注、维护和贡献，才是让这个repo继续存在的动力!
 
 对此 repo 的组织有任何建议或意见，也欢迎大家提出 Issue ，也可加入下方QQ群一起商量探讨，我们一起让这个项目变得更好~
-<div style="text-align:center;">
-    <img src="https://github.com/HITLittleZheng/HITCS/assets/156521939/9e596ab9-e44f-44f6-8340-6b71b9ca1afa" alt="image">
-</div>
+<p align="center">
+    <img src="https://github.com/HITLittleZheng/HITCS/assets/156521939/9e596ab9-e44f-44f6-8340-6b71b9ca1afa" alt="image" width="50%">
+</p>
+
+
 
 
 注：由于本仓库未启用 `git-lfs`，因此请不要上传单个超过 100M 的文件，否则 Commit 无效，Web端只适合 25M 以下小文件。
