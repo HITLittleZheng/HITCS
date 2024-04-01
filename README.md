@@ -34,14 +34,9 @@
    
 </div>
 
-<br>
-
-<div>   
-<img width="120%" src="https://repobeats.axiom.co/api/embed/9c63e58188f143fd375cb755fc598249a0536929.svg" />
-</div>
-
-<br>
-
+<p align="center">
+    <img src="https://github.com/HITLittleZheng/HITCS/assets/156521939/9e596ab9-e44f-44f6-8340-6b71b9ca1afa" alt="image" width="50%">
+</p>
 
 
 ## :sparkles: 愿景 | Vision
@@ -61,10 +56,15 @@
 
 如果您如果有好的资料，也可分享到此仓库，Issue、PR、纠错、复习资料、学习笔记，完全欢迎！来自大家的关注、维护和贡献，才是让这个repo继续存在的动力!
 
-对此 repo 的组织有任何建议或意见，也欢迎大家提出 Issue ，也可加入下方QQ群一起商量探讨，我们一起让这个项目变得更好~
-<p align="center">
-    <img src="https://github.com/HITLittleZheng/HITCS/assets/156521939/9e596ab9-e44f-44f6-8340-6b71b9ca1afa" alt="image" width="50%">
-</p>
+对此 repo 的组织有任何建议或意见，也欢迎大家提出 Issue ，也可加入上方QQ群一起商量探讨，我们一起让这个项目变得更好~
+
+<br>
+
+<div>   
+<img width="120%" src="https://repobeats.axiom.co/api/embed/9c63e58188f143fd375cb755fc598249a0536929.svg" />
+</div>
+
+<br>
 
 
 
