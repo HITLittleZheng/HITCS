@@ -61,7 +61,11 @@
 
 如果您如果有好的资料，也可分享到此仓库，Issue、PR、纠错、复习资料、学习笔记，完全欢迎！来自大家的关注、维护和贡献，才是让这个repo继续存在的动力!
 
-对此 repo 的组织有任何建议或意见，也欢迎大家提出 Issue ，我们一起让这个项目变得更好~
+对此 repo 的组织有任何建议或意见，也欢迎大家提出 Issue ，也可加入下方QQ群一起商量探讨，我们一起让这个项目变得更好~
+<div style="text-align:center;">
+    <img src="https://github.com/HITLittleZheng/HITCS/assets/156521939/9e596ab9-e44f-44f6-8340-6b71b9ca1afa" alt="image">
+</div>
+
 
 注：由于本仓库未启用 `git-lfs`，因此请不要上传单个超过 100M 的文件，否则 Commit 无效，Web端只适合 25M 以下小文件。
 
