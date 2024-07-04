@@ -1,0 +1,5 @@
+实验二参考：https://github.com/twelfth-star/CS224W-Winter2023/tree/main/colabs
+
+实验三参考：https://github.com/taishan1994/BERT-BILSTM-CRF
+
+实验五参考：https://github.com/yubinCloud/kg2vec/
