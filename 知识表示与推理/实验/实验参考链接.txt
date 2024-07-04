@@ -3,3 +3,5 @@
 实验三参考：https://github.com/taishan1994/BERT-BILSTM-CRF
 
 实验五参考：https://github.com/yubinCloud/kg2vec/
+
+注意：很多实验都需要自己租服务器，在linux环境运行
