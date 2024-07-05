@@ -34,9 +34,6 @@
    
 </div>
 
-<p align="center">
-    <img src="https://github.com/HITLittleZheng/HITCS/assets/156521939/9e596ab9-e44f-44f6-8340-6b71b9ca1afa" alt="image" width="50%">
-</p>
 
 
 ## :sparkles: 愿景 | Vision
