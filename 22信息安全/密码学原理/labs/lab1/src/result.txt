@@ -1,0 +1,14 @@
+-------------------------------------------------------
+Message 1: We can factor the number 15 with quantum computers. We can also factor the number 1
+Message 2: Euler would probably enjoy that now his theorem becomes a corner stone of crypto - 
+Message 3: The nice thing about Keeyloq is now we cryptographers can drive a lot of fancy cacan drive a lot of fancy cars
+Message 4: The ciphertext produced by a weak encryption algorithm looks as good as ciphertext
+Message 5: You don't want to buy a set of car keys from a guy who specializes in stealing cars
+Message 6: There are two types of cryptography - that which will keep secrets safe from your l
+Message 7: There are two types of cyptography: one that allows the Government to use brute for
+Message 8: We can see the point where the chip is unhappy if a wrong bit is sent and consumes
+Message 9: A (private-key)  encryption scheme states 3 algorithms, namely a procedure for gene
+Message 10:  The Concise OxfordDictionary (2006) deﬁnes crypto as the art of  writing o r sol
+Message 11: The secret message is: When using a stream cipher, never use the key more than once
+-------------------------------------------------------
+The result using the manual_guessed_key is: The secret message is: When using a stream cipher, never use the key more than once
