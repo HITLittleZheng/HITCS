@@ -1,9 +1,0 @@
-实验二参考：https://github.com/twelfth-star/CS224W-Winter2023/tree/main/colabs
-
-实验三参考：https://github.com/taishan1994/BERT-BILSTM-CRF
-
-实验五参考：https://github.com/yubinCloud/kg2vec/
-
-注意：很多实验都需要自己租服务器，在linux环境运行
-
-还有，笔者当时实验会查重，但是参考github不算查重，主要是你运行结果截图不要和别人的一样
