@@ -1,0 +1,59 @@
+备注：这些都是自己写的记录下来，非老师提供的官方答案，仅供参考
+
+单关系查询习题1
+select distinct maker from Product;
+select distinct model,hd from PC;
+
+select model from PC where speed>=3 and ram>=1024;
+select model from PC where speed>=3 or ram>=1024;
+select distinct type from product where maker='A';
+select model from Printer where color = 'true' and type='laser';
+
+单关系查询习题2
+ select model,price from PC
+    -> union all
+    -> select model,price from laptop;
+select distinct maker from product where type='pc'
+    -> intersect
+    -> select distinct maker from product where type='laptop'
+    -> intersect
+    -> select distinct maker from product where type='printer';
+
+select maker,count(*) as count from Product group by maker;
+select maker,type,count(*) as count from Product group by maker,type;
+
+select hd from PC group by hd having count(*) >=2;
+select maker from Product group by maker having count(distinct type)=3;
+select hd from PC where hd>=100 group by hd having count(*) >=2;
+
+连接查询习题1
+select maker from product natural join laptop where hd>=100;
+select model from  Product natural join PC where maker='A' and price <= 500;
+select maker from product natural join pc group by maker  having count(distinct speed)>=3;
+
+select p1.model,p2.model from pc as p1 join pc as p2 on p1.speed = p2.speed and p1.ram=p2.ram and p1.model < p2.model;
+select p1.model from printer as p1 join printer as p2 on p2.model=3002 and p1.price < p2.price;
+ select distinct p1.hd from pc as p1 join pc as p2 on p1.hd = p2.hd and p1.model <> p2.model;
+连接查询习题2
+select  distinct p1.price from PC as p1 left outer join pc as p2 on p1.price < p2.price where p2.price is Null;
+
+嵌套查询习题1
+select distinct maker from Product where type ='laptop' and maker not in (select maker from Product where type='PC');
+
+select model from Printer where price < (select price from Printer where model=3002);
+ select model from PC where speed >= all (select speed from PC);或者select model from PC where speed =(select max(speed) from PC);
+
+select model from printer as p1 where exists (select * from Printer as p2 where p1.price <p2.price and p2.model=3002);
+
+WITH T AS (SELECT MAKER,SPEED FROM PRODUCT NATURAL JOIN PC) SELECT DISTINCT T1.MAKER FROM T AS T1 JOIN T AS T2 ON T1.MAKER = T2.MAKER AND T1.SPEED <> T2.SPEED JOIN T AS T3 ON T3.SPEED <>T1.SPEED AND T3.SPEED <>T2.SPEED AND T3.MAKER =T1.MAKER;
+
+CH3 P98 习题2第11题
+（1）select distinct maker from Product where type='laptop'
+    -> except
+    -> select distinct maker from Product where type='pc'
+    -> ;
+（2）select distinct maker from Product where type ='laptop' and maker not in (select maker from Product where type='PC');
+（3）select distinct maker from Product as p1 where p1.type='laptop' and not exists(select * from Product as p2 where p2.type = 'pc' and p1.maker=p2.maker);
+（4）select p1.model from printer as p1 join printer as p2 on p1.price < p2.price and p2.model=3002;
+（5）select model from printer where price < (select price from printer where model = 3002);
+（6）select p1.model from printer as p1 where exists (select * from printer as p2 where p1.price < p2.price and p2.model = 3002);

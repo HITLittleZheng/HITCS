@@ -1,0 +1,51 @@
+备注：这些都是自己写的记录下来，非老师提供的官方答案，仅供参考
+
+基本关系代数习题1
+
+π model (σ speed >= 3 ∧ ram >= 1024(PC)) 
+π model (σ speed >= 3 ∨ ram >= 1024(PC)) 
+
+π maker (Product)
+π model (σ maker='A' (Product))
+π model (σ color=true ∧ type='laser'(Printer))
+
+π model,price(PC) ∪ π model,price(Laptop)
+
+基本关系代数习题2
+π maker (σ type = 'laptop'(Product))- π maker (σ type = 'pc'(Product))
+
+π maker (σ hd >=100 (Product ⨝ Laptop))
+π model (σ price < 500 ∧ maker ='A' (Product ⨝ PC))
+
+ρ ssd (PC)
+π P1.model (σ (P1.price<P2.price)(ρ P1 (Printer) ⨯ σ P2.model=3002(ρ P2 (Printer))))
+
+派生关系代数习题1
+π maker (σ type ='laptop'(Product)) ∩ π maker (σ type ='pc'(Product))
+
+π p1.model,p2.model(ρ p1(PC) ⨝ p1.speed=p2.speed ∧ p1.ram=p2.ram ∧ p1.model<p2.model ρ p2(PC))
+π p1.hd(ρ p1(PC) ⨝ p1.hd=p2.hd ∧ p1.model<p2.model ρ p2(PC))
+π speed (PC) - π p1.speed(ρ p1(PC) ⨝ p1.speed<p2.speed ∧ p1.model<>p2.model ρ p2(PC))（不能换成小于）
+
+a=Product⨝PC
+temp=ρ p1 (a) ⨝ p1.speed<>p2.speed ρ p2(a) ⨝ p3.speed<>p2.speed ∧p1.speed<>p3.speed ρ p3 (a)
+π p1.maker(σ p1.maker=p2.maker ∧ p1.maker=p3.maker ∧p3.maker=p2.maker (temp))
+π maker (σhd>=100(Laptop⨝Product))
+派生关系代数习题2
+π p1.model(σ p2.speed=NULL (ρ p1(PC) ⟕ p1.speed<p2.speed ρ p2 (PC)))
+
+π maker,type (Product) ÷ π type (Product)
+
+扩展关系代数习题1
+γ maker;count(*)->count(Product)
+γ maker,type;count(*)->count(Product)
+π hd(σ count>=2(γ hd;count(*)->count (PC)))
+π maker(σ count=3 (γ maker;count(*)->count(π maker,type(Product))))
+
+type1=π maker(σ type='pc'(Product))
+type2=π maker(σ type='laptop'(Product))
+type3=π maker(σ type='printer'(Product))
+type1∩type2∩type3
+
+
+
