@@ -38,6 +38,15 @@
 
 感谢对本项目贡献的同学：[rookiexiong7](https://github.com/rookiexiong7)、[Ralph-Zhou](https://github.com/Ralph-Zhou)、[skyrimforest](https://github.com/skyrimforest)、[decemberboy04](https://github.com/decemberboy04)、[tloly-Roc](https://github.com/tloly-Roc)、[StellaLin030](https://github.com/StellaLin030)、[cpu095](https://github.com/cpu095)、[ymd2002](https://github.com/ymd2002)、[jielahou](https://github.com/jielahou)、[Mubuky](https://github.com/Mubuky)、[jjuuulll](https://github.com/jjuuulll)、[pmczx](https://github.com/pmczx)、[HITjunle](https://github.com/HITjunle)、[Dodojordi](https://github.com/Dodojordi)、[HITLittleZheng](https://github.com/HITLittleZheng)、[WhtyBi](https://github.com/WhtyBi)、[ZephyrVictor](https://github.com/ZephyrVictor)、[wiwyil2tr](https://github.com/wiwyil2tr)
 
+## :fire: 更新 | News
+
+- [24/11/14] :tada: 课程资料共享平台正式合并！
+- [24/03/05] :bento: 上传计算学部金牌讲师团LOGO
+- [24/01/10] :tada: 计算学部课程资料共享平台正式启动！
+- [24/01/07] :tada: 本人课程资料共享平台正式启动！
+
+<details><summary>Full News</summary>
+</details>
 
 ## :sparkles: 愿景 | Vision
 
