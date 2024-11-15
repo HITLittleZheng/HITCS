@@ -1,7 +1,11 @@
 <div align="center">
     <img src="https://github.com/user-attachments/assets/c9cc8c67-5d7c-47b7-ad37-00adf1066278" alt="计算学部 | 课程资料共享计划">
 </div>
-<p align="center">
+<div align="center">
+ <a >
+        
+   [![Visits Badge](https://badges.strrl.dev/visits/HITLittleZheng/HITCS)](https://badges.strrl.dev)
+    </a>
   <a href="https://github.com/HITLittleZheng/HITCS/watchers">
     <img src="https://img.shields.io/github/watchers/HITLittleZheng/HITCS.svg?style=flat&label=watchers&color=blue" alt="Github Watchers">
   </a>
@@ -17,7 +21,13 @@
   <a href="https://github.com/HITLittleZheng/HITCS/commits/main/">
     <img src="https://img.shields.io/github/last-commit/HITLittleZheng/HITCS.svg?style=flat&label=last-commit&color=teal" alt="GitHub last commit">
   </a>
-</p>
+  <a href="https://github.com/HITLittleZheng/HITCS/issues">
+    <img src="https://img.shields.io/github/issues/HITLittleZheng/HITCS" alt="Issues Badge" />
+  </a>
+  <a href="https://github.com/HITLittleZheng/HITCS/graphs/contributors">
+    <img alt="GitHub contributors" src="https://img.shields.io/github/contributors/HITLittleZheng/HITCS?color=2b9348">
+  </a>
+</div>
 
 
 ## :ledger: 计算学部 | 课程资料共享计划
@@ -76,7 +86,7 @@ Issue、PR、纠错、复习资料、学习笔记、选课/考试、回忆版考
 
 ## ⚠️: 注意 | Attention
 
-如果您认为本仓库的一些文件侵犯了您的权益，请联系QQ3565989732 。我将会从仓库中彻底清除这些文件。
+如果您认为本仓库的一些文件侵犯了您的权益，请联系QQ3565989732或 email 至本人邮箱。我将会从仓库中彻底清除这些文件。
 
 资料仅供参考，课程内容及重点可能发生变化，请以老师上课实际讲授为准。
 
