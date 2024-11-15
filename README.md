@@ -1,3 +1,29 @@
+<div align="center">
+    <img src="![LOGO](https://github.com/user-attachments/assets/c9cc8c67-5d7c-47b7-ad37-00adf1066278)" alt="计算学部 | 课程资料共享计划">
+</div>
+<p align="center">
+  <a href="https://github.com/HIT-FC-OpenCS/CS_Courses/watchers">
+    <img src="https://img.shields.io/github/watchers/HIT-FC-OpenCS/CS_Courses.svg?style=flat&label=watchers&color=blue" alt="Github Watchers">
+  </a>
+  <a href="https://github.com/HIT-FC-OpenCS/CS_Courses/stargazers">
+    <img src="https://img.shields.io/github/stars/HIT-FC-OpenCS/CS_Courses.svg?style=flat&label=stars&color=yellow" alt="Github Stars">
+  </a>
+  <a href="https://github.com/HIT-FC-OpenCS/CS_Courses/network/members">
+    <img src="https://img.shields.io/github/forks/HIT-FC-OpenCS/CS_Courses.svg?style=flat&label=forks&color=green" alt="Github Forks">
+  </a>
+  <a href="https://github.com/HIT-FC-OpenCS/CS_Courses">
+    <img src="https://img.shields.io/github/repo-size/HIT-FC-OpenCS/CS_Courses.svg?style=flat&label=repo-size&color=orange" alt="Github Repository Size">
+  </a>
+  <a href="https://github.com/HIT-FC-OpenCS/CS_Courses/commits/main/">
+    <img src="https://img.shields.io/github/last-commit/HIT-FC-OpenCS/CS_Courses.svg?style=flat&label=last-commit&color=teal" alt="GitHub last commit">
+  </a>
+</p>
+![LOGO](https://github.com/user-attachments/assets/32167f50-41f6-4ca9-804f-15be52269bb9)
+
+
+
+
+
 <h1 align="center">哈工大计算机专业 | 课程资料共享</h1> 
 
 <div align="center">
