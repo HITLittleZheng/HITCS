@@ -1,5 +1,5 @@
 <div align="center">
-    <img src="https://github.com/user-attachments/assets/c9cc8c67-5d7c-47b7-ad37-00adf1066278" alt="计算学部 | 课程资料共享计划">
+    <img src="LOGO.png" alt="计算学部 | 课程资料共享计划">
 </div>
 <div align="center">
  <a >
