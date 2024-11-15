@@ -2,19 +2,21 @@
     <img src="LOGO.png" alt="计算学部 | 课程资料共享计划">
 </div>
 <div align="center">
+     <a href="https://github.com/HITLittleZheng/HITCS/watchers">
+    <img src="https://img.shields.io/github/watchers/HITLittleZheng/HITCS" alt="Github Watchers">
+  </a>
+  <a href="https://github.com/HITLittleZheng/HITCS/stargazers">
+    <img src="https://img.shields.io/github/stars/HITLittleZheng/HITCS" alt="Github Stars">
+  </a>
+  <a href="https://github.com/HITLittleZheng/HITCS/network/members">
+    <img src="https://img.shields.io/github/forks/HITLittleZheng/HITCS" alt="Github Forks">
+  </a>
+</div>
+<div align="center">
  <a >
         
    [![Visits Badge](https://badges.strrl.dev/visits/HITLittleZheng/HITCS)](https://badges.strrl.dev)
-    </a>
-  <a href="https://github.com/HITLittleZheng/HITCS/watchers">
-    <img src="https://img.shields.io/github/watchers/HITLittleZheng/HITCS.svg?style=flat&label=watchers&color=blue" alt="Github Watchers">
-  </a>
-  <a href="https://github.com/HITLittleZheng/HITCS/stargazers">
-    <img src="https://img.shields.io/github/stars/HITLittleZheng/HITCS.svg?style=flat&label=stars&color=yellow" alt="Github Stars">
-  </a>
-  <a href="https://github.com/HITLittleZheng/HITCS/network/members">
-    <img src="https://img.shields.io/github/forks/HITLittleZheng/HITCS.svg?style=flat&label=forks&color=green" alt="Github Forks">
-  </a>
+    </a> 
   <a href="https://github.com/HITLittleZheng/HITCS">
     <img src="https://img.shields.io/github/repo-size/HITLittleZheng/HITCS.svg?style=flat&label=repo-size&color=orange" alt="Github Repository Size">
   </a>
