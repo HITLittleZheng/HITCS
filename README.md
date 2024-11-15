@@ -1,30 +1,12 @@
 <div align="center">
-    <img src="![LOGO](https://github.com/user-attachments/assets/c9cc8c67-5d7c-47b7-ad37-00adf1066278)" alt="计算学部 | 课程资料共享计划">
-</div>
-<p align="center">
-  <a href="https://github.com/HIT-FC-OpenCS/CS_Courses/watchers">
-    <img src="https://img.shields.io/github/watchers/HIT-FC-OpenCS/CS_Courses.svg?style=flat&label=watchers&color=blue" alt="Github Watchers">
-  </a>
-  <a href="https://github.com/HIT-FC-OpenCS/CS_Courses/stargazers">
-    <img src="https://img.shields.io/github/stars/HIT-FC-OpenCS/CS_Courses.svg?style=flat&label=stars&color=yellow" alt="Github Stars">
-  </a>
-  <a href="https://github.com/HIT-FC-OpenCS/CS_Courses/network/members">
-    <img src="https://img.shields.io/github/forks/HIT-FC-OpenCS/CS_Courses.svg?style=flat&label=forks&color=green" alt="Github Forks">
-  </a>
-  <a href="https://github.com/HIT-FC-OpenCS/CS_Courses">
-    <img src="https://img.shields.io/github/repo-size/HIT-FC-OpenCS/CS_Courses.svg?style=flat&label=repo-size&color=orange" alt="Github Repository Size">
-  </a>
-  <a href="https://github.com/HIT-FC-OpenCS/CS_Courses/commits/main/">
-    <img src="https://img.shields.io/github/last-commit/HIT-FC-OpenCS/CS_Courses.svg?style=flat&label=last-commit&color=teal" alt="GitHub last commit">
-  </a>
-</p>
-![LOGO](https://github.com/user-attachments/assets/32167f50-41f6-4ca9-804f-15be52269bb9)
+    <img src="https://github.com/user-attachments/assets/c9cc8c67-5d7c-47b7-ad37-00adf1066278" alt="计算学部 | 课程资料共享计划">
+    
+<div align="center">
 
 
 
 
 
-<h1 align="center">哈工大计算机专业 | 课程资料共享</h1> 
 
 <div align="center">
 
@@ -60,6 +42,20 @@
    
 </div>
 
+## :ledger: 计算学部 | 课程资料共享计划
+
+受 [浙江大学相关项目](https://github.com/QSCTech/zju-icicles) 、 [清华大学相关项目](https://github.com/PKUanonym/REKCARC-TSC-UHT) 和 [哈工大（深圳）相关项目](https://github.com/HITSZ-OpenCS/HITSZ-OpenCS)启发，计算学部金牌讲师团创立了课程资源分享项目，由于项目的两位负责人[rookiexiong7](https://github.com/rookiexiong7)、[Ralph-Zhou](https://github.com/Ralph-Zhou)推免至外校，没有精力维护课程资源分享项目，经负责人同意，本人作为计算学部金牌讲师团的一员，将计算学部金牌讲师团的课程资源分享项目与本人的课程资源分享项目整合，形成此项目。
+
+感谢对本项目贡献的同学：[rookiexiong7](https://github.com/rookiexiong7)、[Ralph-Zhou](https://github.com/Ralph-Zhou)、[skyrimforest](https://github.com/skyrimforest)、[decemberboy04](https://github.com/decemberboy04)、[tloly-Roc](https://github.com/tloly-Roc)、[StellaLin030](https://github.com/StellaLin030)、[cpu095](https://github.com/cpu095)、[ymd2002](https://github.com/ymd2002)、[jielahou](https://github.com/jielahou)、[Mubuky](https://github.com/Mubuky)、[jjuuulll](https://github.com/jjuuulll)、[pmczx](https://github.com/pmczx)、[HITjunle](https://github.com/HITjunle)、[Dodojordi](https://github.com/Dodojordi)、[HITLittleZheng](https://github.com/HITLittleZheng)、[WhtyBi](https://github.com/WhtyBi)
+
+## :fire: 更新 | News
+
+- [24/03/05] :bento: 上传LOGO
+- [24/03/02] :tada: 我们制作的前端网页正式上线 https://hit-fc-opencs.github.io/CS_Courses/ ！
+- [24/01/10] :tada: Github课程资料共享平台正式启动！
+
+<details><summary>Full News</summary>
+</details>
 
 
 ## :sparkles: 愿景 | Vision
