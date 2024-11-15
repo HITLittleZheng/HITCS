@@ -31,21 +31,23 @@
 
 ## :man_technologist: 自我介绍
 
-2021级计算学部人工智能专业本科生，2025级社会计算与信息检索研究中心研究生
+👨‍🎓 2021级计算学部人工智能专业本科生，2025级社会计算与信息检索研究中心研究生
 
-曾为计算学部金牌讲师团成员，计算学部学生会主席团成员
+🏅 曾为计算学部金牌讲师团成员，计算学部学生会主席团成员
 
-QQ3565989732，邮箱13292293911@163.com
+📱 QQ: 3565989732，📧 邮箱: 13292293911@163.com
 
-想加入赛尔实验室，或在赛尔实验室进行科研实习的大二大三学生，欢迎与我联系~
+🔬 想加入赛尔实验室，或在赛尔实验室进行科研实习的大二大三学生，欢迎与我联系~
+
 
 ## :ledger: 计算学部 | 课程资料共享计划
 
-受 [浙江大学相关项目](https://github.com/QSCTech/zju-icicles) 、 [清华大学相关项目](https://github.com/PKUanonym/REKCARC-TSC-UHT) 和 [哈工大（深圳）相关项目](https://github.com/HITSZ-OpenCS/HITSZ-OpenCS)启发，计算学部金牌讲师团创立了课程资源分享项目
+📚 受 [浙江大学相关项目](https://github.com/QSCTech/zju-icicles) 、 [清华大学相关项目](https://github.com/PKUanonym/REKCARC-TSC-UHT) 和 [哈工大（深圳）相关项目](https://github.com/HITSZ-OpenCS/HITSZ-OpenCS)启发，计算学部金牌讲师团创立了课程资源分享项目
 
-由于项目的两位负责人[rookiexiong7](https://github.com/rookiexiong7)、[Ralph-Zhou](https://github.com/Ralph-Zhou)已推免至外校，同时也没有精力维护项目，应负责人邀请，本人作为计算学部金牌讲师团的一员，将计算学部金牌讲师团的项目与本人的课程资源分享项目整合，形成此项目
+🔄 由于项目的两位负责人[rookiexiong7](https://github.com/rookiexiong7)、[Ralph-Zhou](https://github.com/Ralph-Zhou)已推免至外校，同时也没有精力维护项目，应负责人邀请，本人作为计算学部金牌讲师团的一员，将计算学部金牌讲师团的项目与本人的课程资源分享项目整合，形成此项目
 
-感谢对本项目贡献的同学：[rookiexiong7](https://github.com/rookiexiong7)、[Ralph-Zhou](https://github.com/Ralph-Zhou)、[skyrimforest](https://github.com/skyrimforest)、[decemberboy04](https://github.com/decemberboy04)、[tloly-Roc](https://github.com/tloly-Roc)、[StellaLin030](https://github.com/StellaLin030)、[cpu095](https://github.com/cpu095)、[ymd2002](https://github.com/ymd2002)、[jielahou](https://github.com/jielahou)、[Mubuky](https://github.com/Mubuky)、[jjuuulll](https://github.com/jjuuulll)、[pmczx](https://github.com/pmczx)、[HITjunle](https://github.com/HITjunle)、[Dodojordi](https://github.com/Dodojordi)、[HITLittleZheng](https://github.com/HITLittleZheng)、[WhtyBi](https://github.com/WhtyBi)、[ZephyrVictor](https://github.com/ZephyrVictor)、[wiwyil2tr](https://github.com/wiwyil2tr)
+🙏 感谢对本项目贡献的同学：[rookiexiong7](https://github.com/rookiexiong7)、[Ralph-Zhou](https://github.com/Ralph-Zhou)、[skyrimforest](https://github.com/skyrimforest)、[decemberboy04](https://github.com/decemberboy04)、[tloly-Roc](https://github.com/tloly-Roc)、[StellaLin030](https://github.com/StellaLin030)、[cpu095](https://github.com/cpu095)、[ymd2002](https://github.com/ymd2002)、[jielahou](https://github.com/jielahou)、[Mubuky](https://github.com/Mubuky)、[jjuuulll](https://github.com/jjuuulll)、[pmczx](https://github.com/pmczx)、[HITjunle](https://github.com/HITjunle)、[Dodojordi](https://github.com/Dodojordi)、[HITLittleZheng](https://github.com/HITLittleZheng)、[WhtyBi](https://github.com/WhtyBi)、[ZephyrVictor](https://github.com/ZephyrVictor)、[wiwyil2tr](https://github.com/wiwyil2tr)
+
 
 ## :fire: 更新 | News
 
@@ -69,20 +71,17 @@ QQ3565989732，邮箱13292293911@163.com
 
 **欢迎贡献，炬火煌煌相递传！** :blush:
 
-Issue、PR、纠错、复习资料、学习笔记、选课/考试、回忆版考试真题、攻略，完全欢迎！来自大家的关注、维护和贡献，才是让这个repo继续存在的动力~
+📌 Issue、PR、纠错、复习资料、学习笔记、选课/考试、回忆版考试真题、攻略，完全欢迎！来自大家的关注、维护和贡献，才是让这个repo继续存在的动力~
 
-电脑前的您请不要吝啬，您的作品一旦被合并至该仓库中，有可能会被无数学弟学妹仰慕。我们需要您的 PR！
+💻 电脑前的您请不要吝啬，您的作品一旦被合并至该仓库中，有可能会被无数学弟学妹仰慕。我们需要您的 PR！
 
-具体贡献方法可以参考 [贡献方法](贡献方法.md)
+📖 具体贡献方法可以参考 [贡献方法](贡献方法.md)
 
-如果您希望匿名贡献，可以 email 至本人邮箱，注明邮件主题即可：13292293911@163.com
+📧 如果您希望匿名贡献，可以 email 至本人邮箱，注明邮件主题即可：13292293911@163.com
 
-或者直接联系本人QQ：3565989732
+📱 或者直接联系本人QQ：3565989732
 
-对此 repo 的组织有任何建议或意见，也欢迎大家提出 Issue 或者 Email，我们一起让这个项目变得更好~
-
-
-
+💡 对此 repo 的组织有任何建议或意见，也欢迎大家提出 Issue 或者 Email，我们一起让这个项目变得更好~
 
 <br>
 
