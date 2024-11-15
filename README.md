@@ -44,7 +44,7 @@
 
 📚 受 [浙江大学相关项目](https://github.com/QSCTech/zju-icicles) 、 [清华大学相关项目](https://github.com/PKUanonym/REKCARC-TSC-UHT) 和 [哈工大（深圳）相关项目](https://github.com/HITSZ-OpenCS/HITSZ-OpenCS)启发，计算学部金牌讲师团创立了课程资源分享项目
 
-🔄 由于项目的两位负责人[rookiexiong7](https://github.com/rookiexiong7)、[Ralph-Zhou](https://github.com/Ralph-Zhou)已推免至外校，同时也没有精力维护项目，应负责人邀请，本人作为计算学部金牌讲师团的一员，将计算学部金牌讲师团的项目与本人的课程资源分享项目整合，形成此项目
+🔄 由于项目的两位负责人[rookiexiong7](https://github.com/rookiexiong7)、[Ralph-Zhou](https://github.com/Ralph-Zhou)已推免至外校，同时也没有精力维护项目，应负责人邀请，本人将计算学部金牌讲师团的项目与本人的课程资源分享项目整合，形成此项目
 
 🙏 感谢对本项目贡献的同学：[rookiexiong7](https://github.com/rookiexiong7)、[Ralph-Zhou](https://github.com/Ralph-Zhou)、[skyrimforest](https://github.com/skyrimforest)、[decemberboy04](https://github.com/decemberboy04)、[tloly-Roc](https://github.com/tloly-Roc)、[StellaLin030](https://github.com/StellaLin030)、[cpu095](https://github.com/cpu095)、[ymd2002](https://github.com/ymd2002)、[jielahou](https://github.com/jielahou)、[Mubuky](https://github.com/Mubuky)、[jjuuulll](https://github.com/jjuuulll)、[pmczx](https://github.com/pmczx)、[HITjunle](https://github.com/HITjunle)、[Dodojordi](https://github.com/Dodojordi)、[HITLittleZheng](https://github.com/HITLittleZheng)、[WhtyBi](https://github.com/WhtyBi)、[ZephyrVictor](https://github.com/ZephyrVictor)、[wiwyil2tr](https://github.com/wiwyil2tr)
 
