@@ -1,0 +1,18 @@
+HTTP/1.1 200 OK
+Content-Type: text/css
+Content-Length: 2154
+Connection: keep-alive
+Server:      
+Date: Thu, 26 Sep 2024 16:28:34 GMT
+Last-Modified: Mon, 11 Dec 2023 06:35:41 GMT
+ETag: "6576adbd-86a"
+Access-Control-Allow-Origin: *
+X-Varnish: 216511663 191309641
+Age: 75
+Via: 1.1 varnish-v4
+X-Varnish-Cache: HIT
+Accept-Ranges: bytes
+
+#main-navigation .navbar,.tooltip-inner,.list.list-date-v1 li .top-title.bg-white .card-date-text,.calendar-block .view-header .pager,.footer,.list.list-v2 li a.badge:hover,.nav-tabs:not(.nav-tabs-v2).tabs-blue>li:not(.active),.views-filter-wrapper .views-exposed-form .form--inline>.form-actions:before,.btn-primary,.pagination>.active>a,#main-navigation{background-color:#005375;}.list-header-v1,.nav-tabs-v1 li:hover a,.nav-tabs-v1 li.active a,.nav li.active a,.tags-v1 .tags-header,.nav-tabs-v2.nav-tabs li.active a,.tags-v1 a,.one-list-v1 .list-item li:hover .item-left a,.list-tooltip>li>.top:hover,.list.list-date-v1 li .list-date-content .list-title a:hover,.footer-action a:hover,.list.cal-list.cal-single-list li .info a,#horizontal-menu>li>a.is-active,#block-zuixinfabuqukuai .block-title .right-link a,.pagination>li>a,.card-info-v1 .card-info-content .f-l .month,.card-v1 a:hover{color:#005375 !important;}.pagination>.active>a,.views-filter-wrapper .views-exposed-form .form--inline>.form-item>input{border-color:#005375;}.tooltip.right .tooltip-arrow{border-right-color:#005375;}.nav-tabs-v3 li:nth-child(1) a{color:#005375;border-left-color:#005375;}.card-info-v1 a:hover{color:#fff;}.nav-tabs:not(.nav-tabs-v2).tabs-blue>li{border-top-color:#005375;}.card-info-v1{background:url(/sites/today1.prod1.dpweb1.hit.edu.cn/files/shouye.png) center center no-repeat;}.full_top{background:url(/sites/today1.prod1.dpweb1.hit.edu.cn/files/bumen.png);}
+.header-right .header-share li.weixin{display:none;}
+#views-exposed-form-search-api-content-events [for="edit-sort-by"],#views-exposed-form-search-api-content-articles [for="edit-sort-by"],#views-exposed-form-search-api-content-complex [for="edit-sort-by"]{color:red;}#views-exposed-form-search-api-content-events .form-item-sort-by .select-wrapper:after,#views-exposed-form-search-api-content-articles .form-item-sort-by .select-wrapper:after,#views-exposed-form-search-api-content-complex .form-item-sort-by .select-wrapper:after{content:'请在此修改结果集显示方式';display:inline-block;margin-left:10px;color:red;}#views-exposed-form-search-api-content-complex{padding:15px 60px;}

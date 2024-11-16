@@ -1,0 +1,15 @@
+HTTP/1.1 200 OK
+Server: Server           
+Last-Modified: Thu, 01 Sep 2022 01:32:54 GMT
+Content-Type: application/javascript;charset=UTF-8
+Content-Length: 56
+Date: Thu, 26 Sep 2024 16:28:52 GMT
+
+
+function jwreload() {
+	window.location.reload();
+}
+ccept-Encoding: gzip, deflate
+Accept-Language: zh-CN,zh;q=0.9
+Cookie: JSESSIONID=66AC90364C11D278C1CFBE1A8BFF1A06
+

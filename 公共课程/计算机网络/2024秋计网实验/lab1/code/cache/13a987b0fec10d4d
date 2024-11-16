@@ -1,0 +1,17 @@
+HTTP/1.1 200 OK
+Server: Server           
+Last-Modified: Thu, 01 Sep 2022 01:32:54 GMT
+Content-Type: text/css;charset=UTF-8
+Content-Length: 158
+Date: Mon, 14 Oct 2024 16:00:04 GMT
+
+.Wdate{
+	border:#999 1px solid;
+	height:20px;
+	background:#fff url(datePicker.gif) no-repeat right;
+}
+
+.WdateFmtErr{
+	font-weight:bold;
+	color:red;
+}

@@ -1,0 +1,11 @@
+HTTP/1.1 200 OK
+Server: Server           
+Last-Modified: Thu, 01 Sep 2022 01:32:54 GMT
+Content-Type: application/javascript;charset=UTF-8
+Content-Length: 56
+Date: Mon, 14 Oct 2024 16:00:04 GMT
+
+
+function jwreload() {
+	window.location.reload();
+}

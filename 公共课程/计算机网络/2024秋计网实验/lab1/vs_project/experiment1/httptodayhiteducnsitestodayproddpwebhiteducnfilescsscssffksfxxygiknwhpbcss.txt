@@ -1,0 +1,17 @@
+HTTP/1.1 200 OK
+Content-Type: text/css
+Content-Length: 2832
+Connection: keep-alive
+Server:      
+Date: Thu, 26 Sep 2024 16:28:34 GMT
+Last-Modified: Thu, 21 Dec 2023 08:56:04 GMT
+ETag: "6583fda4-b10"
+Access-Control-Allow-Origin: *
+X-Varnish: 217232117 208916872
+Age: 74
+Via: 1.1 varnish-v4
+X-Varnish-Cache: HIT
+Accept-Ranges: bytes
+
+.sidebar-preview{top:auto;bottom:0;left:0;display:block;padding:0;border-right:1px solid #eee;background-color:#fff;*/}.sidebar-preview .offcanvas-nav{padding:12px 0;}.sidebar-hide.sidebar-preview{position:fixed!important;z-index:4;}.toggle-button{z-index:100;cursor:pointer;}.sidebar-preview .toggle-button{top:40%;position:absolute;right:0px;width:20px;height:69px;background-image:url(/themes/custom/hit_front/images/shrink.png);background-repeat:no-repeat;}.sidebar-preview .toggle-button:hover{width:26px;}.sidebar-preview .toggle-button-r{display:none;}.sidebar-hide .toggle-button-r{top:40%;position:absolute;right:-20px;display:block;background-image:url(/themes/custom/hit_front/images/spread.png);background-position:left;background-repeat:no-repeat;width:22px;height:62px;z-index:1000;}.sidebar-hide .toggle-button-r:hover{right:-22px;}.transition{-webkit-transition:all .25s ease-out;-o-transition:all .25s ease-out;transition:all .25s ease-out;}@media screen and (min-width:768px){.sidebar-hide{left:-25%;}}@media screen and (min-width:992px){.sidebar-hide{left:-16.66666667%;top:220px;}}@media screen and (max-width:767px){.sidebar-preview{width:300px;box-sizing:border-box;}.sidebar-hide{left:-300px;}}
+.file{display:inline-block;min-height:16px;padding-left:20px;background-repeat:no-repeat;background-position:left center;}[dir="rtl"] .file{padding-right:20px;padding-left:inherit;background-position:right center;}.file--general,.file--application-octet-stream{background-image:url(/core/themes/classy/images/icons/application-octet-stream.png);}.file--package-x-generic{background-image:url(/core/themes/classy/images/icons/package-x-generic.png);}.file--x-office-spreadsheet{background-image:url(/core/themes/classy/images/icons/x-office-spreadsheet.png);}.file--x-office-document{background-image:url(/core/themes/classy/images/icons/x-office-document.png);}.file--x-office-presentation{background-image:url(/core/themes/classy/images/icons/x-office-presentation.png);}.file--text-x-script{background-image:url(/core/themes/classy/images/icons/text-x-script.png);}.file--text-html{background-image:url(/core/themes/classy/images/icons/text-html.png);}.file--text-plain{background-image:url(/core/themes/classy/images/icons/text-plain.png);}.file--application-pdf{background-image:url(/core/themes/classy/images/icons/application-pdf.png);}.file--application-x-executable{background-image:url(/core/themes/classy/images/icons/application-x-executable.png);}.file--audio{background-image:url(/core/themes/classy/images/icons/audio-x-generic.png);}.file--video{background-image:url(/core/themes/classy/images/icons/video-x-generic.png);}.file--text{background-image:url(/core/themes/classy/images/icons/text-x-generic.png);}.file--image{background-image:url(/core/themes/classy/images/icons/image-x-generic.png);}

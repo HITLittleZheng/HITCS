@@ -1,0 +1,759 @@
+HTTP/1.1 200 OK
+Content-Type: text/html
+Content-Length: 443277
+Connection: keep-alive
+Server:      
+Date: Thu, 26 Sep 2024 16:29:48 GMT
+Last-Modified: Thu, 26 Sep 2024 13:52:23 GMT
+ETag: "66f56717-6c38d"
+Access-Control-Allow-Origin: *
+Accept-Ranges: bytes
+X-Varnish: 216511653
+Age: 0
+Via: 1.1 varnish-v4
+X-Varnish-Cache: MISS
+Accept-Ranges: bytes
+
+<!DOCTYPE html>
+<html  lang="zh-hans" dir="ltr" prefix="content: http://purl.org/rss/1.0/modules/content/  dc: http://purl.org/dc/terms/  foaf: http://xmlns.com/foaf/0.1/  og: http://ogp.me/ns#  rdfs: http://www.w3.org/2000/01/rdf-schema#  schema: http://schema.org/  sioc: http://rdfs.org/sioc/ns#  sioct: http://rdfs.org/sioc/types#  skos: http://www.w3.org/2004/02/skos/core#  xsd: http://www.w3.org/2001/XMLSchema# ">
+  <head>
+    <meta name="renderer" content="webkit">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta charset="utf-8" />
+<link rel="canonical" href="http://today.hit.edu.cn/" />
+<link rel="shortlink" href="http://today.hit.edu.cn/" />
+<meta name="Generator" content="Drupal 8 (https://www.drupal.org)" />
+<meta name="MobileOptimized" content="width" />
+<meta name="HandheldFriendly" content="true" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<link rel="shortcut icon" href="/sites/today1.prod1.dpweb1.hit.edu.cn/themes/hit_today/favicon.ico" type="image/vnd.microsoft.icon" />
+<link rel="revision" href="http://today.hit.edu.cn/home" />
+
+    <title>首页 | 今日哈工大 ： 哈尔滨工业大学校内综合信息网</title>
+    <link rel="stylesheet" media="all" href="/sites/today1.prod1.dpweb1.hit.edu.cn/files/css/css_9v1HTF-1efQ72eOjGFzFISAj10UGeCwtqzREmZEFl7M.css" />
+<link rel="stylesheet" media="all" href="/themes/custom/hit_front/css/devel-tools/panels-ipe.css?sb41wm" />
+<link rel="stylesheet" media="all" href="/sites/today1.prod1.dpweb1.hit.edu.cn/files/css/css_ZCffksEfGLxS2xyDgMKYiZknwMSANWY2hF_G_pCbON0.css" />
+<link rel="stylesheet" media="all" href="/themes/custom/hit_front/css/style.css?sb41wm" />
+<link rel="stylesheet" media="all" href="/sites/today1.prod1.dpweb1.hit.edu.cn/files/css/css_3c6vwXne105nYwgRpqkLvJ3QLMGJb7LQrx1iSzuodk0.css" />
+<link rel="stylesheet" media="all" href="/sites/today1.prod1.dpweb1.hit.edu.cn/files/css/css_FFC9MsHBFppwwft079i2FUhsw0T8tFqNdGT_7Xpqk1s.css" />
+
+    
+<!--[if lte IE 8]>
+<script src="/sites/today1.prod1.dpweb1.hit.edu.cn/files/js/js_-FMdK-lG3dyu3_2eCQZ0GlFq7u5Am7WVC5NPJKWqnm4.js"></script>
+<![endif]-->
+<script src="/core/assets/vendor/modernizr/modernizr.min.js?v=3.3.1"></script>
+
+  </head>
+  <body class="workspace-live path-frontpage page-node-type-landing-page">
+    <a href="#main-content" class="visually-hidden focusable skip-link">
+      跳转到主要内容
+    </a>
+    
+      <div class="dialog-off-canvas-main-canvas" data-off-canvas-main-canvas>
+    <div id="page-wrapper">
+  <div id="page">
+        <div id="main-navigation">
+                        <div class="container">
+            <div class="header-top">
+                <div class="region region-header-top">
+    <div id="block-hit-today-responsivemenumobileicon" data-block-plugin-id="responsive_menu_toggle" class="responsive-menu-toggle-wrapper responsive-menu-toggle block block-responsive-menu block-responsive-menu-toggle clearfix">
+  
+    
+
+      <a id="toggle-icon" class="toggle responsive-menu-toggle-icon" title="Menu" href="#off-canvas">
+  <span class="icon"></span><span class="label">菜单</span>
+</a>
+  </div>
+
+      <a class="logo" href="/" title="首页" rel="home">
+      <img class="visible-md-inline-block visible-lg-inline-block" src="/sites/today/themes/hit_today/logo.png" alt="首页"/>
+      <img class="hidden-lg hidden-md" src="/sites/today/themes/hit_today/logo-mobile.png" alt="">
+    </a>
+      <div id="block-toubutianqiqukuai" data-block-plugin-id="default_header_block" class="block block-core block-default-header-block clearfix">
+  
+    
+
+      <span data-boost-placeholder-id="callback=hit_misc.lazy_builder%3AbuildDefaultHeader&amp;&amp;token=hRBI6B8_mBplSk-Qq7PVQo5M5h23k7BgvZH9J8RrHXs"></span>
+  </div>
+
+
+  </div>
+
+            </div>
+          </div>
+                                      <div id="navbar" class="navbar">
+            <div class="container">
+                <div class="region region-navigation">
+    <div id="block-hit-today-horizontalmenu" data-block-plugin-id="responsive_menu_horizontal_menu" class="block block-responsive-menu block-responsive-menu-horizontal-menu clearfix">
+  
+    
+
+      <div class="responsive-menu-block-wrapper">
+  
+    
+          <ul id="horizontal-menu" class="clearfix">
+                            <li class="menu-item menu-item--active-trail">
+        <a href="/" target="_self" data-drupal-link-system-path="&lt;front&gt;" class="is-active">首页</a>
+                  </li>
+                        <li class="menu-item">
+        <a href="/calendar/month" target="_self" rel="" class="hidden-xs" data-drupal-link-system-path="calendar/month">活动预报</a>
+                  </li>
+                        <li class="menu-item">
+        <a href="/departments" target="_self" rel="" data-drupal-link-system-path="node/835">院部导航</a>
+                  </li>
+                        <li class="menu-item">
+        <a href="/category/10" target="_self" rel="" data-drupal-link-system-path="taxonomy/term/10">公告公示</a>
+                  </li>
+                        <li class="menu-item">
+        <a href="/category/11" target="_self" rel="" data-drupal-link-system-path="taxonomy/term/11">新闻快讯</a>
+                  </li>
+                        <li class="menu-item">
+        <a href="/ranking">访问排行 </a>
+                  </li>
+                        <li class="menu-item">
+        <a href="/search/complex" target="_self" rel="" data-drupal-link-system-path="search/complex">站内搜索</a>
+                  </li>
+                        <li class="menu-item">
+        <a href="http://today.hit.edu.cn/my/read">个人中心</a>
+                  </li>
+                        <li class="menu-item">
+        <a href="http://today.hit.edu.cn/taxonomy/term/10/34333?page=0">创新创业</a>
+                  </li>
+        </ul>
+
+  
+
+
+</div>
+
+  </div>
+
+
+  </div>
+
+            </div>
+          </div>
+                  </div>
+    
+              <div role="main" class="main-container container js-quickedit-main-content">
+                
+                
+                
+                
+        <div class="row">
+                    
+                      <a id="main-content"></a>
+            <div  class="col-sm-12">
+                                            <div class="region region-content">
+    <div data-drupal-messages-fallback class="hidden"></div><span data-boost-placeholder-id="callback=Drupal%5CCore%5CRender%5CElement%5CStatusMessages%3A%3ArenderMessages&amp;args%5B0%5D=&amp;token=_AZ3AspTMq078QO9qahwtJ85a5oxfiI8sVz8o_s8szc"></span>  
+    
+
+  <div data-history-node-id="1" class="node node--type-landing_page node--view-mode-full clearfix">
+  
+    
+
+  <div>
+    <div >
+  <div class="row">
+    <div class="col-xs-12">
+      <div class="front-top">
+        <div class="row">
+          <div class="col-xs-12 col-sm-6 col-md-4">
+          <div class="slideshow">
+            <div class="block-region-top-left"><div data-block-plugin-id="advertisement_front_block" class="block block-hit-article block-advertisement-front-block clearfix">
+  
+    
+
+      <span data-boost-placeholder-id="callback=hit_misc.lazy_builder%3AbuildAdvertiseShow&amp;args%5B0%5D=1&amp;args%5B1%5D=5&amp;args%5B2%5D=5&amp;args%5B3%5D=100&amp;token=VMGhMiQXk2j_jGbFTYqPBxrKabVsZpUsoAv8lZLXW5w"></span>
+  </div>
+
+</div>
+                        <div id="loader">
+              <div class="centrize">
+                <div class="v-center">
+                  <div id="mask">
+                    <img src="/themes/custom/hit_front/images/loader.jpg" alt="">
+                    <i class="fa fa-spinner fa-spin fa-fw"></i>
+                  </div>
+                </div>
+              </div>
+          </div>
+          </div>
+        </div>
+        <div class="col-xs-12 col-sm-6 col-md-4">
+          <div class="block-region-top-middle"><div data-block-plugin-id="web_recommend_block" class="block block-hit-article block-web-recommend-block clearfix">
+  
+    
+
+        <div class="bg-white one-list-v1 list-first  visible-xs  visible-sm  visible-md  visible-lg ">
+    <h4 class="list-header list-header-v1 clearfix block-title-blue">
+      <div class="en">recommendation</div>
+      <div class="title">网站推荐</div>
+        <a class="link more-link-v1" href="http://today.hit.edu.cn/web-recommend" target="_blank" data-container="body" data-toggle="tooltip" data-placement="top" title="更多">更多</a>
+    </h4>
+    <ul class="list-item p-right-lg clearfix">
+              <li data-container="body" data-toggle="tooltip" data-placement="right" title="关于开展2024年度宝钢教育奖优秀学生奖评选工作的通知">
+          <span class="item-right dark">
+                      <a href="/taxonomy/term/74" target="_blank">学工处 </a> 7812                  </span>
+        <span class="item-left">
+          <a href="http://today.hit.edu.cn/article/2024/09/24/115965" target="_blank">关于开展2024年度宝钢教育奖优秀学生奖评选工作的通知</a>
+        </span>
+        </li>
+              <li data-container="body" data-toggle="tooltip" data-placement="right" title="学校办公室关于2024年国庆节放假安排的通知">
+          <span class="item-right dark">
+                      <a href="/taxonomy/term/73" target="_blank">校办</a> 3598                  </span>
+        <span class="item-left">
+          <a href="http://today.hit.edu.cn/article/2024/09/19/115813" target="_blank">学校办公室关于2024年国庆节放假安排的通知</a>
+        </span>
+        </li>
+              <li data-container="body" data-toggle="tooltip" data-placement="right" title="关于推荐2024级优秀本科生申报飞行器动力工程（中俄联合培养）奖学金项目的通知">
+          <span class="item-right dark">
+                      <a href="/taxonomy/term/70" target="_blank">本科生院</a> 2047                  </span>
+        <span class="item-left">
+          <a href="http://today.hit.edu.cn/article/2024/09/24/115978" target="_blank">关于推荐2024级优秀本科生申报飞行器动力工程（中俄联合培养）奖学金项目的通知</a>
+        </span>
+        </li>
+              <li data-container="body" data-toggle="tooltip" data-placement="right" title="关于开展哈尔滨工业大学2024年暑期社会实践优秀集体和个人评选工作的通知">
+          <span class="item-right dark">
+                      <a href="/taxonomy/term/92" target="_blank">团委</a> 1986                  </span>
+        <span class="item-left">
+          <a href="http://today.hit.edu.cn/article/2024/09/20/115889" target="_blank">关于开展哈尔滨工业大学2024年暑期社会实践优秀集体和个人评选工作的通知</a>
+        </span>
+        </li>
+              <li data-container="body" data-toggle="tooltip" data-placement="right" title="【探索未来】李惠院士主题讲座-未来技术讲坛（第15期）活动预告">
+          <span class="item-right dark">
+                      <a href="/taxonomy/term/33139" target="_blank">未来技术</a> 1703                  </span>
+        <span class="item-left">
+          <a href="http://today.hit.edu.cn/article/2024/09/23/115934" target="_blank">【探索未来】李惠院士主题讲座-未来技术讲坛（第15期）活动预告</a>
+        </span>
+        </li>
+          </ul>
+  </div>
+  <div class="spacer-md-sm"></div>
+
+  </div>
+
+</div>
+        </div>
+        <div class="col-xs-12 col-md-4">
+          <div class="block-region-top-right"><div data-block-plugin-id="recommend_block" class="block block-hit-article block-recommend-block clearfix">
+  
+    
+
+        <div class="bg-white one-list-v1  visible-xs  visible-sm  visible-md  visible-lg ">
+    <h4 class="list-header list-header-v1 clearfix block-title-blue">
+      <div class="en">recommendation</div>
+      <div class="title">读者推荐</div>
+      <a class="link more-link-v1" href="http://today.hit.edu.cn/ranking" target="_blank" data-container="body" data-toggle="tooltip" data-placement="top" title="更多">更多</a>
+    </h4>
+    <ul class="list-item clearfix">
+              <li data-container="body" data-toggle="tooltip" data-placement="right" title="【探索未来】未来技术学院大学生创新创业训练计划经验分享会">
+                    <span class="item-right" style="margin-right:0">
+              <i class="fa fa-thumbs-up"></i>
+              6
+          </span>
+                    <span class="item-left">
+            <a href="http://today.hit.edu.cn/event/2024/09/25/116017" target="_blank">【探索未来】未来技术学院大学生创新创业训练计划经验分享会</a>
+          </span>
+        </li>
+              <li data-container="body" data-toggle="tooltip" data-placement="right" title="【探索未来】李惠院士主题讲座-未来技术讲坛（第15期）活动预告">
+                    <span class="item-right" style="margin-right:0">
+              <i class="fa fa-thumbs-up"></i>
+              6
+          </span>
+                    <span class="item-left">
+            <a href="http://today.hit.edu.cn/article/2024/09/23/115934" target="_blank">【探索未来】李惠院士主题讲座-未来技术讲坛（第15期）活动预告</a>
+          </span>
+        </li>
+              <li data-container="body" data-toggle="tooltip" data-placement="right" title="【逐梦未来】“国防教育月嘉年华”志愿服务活动纪实">
+                    <span class="item-right" style="margin-right:0">
+              <i class="fa fa-thumbs-up"></i>
+              5
+          </span>
+                    <span class="item-left">
+            <a href="http://today.hit.edu.cn/article/2024/09/26/116041" target="_blank">【逐梦未来】“国防教育月嘉年华”志愿服务活动纪实</a>
+          </span>
+        </li>
+              <li data-container="body" data-toggle="tooltip" data-placement="right" title="关于2024年度“未来英才”计划 评选结果的公示">
+                    <span class="item-right" style="margin-right:0">
+              <i class="fa fa-thumbs-up"></i>
+              5
+          </span>
+                    <span class="item-left">
+            <a href="http://today.hit.edu.cn/article/2024/09/25/116004" target="_blank">关于2024年度“未来英才”计划 评选结果的公示</a>
+          </span>
+        </li>
+              <li data-container="body" data-toggle="tooltip" data-placement="right" title="哈尔滨工业大学“思源计划”四期支教调研实践纪实">
+                    <span class="item-right" style="margin-right:0">
+              <i class="fa fa-thumbs-up"></i>
+              5
+          </span>
+                    <span class="item-left">
+            <a href="http://today.hit.edu.cn/article/2024/09/24/115991" target="_blank">哈尔滨工业大学“思源计划”四期支教调研实践纪实</a>
+          </span>
+        </li>
+          </ul>
+  </div>
+  <div class="spacer-md-sm"></div>
+
+  </div>
+
+</div>
+        </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-xs-12">
+      
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-xs-12 col-sm-6">
+      <div class="block-region-top-left-below"><div data-block-plugin-id="block_content:839079a7-5aae-4081-912b-b00417d250cf" class="block block-block-content block-block-content839079a7-5aae-4081-912b-b00417d250cf clearfix">
+  
+    
+
+      <div class="home-list-image-left bg-white   visible-xs  visible-sm  visible-md  visible-lg ">
+  <!-- Nav tabs -->
+  <div class="list-header-v1 border-b">
+    <div class="en">notices</div>
+      <h4 class="title">公告</h4>
+    <ul class="nav-tabs-v1 clearfix tabs-blue">
+                            <li class="active">
+                      <a href="#tab-5ffefcb6-889a-499d-af5f-99abdc7cfaba" data-toggle="tab">最新公告</a>
+        </li>
+                          <li>
+                        <a href="#tab-462ab54e-ffc6-4ba1-b233-58ca4e08e48c" data-toggle="tab">院系公告</a>
+        </li>
+                          <li>
+                        <a href="#tab-d39b45c1-71d8-4441-a288-d12fb8615a67" data-toggle="tab">部处公告</a>
+        </li>
+            </ul>
+  </div>
+
+<!-- Tab panes -->
+  <div class="tab-content clearfix">
+                  <div class="tab-pane active" id="tab-5ffefcb6-889a-499d-af5f-99abdc7cfaba">
+            <div class="views-element-container form-group"><div class="one-list-v1 view view-front-article view-id-front_article view-display-id-block_1 js-view-dom-id-235a963d3391fc77441dd3595f5a95a41103002b1ca5bdf24a14822d10aa8eb9">
+  
+    
+      
+      <div class="view-content">
+      <div>
+  
+  <ul class="list-item p-right-lgx list-tooltip clearfix">
+
+          <li><div class="item-right dark">
+    <span class="list-left-below"><a href="/department/69" target="_blank">科工院</a> <i class="fa fa-clock-o yellow" aria-hidden="true"></i> 47 秒前</span>
+</div>
+<span class="clearfix  item-left" data-container="body" data-toggle="tooltip" data-placement="right" title="关于发布国家自然科学基金一批2024年度数学天元基金和专项项目指南的通知"><a href="/article/2024/09/26/116067" target="_blank" hreflang="zh-hans">关于发布国家自然科学基金一批2024年度数学天元基金和专项项目指南的通知</a></span></li>
+          <li><div class="item-right dark">
+    <span class="list-left-below"><a href="/department/69" target="_blank">科工院</a> <i class="fa fa-clock-o yellow" aria-hidden="true"></i> 3 分钟前</span>
+</div>
+<span class="clearfix  item-left" data-container="body" data-toggle="tooltip" data-placement="right" title="2024年资助学术会议结果的公示（第一批）"><a href="/article/2024/09/26/116066" target="_blank" hreflang="zh-hans">2024年资助学术会议结果的公示（第一批）</a></span></li>
+          <li><div class="item-right dark">
+    <span class="list-left-below"><a href="/department/101" target="_blank">基础学部</a> <i class="fa fa-clock-o yellow" aria-hidden="true"></i> 2 小时前</span>
+</div>
+<span class="clearfix  item-left" data-container="body" data-toggle="tooltip" data-placement="right" title="【创优固基】哈尔滨工业大学“鲲鹏计划” 职业启蒙与学业赋能训练营"><a href="/article/2024/09/26/116063" target="_blank" hreflang="zh-hans">【创优固基】哈尔滨工业大学“鲲鹏计划” 职业启蒙与学业赋能训练营</a></span></li>
+          <li><div class="item-right dark">
+    <span class="list-left-below"><a href="/department/33139" target="_blank">未来技术</a> <i class="fa fa-clock-o yellow" aria-hidden="true"></i> 3 小时前</span>
+</div>
+<span class="clearfix  item-left" data-container="body" data-toggle="tooltip" data-placement="right" title="【逐梦未来】“展映峥嵘岁月，欢度国庆佳节”未来技术学院国庆节特别活动通知"><a href="/event/2024/09/26/116062" target="_blank" hreflang="zh-hans">【逐梦未来】“展映峥嵘岁月，欢度国庆佳节”未来技术学院国庆节特别活动通知</a></span></li>
+          <li><div class="item-right dark">
+    <span class="list-left-below"><a href="/department/90" target="_blank">后勤集团</a> <i class="fa fa-clock-o yellow" aria-hidden="true"></i> 5 小时前</span>
+</div>
+<span class="clearfix  item-left" data-container="body" data-toggle="tooltip" data-placement="right" title="活动中心一、二校区场地使用情况公示-2024-09-27				"><a href="/article/2024/09/26/116061" target="_blank" hreflang="zh-hans">活动中心一、二校区场地使用情况公示-2024-09-27				</a></span></li>
+          <li><div class="item-right dark">
+    <span class="list-left-below"><a href="/department/99" target="_blank">国有资产</a> <i class="fa fa-clock-o yellow" aria-hidden="true"></i> 6 小时前</span>
+</div>
+<span class="clearfix  item-left" data-container="body" data-toggle="tooltip" data-placement="right" title="关于开展放射源、射线装置专项巡查的通知"><a href="/article/2024/09/26/116060" target="_blank" hreflang="zh-hans">关于开展放射源、射线装置专项巡查的通知</a></span></li>
+          <li><div class="item-right dark">
+    <span class="list-left-below"><a href="/department/99" target="_blank">国有资产</a> <i class="fa fa-clock-o yellow" aria-hidden="true"></i> 6 小时前</span>
+</div>
+<span class="clearfix  item-left" data-container="body" data-toggle="tooltip" data-placement="right" title="学校召开辐射与防护安全领导小组和生物安全委员会专项工作会议"><a href="/article/2024/09/26/116059" target="_blank" hreflang="zh-hans">学校召开辐射与防护安全领导小组和生物安全委员会专项工作会议</a></span></li>
+          <li><div class="item-right dark">
+    <span class="list-left-below"><a href="/department/84" target="_blank">图书馆</a> <i class="fa fa-clock-o yellow" aria-hidden="true"></i> 6 小时前</span>
+</div>
+<span class="clearfix  item-left" data-container="body" data-toggle="tooltip" data-placement="right" title="哈尔滨工业大学图书馆智能导览开通，智慧服务再升级！"><a href="/article/2024/09/26/116058" target="_blank" hreflang="zh-hans">哈尔滨工业大学图书馆智能导览开通，智慧服务再升级！</a></span></li>
+          <li><div class="item-right dark">
+    <span class="list-left-below"><a href="/department/121" target="_blank">化工学院</a> <i class="fa fa-clock-o yellow" aria-hidden="true"></i> 10 小时前</span>
+</div>
+<span class="clearfix  item-left" data-container="body" data-toggle="tooltip" data-placement="right" title="关于做好化工与化学学院研究生会第十七届主席团换届选举工作的通知"><a href="/article/2024/09/26/116055" target="_blank" hreflang="zh-hans">关于做好化工与化学学院研究生会第十七届主席团换届选举工作的通知</a></span></li>
+          <li><div class="item-right dark">
+    <span class="list-left-below"><a href="/department/121" target="_blank">化工学院</a> <i class="fa fa-clock-o yellow" aria-hidden="true"></i> 10 小时前</span>
+</div>
+<span class="clearfix  item-left" data-container="body" data-toggle="tooltip" data-placement="right" title="关于做好化工与化学学院学生会第十七届主席团换届选举工作的通知"><a href="/article/2024/09/26/116054" target="_blank" hreflang="zh-hans">关于做好化工与化学学院学生会第十七届主席团换届选举工作的通知</a></span></li>
+    
+  </ul>
+
+</div>
+
+    </div>
+  
+          </div>
+</div>
+
+            <div class="block-more text-center">
+                <a href="/category/10" class="more-link-v1" target="_blank"  data-container="body" data-toggle="tooltip" data-placement="top" title="更多">更多</a>
+              </div>
+              </div>
+
+                          <div class="tab-pane" id="tab-462ab54e-ffc6-4ba1-b233-58ca4e08e48c">
+            <div class="views-element-container form-group"><div class="one-list-v1 view view-front-article view-id-front_article view-display-id-block_3 js-view-dom-id-a27b2533b8e55736d88e66fadbb0490efd5ef9a45741ec6aa60683d31fa926b8">
+  
+    
+      
+      <div class="view-content">
+      <div>
+  
+  <ul class="list-item p-right-lgx list-tooltip clearfix">
+
+          <li><div class="item-right dark">
+    <span class="list-left-below"><a href="/department/101" hreflang="zh-hans">基础学部</a> <i class="fa fa-clock-o yellow" aria-hidden="true"></i> 2 小时前</span>
+</div>
+<span class="clearfix  item-left" data-container="body" data-toggle="tooltip" data-placement="right" title="【创优固基】哈尔滨工业大学“鲲鹏计划” 职业启蒙与学业赋能训练营"><a href="/article/2024/09/26/116063" target="_blank" hreflang="zh-hans">【创优固基】哈尔滨工业大学“鲲鹏计划” 职业启蒙与学业赋能训练营</a></span></li>
+          <li><div class="item-right dark">
+    <span class="list-left-below"><a href="/department/121" hreflang="zh-hans">化工学院</a> <i class="fa fa-clock-o yellow" aria-hidden="true"></i> 10 小时前</span>
+</div>
+<span class="clearfix  item-left" data-container="body" data-toggle="tooltip" data-placement="right" title="关于做好化工与化学学院研究生会第十七届主席团换届选举工作的通知"><a href="/article/2024/09/26/116055" target="_blank" hreflang="zh-hans">关于做好化工与化学学院研究生会第十七届主席团换届选举工作的通知</a></span></li>
+          <li><div class="item-right dark">
+    <span class="list-left-below"><a href="/department/121" hreflang="zh-hans">化工学院</a> <i class="fa fa-clock-o yellow" aria-hidden="true"></i> 10 小时前</span>
+</div>
+<span class="clearfix  item-left" data-container="body" data-toggle="tooltip" data-placement="right" title="关于做好化工与化学学院学生会第十七届主席团换届选举工作的通知"><a href="/article/2024/09/26/116054" target="_blank" hreflang="zh-hans">关于做好化工与化学学院学生会第十七届主席团换届选举工作的通知</a></span></li>
+          <li><div class="item-right dark">
+    <span class="list-left-below"><a href="/department/58" hreflang="zh-hans">数学学院</a> <i class="fa fa-clock-o yellow" aria-hidden="true"></i> 10 小时前</span>
+</div>
+<span class="clearfix  item-left" data-container="body" data-toggle="tooltip" data-placement="right" title="【MathTalk数学微沙龙|30期】基于MLLM的视觉理解专题讲座"><a href="/article/2024/09/26/116053" target="_blank" hreflang="zh-hans">【MathTalk数学微沙龙|30期】基于MLLM的视觉理解专题讲座</a></span></li>
+          <li><div class="item-right dark">
+    <span class="list-left-below"><a href="/department/121" hreflang="zh-hans">化工学院</a> <i class="fa fa-clock-o yellow" aria-hidden="true"></i> 10 小时前</span>
+</div>
+<span class="clearfix  item-left" data-container="body" data-toggle="tooltip" data-placement="right" title="关于选举化工与化学学院第十七次研究生代表大会学生代表的通知"><a href="/article/2024/09/26/116052" target="_blank" hreflang="zh-hans">关于选举化工与化学学院第十七次研究生代表大会学生代表的通知</a></span></li>
+          <li><div class="item-right dark">
+    <span class="list-left-below"><a href="/department/35753" hreflang="zh-hans">人文社科</a> <i class="fa fa-clock-o yellow" aria-hidden="true"></i> 10 小时前</span>
+</div>
+<span class="clearfix  item-left" data-container="body" data-toggle="tooltip" data-placement="right" title="关于人文社科学部研究生会主席团换届选举工作的通知"><a href="/article/2024/09/26/116051" target="_blank" hreflang="zh-hans">关于人文社科学部研究生会主席团换届选举工作的通知</a></span></li>
+          <li><div class="item-right dark">
+    <span class="list-left-below"><a href="/department/121" hreflang="zh-hans">化工学院</a> <i class="fa fa-clock-o yellow" aria-hidden="true"></i> 10 小时前</span>
+</div>
+<span class="clearfix  item-left" data-container="body" data-toggle="tooltip" data-placement="right" title="关于选举化工与化学学院第十七次学生代表大会学生代表的通知"><a href="/article/2024/09/26/116049" target="_blank" hreflang="zh-hans">关于选举化工与化学学院第十七次学生代表大会学生代表的通知</a></span></li>
+          <li><div class="item-right dark">
+    <span class="list-left-below"><a href="/department/35753" hreflang="zh-hans">人文社科</a> <i class="fa fa-clock-o yellow" aria-hidden="true"></i> 10 小时前</span>
+</div>
+<span class="clearfix  item-left" data-container="body" data-toggle="tooltip" data-placement="right" title="关于开展人文社科学部学生会主席团换届选举工作的通知"><a href="/article/2024/09/26/116050" target="_blank" hreflang="zh-hans">关于开展人文社科学部学生会主席团换届选举工作的通知</a></span></li>
+          <li><div class="item-right dark">
+    <span class="list-left-below"><a href="/department/50" hreflang="zh-hans">机电学院</a> <i class="fa fa-clock-o yellow" aria-hidden="true"></i> 13 小时前</span>
+</div>
+<span class="clearfix  item-left" data-container="body" data-toggle="tooltip" data-placement="right" title="机电工程学院关于举办“红心向党，青春献贺”庆祝新中国成立75周年主题贺卡传情活动的通知"><a href="/article/2024/09/26/116043" target="_blank" hreflang="zh-hans">机电工程学院关于举办“红心向党，青春献贺”庆祝新中国成立75周年主题贺卡传情活动的通知</a></span></li>
+          <li><div class="item-right dark">
+    <span class="list-left-below"><a href="/department/22975" hreflang="zh-hans">环境学院</a> <i class="fa fa-clock-o yellow" aria-hidden="true"></i> 1 天前</span>
+</div>
+<span class="clearfix  item-left" data-container="body" data-toggle="tooltip" data-placement="right" title="关于环境学院2024年长聘岗聘任申报材料公示的通知"><a href="/article/2024/09/25/116040" target="_blank" hreflang="zh-hans">关于环境学院2024年长聘岗聘任申报材料公示的通知</a></span></li>
+    
+  </ul>
+
+</div>
+
+    </div>
+  
+          </div>
+</div>
+
+            <div class="block-more text-center">
+                <a href="/category/10" class="more-link-v1" target="_blank"  data-container="body" data-toggle="tooltip" data-placement="top" title="更多">更多</a>
+              </div>
+              </div>
+
+                          <div class="tab-pane" id="tab-d39b45c1-71d8-4441-a288-d12fb8615a67">
+            <div class="views-element-container form-group"><div class="one-list-v1 view view-front-article view-id-front_article view-display-id-block_2 js-view-dom-id-4a35961946f02c12fd1ef5352b28c6ee482a55b4a687db1922a7b924bfdf0207">
+  
+    
+      
+      <div class="view-content">
+      <div>
+  
+  <ul class="list-item p-right-lgx list-tooltip clearfix">
+
+          <li><div class="item-right dark">
+    <span class="list-left-below"><a href="/department/69" hreflang="zh-hans">科工院</a> <i class="fa fa-clock-o yellow" aria-hidden="true"></i> 47 秒前</span>
+</div>
+<span class="clearfix  item-left" data-container="body" data-toggle="tooltip" data-placement="right" title="关于发布国家自然科学基金一批2024年度数学天元基金和专项项目指南的通知"><a href="/article/2024/09/26/116067" target="_blank" hreflang="zh-hans">关于发布国家自然科学基金一批2024年度数学天元基金和专项项目指南的通知</a></span></li>
+          <li><div class="item-right dark">
+    <span class="list-left-below"><a href="/department/69" hreflang="zh-hans">科工院</a> <i class="fa fa-clock-o yellow" aria-hidden="true"></i> 3 分钟前</span>
+</div>
+<span class="clearfix  item-left" data-container="body" data-toggle="tooltip" data-placement="right" title="2024年资助学术会议结果的公示（第一批）"><a href="/article/2024/09/26/116066" target="_blank" hreflang="zh-hans">2024年资助学术会议结果的公示（第一批）</a></span></li>
+          <li><div class="item-right dark">
+    <span class="list-left-below"><a href="/department/90" hreflang="zh-hans">后勤集团</a> <i class="fa fa-clock-o yellow" aria-hidden="true"></i> 5 小时前</span>
+</div>
+<span class="clearfix  item-left" data-container="body" data-toggle="tooltip" data-placement="right" title="活动中心一、二校区场地使用情况公示-2024-09-27				"><a href="/article/2024/09/26/116061" target="_blank" hreflang="zh-hans">活动中心一、二校区场地使用情况公示-2024-09-27				</a></span></li>
+          <li><div class="item-right dark">
+    <span class="list-left-below"><a href="/department/99" hreflang="zh-hans">国有资产</a> <i class="fa fa-clock-o yellow" aria-hidden="true"></i> 6 小时前</span>
+</div>
+<span class="clearfix  item-left" data-container="body" data-toggle="tooltip" data-placement="right" title="关于开展放射源、射线装置专项巡查的通知"><a href="/article/2024/09/26/116060" target="_blank" hreflang="zh-hans">关于开展放射源、射线装置专项巡查的通知</a></span></li>
+          <li><div class="item-right dark">
+    <span class="list-left-below"><a href="/department/99" hreflang="zh-hans">国有资产</a> <i class="fa fa-clock-o yellow" aria-hidden="true"></i> 6 小时前</span>
+</div>
+<span class="clearfix  item-left" data-container="body" data-toggle="tooltip" data-placement="right" title="学校召开辐射与防护安全领导小组和生物安全委员会专项工作会议"><a href="/article/2024/09/26/116059" target="_blank" hreflang="zh-hans">学校召开辐射与防护安全领导小组和生物安全委员会专项工作会议</a></span></li>
+          <li><div class="item-right dark">
+    <span class="list-left-below"><a href="/department/84" hreflang="zh-hans">图书馆</a> <i class="fa fa-clock-o yellow" aria-hidden="true"></i> 6 小时前</span>
+</div>
+<span class="clearfix  item-left" data-container="body" data-toggle="tooltip" data-placement="right" title="哈尔滨工业大学图书馆智能导览开通，智慧服务再升级！"><a href="/article/2024/09/26/116058" target="_blank" hreflang="zh-hans">哈尔滨工业大学图书馆智能导览开通，智慧服务再升级！</a></span></li>
+          <li><div class="item-right dark">
+    <span class="list-left-below"><a href="/department/67" hreflang="zh-hans">人事处</a> <i class="fa fa-clock-o yellow" aria-hidden="true"></i> 12 小时前</span>
+</div>
+<span class="clearfix  item-left" data-container="body" data-toggle="tooltip" data-placement="right" title="转发关于启动2025/2026年度瑞士互换奖学金项目遴选工作的通知"><a href="/article/2024/09/26/116045" target="_blank" hreflang="zh-hans">转发关于启动2025/2026年度瑞士互换奖学金项目遴选工作的通知</a></span></li>
+          <li><div class="item-right dark">
+    <span class="list-left-below"><a href="/department/74" hreflang="zh-hans">学工处 </a> <i class="fa fa-clock-o yellow" aria-hidden="true"></i> 12 小时前</span>
+</div>
+<span class="clearfix  item-left" data-container="body" data-toggle="tooltip" data-placement="right" title="关于表彰2024年军训先进个人的决定"><a href="/article/2024/09/26/116044" target="_blank" hreflang="zh-hans">关于表彰2024年军训先进个人的决定</a></span></li>
+          <li><div class="item-right dark">
+    <span class="list-left-below"><a href="/department/90" hreflang="zh-hans">后勤集团</a> <i class="fa fa-clock-o yellow" aria-hidden="true"></i> 1 天前</span>
+</div>
+<span class="clearfix  item-left" data-container="body" data-toggle="tooltip" data-placement="right" title="活动中心一、二校区场地使用情况公示-2024-09-26				"><a href="/article/2024/09/25/116038" target="_blank" hreflang="zh-hans">活动中心一、二校区场地使用情况公示-2024-09-26				</a></span></li>
+          <li><div class="item-right dark">
+    <span class="list-left-below"><a href="/department/106" hreflang="zh-hans">国际教育</a> <i class="fa fa-clock-o yellow" aria-hidden="true"></i> 1 天前</span>
+</div>
+<span class="clearfix  item-left" data-container="body" data-toggle="tooltip" data-placement="right" title="“留学哈工大”品牌系列学生活动——【Hi-Talk】咖啡角第十一期活动预告"><a href="/article/2024/09/25/116032" target="_blank" hreflang="zh-hans">“留学哈工大”品牌系列学生活动——【Hi-Talk】咖啡角第十一期活动预告</a></span></li>
+    
+  </ul>
+
+</div>
+
+    </div>
+  
+          </div>
+</div>
+
+            <div class="block-more text-center">
+                <a href="/category/10" class="more-link-v1" target="_blank"  data-container="body" data-toggle="tooltip" data-placement="top" title="更多">更多</a>
+              </div>
+              </div>
+
+              </div>
+</div>
+  <div class="spacer-md-sm"></div>
+
+  </div>
+
+</div>
+    </div>
+    <div class="col-xs-12 col-sm-6">
+      <div class="block-region-top-right-below"><div data-block-plugin-id="block_content:a4d2950a-6a27-4342-b621-c10470031e97" class="block block-block-content block-block-contenta4d2950a-6a27-4342-b621-c10470031e97 clearfix">
+  
+    
+
+      <div class="home-list-image   visible-xs  visible-sm  visible-md  visible-lg ">
+  <!-- Nav tabs -->
+  <ul class="nav nav-tabs-v3 tabs-blue">
+                            <li class="active">
+                                  <a href="#tab-09e0f211-fc83-4838-8eee-41715112d030" data-toggle="tab">最新快讯</a>
+        </li>
+                          <li>
+                                    <a href="#tab-81934ec4-ad9e-4211-a026-096c0f319df8" data-toggle="tab">科教动态</a>
+        </li>
+                          <li>
+                                    <a href="#tab-3de6b3b5-8b11-4d2f-8f26-e85a17e1f865" data-toggle="tab">交流合作</a>
+        </li>
+            </ul>
+
+<!-- Tab panes -->
+  <div class="tab-content clearfix">
+                  <div class="tab-pane active" id="tab-09e0f211-fc83-4838-8eee-41715112d030">
+                              <div class="row">
+            <div class="col-xs-12">
+              <div class="one-list-v1">
+                <ul class="list-item p-right-lgx no-hover-bg list-tooltip clearfix">
+                                                      <li data-container="body" data-toggle="tooltip" data-placement="right" title="上海市浦东新区吕轶舟一行来电气学院调研">
+                    <div class="item-right dark" style="margin-right:0">
+                                            <a class="hidden-xs" href="/department/56" target="_blank">电气学院</a>
+                      <span class="date"><i class="fa fa-clock-o yellow" aria-hidden="true"></i> 09-26</span>
+                    </div>
+                    <span class="item-left">
+                      <a href="/article/2024/09/26/116065" target="_blank">上海市浦东新区吕轶舟一行来电气学院调研</a>
+                    </span>
+                  </li>
+                                                                        <li data-container="body" data-toggle="tooltip" data-placement="right" title="【数爱同行·特教暖心行】数学学院爱心社 携手特教学校，共绘温馨画卷">
+                    <div class="item-right dark" style="margin-right:0">
+                                            <a class="hidden-xs" href="/department/58" target="_blank">数学学院</a>
+                      <span class="date"><i class="fa fa-clock-o yellow" aria-hidden="true"></i> 09-26</span>
+                    </div>
+                    <span class="item-left">
+                      <a href="/article/2024/09/26/116064" target="_blank">【数爱同行·特教暖心行】数学学院爱心社 携手特教学校，共绘温馨画卷</a>
+                    </span>
+                  </li>
+                                                                        <li data-container="body" data-toggle="tooltip" data-placement="right" title="第52期“土木之光”论坛——土木工程灾害及其防御专题讲座举办">
+                    <div class="item-right dark" style="margin-right:0">
+                                            <a class="hidden-xs" href="/department/53" target="_blank">土木学院</a>
+                      <span class="date"><i class="fa fa-clock-o yellow" aria-hidden="true"></i> 09-26</span>
+                    </div>
+                    <span class="item-left">
+                      <a href="/article/2024/09/26/116056" target="_blank">第52期“土木之光”论坛——土木工程灾害及其防御专题讲座举办</a>
+                    </span>
+                  </li>
+                                                                        <li data-container="body" data-toggle="tooltip" data-placement="right" title="土木工程学院师生羽毛球友谊赛举办">
+                    <div class="item-right dark" style="margin-right:0">
+                                            <a class="hidden-xs" href="/department/53" target="_blank">土木学院</a>
+                      <span class="date"><i class="fa fa-clock-o yellow" aria-hidden="true"></i> 09-26</span>
+                    </div>
+                    <span class="item-left">
+                      <a href="/article/2024/09/26/116048" target="_blank">土木工程学院师生羽毛球友谊赛举办</a>
+                    </span>
+                  </li>
+                                                                        <li data-container="body" data-toggle="tooltip" data-placement="right" title="计算学部党委理论学习中心组专题学习全国教育大会精神">
+                    <div class="item-right dark" style="margin-right:0">
+                                            <a class="hidden-xs" href="/department/60" target="_blank">计算学部</a>
+                      <span class="date"><i class="fa fa-clock-o yellow" aria-hidden="true"></i> 09-26</span>
+                    </div>
+                    <span class="item-left">
+                      <a href="/article/2024/09/26/116046" target="_blank">计算学部党委理论学习中心组专题学习全国教育大会精神</a>
+                    </span>
+                  </li>
+                                                                        <li data-container="body" data-toggle="tooltip" data-placement="right" title="图书馆开展“红色基地忆初心，凝心聚力担使命”主题党日活动">
+                    <div class="item-right dark" style="margin-right:0">
+                                            <a class="hidden-xs" href="/department/84" target="_blank">图书馆</a>
+                      <span class="date"><i class="fa fa-clock-o yellow" aria-hidden="true"></i> 09-26</span>
+                    </div>
+                    <span class="item-left">
+                      <a href="/article/2024/09/26/116042" target="_blank">图书馆开展“红色基地忆初心，凝心聚力担使命”主题党日活动</a>
+                    </span>
+                  </li>
+                                                                                                                                                                </ul>
+              </div>
+            </div>
+            <div class="col-xs-12"><div class="divider outside-min-b inside-min-lr"></div></div>
+                                                                                                                                                                                                  <div class="col-xs-12 col-sm-4">
+              <div class="card-v1">
+                <div class="card-header">
+                  <div class="zoom-box">
+                    <a href="/article/2024/09/26/116041" target="_blank">
+                      <div class="zoom zoom-70" style="background:url(http://today.hit.edu.cn/sites/today1.prod1.dpweb1.hit.edu.cn/files/styles/355x220/public/images/2024/09/26/%E5%9B%BE%E7%89%875.jpg?itok=sDB2Fu1T) no-repeat center center;background-size:cover;"></div>
+                    </a>
+                  </div>
+                </div>
+                <div class="card-footer clearfix">
+                                    <a href="/department/33139" target="_blank">未来技术</a>
+                  <i class="fa fa-clock-o yellow" aria-hidden="true"></i> <span class="time">09-26</span>
+                </div>
+                <div class="card-content">
+                  <div class="card-content-inner">
+                    <a href="/article/2024/09/26/116041" target="_blank" title="【逐梦未来】“国防教育月嘉年华”志愿服务活动纪实">【逐梦未来】“国防教育月嘉年华”志愿服务活动纪实</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+                                                  <div class="col-xs-12 col-sm-4">
+              <div class="card-v1">
+                <div class="card-header">
+                  <div class="zoom-box">
+                    <a href="/article/2024/09/25/116036" target="_blank">
+                      <div class="zoom zoom-70" style="background:url(http://today.hit.edu.cn/sites/today1.prod1.dpweb1.hit.edu.cn/files/styles/355x220/public/inline-images/%5Bdate%3Acustom%3AY%5D/%5Bdate%3Acustom%3Am%5D/%5Bdate%3Acustom%3Ad%5D/image_17463.png?itok=c1ENAqtt) no-repeat center center;background-size:cover;"></div>
+                    </a>
+                  </div>
+                </div>
+                <div class="card-footer clearfix">
+                                    <a href="/department/33139" target="_blank">未来技术</a>
+                  <i class="fa fa-clock-o yellow" aria-hidden="true"></i> <span class="time">09-25</span>
+                </div>
+                <div class="card-content">
+                  <div class="card-content-inner">
+                    <a href="/article/2024/09/25/116036" target="_blank" title="【逐梦未来】未来技术学院第三届新生趣味运动会暨首届招新嘉年华纪实">【逐梦未来】未来技术学院第三届新生趣味运动会暨首届招新嘉年华纪实</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+                                                  <div class="col-xs-12 col-sm-4">
+              <div class="card-v1">
+                <div class="card-header">
+                  <div class="zoom-box">
+                    <a href="/article/2024/09/25/116035" target="_blank">
+                      <div class="zoom zoom-70" style="background:url(http://today.hit.edu.cn/sites/today1.prod1.dpweb1.hit.edu.cn/files/styles/355x220/public/inline-images/%5Bdate%3Acustom%3AY%5D/%5Bdate%3Acustom%3Am%5D/%5Bdate%3Acustom%3Ad%5D/image_17460.png?itok=O7d5XR1L) no-repeat center center;background-size:cover;"></div>
+                    </a>
+                  </div>
+                </div>
+                <div class="card-footer clearfix">
+                                    <a href="/department/57" target="_blank">建筑学院</a>
+                  <i class="fa fa-clock-o yellow" aria-hidden="true"></i> <span class="time">09-25</span>
+                </div>
+                <div class="card-content">
+                  <div class="card-content-inner">
+                    <a href="/article/2024/09/25/116035" target="_blank" title="建筑与设计学院2022级硕士生年级大会顺利召开">建筑与设计学院2022级硕士生年级大会顺利召开</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+                                  </div>
+                                  <div class="footer-action clearfix">
+                            <a href="/category/11" class="pull-right" target="_blank"><span class="more-link-v1"></span>更多</a>
+                          </div>
+                        </div>
+
+                          <div class="tab-pane" id="tab-81934ec4-ad9e-4211-a026-096c0f319df8">
+                              <div class="row">
+            <div class="col-xs-12">
+              <div class="one-list-v1">
+                <ul class="list-item p-right-lgx no-hover-bg list-tooltip clearfix">
+                                                      <li data-container="body" data-toggle="tooltip" data-placement="right" title="【逐梦未来】未来技术学院第三届新生趣味运动会暨首届招新嘉年华纪实">
+                    <div class="item-right dark" style="margin-right:0">
+                                            <a class="hidden-xs" href="/department/33139" target="_blank">未来技术</a>
+                      <span class="date"><i class="fa fa-clock-o yellow" aria-hidden="true"></i> 09-25</span>
+                    </div>
+                    <span class="item-left">
+                      <a href="/article/2024/09/25/116036" target="_blank">【逐梦未来】未来技术学院第三届新生趣味运动会暨首届招新嘉年华纪实</a>
+                    </span>
+                  </li>
+                                                                        <li data-container="body" data-toggle="tooltip" data-placement="right" title="国内合作处到仪器学院调研交流科技成果转化工作">
+                    <div class="item-right dark" style="margin-right:0">
+                                            <a class="hidden-xs" href="/department/25311" target="_blank">仪器学院</a>
+                      <span class="date"><i class="fa fa-clock-o yellow" aria-hidden="true"></i> 09-25</span>
+                    </div>
+                    <span class="item-left">
+                      <a href="/article/2024/09/25/116033" target="_blank">国内合作处到仪器学院调研交流科技成果转化工作</a>
+                    </span>
+                  </li>
+                                                                        <li data-container="body" data-toggle="tooltip" data-placement="right" title="仪器学院召开2021级本科生年级大会">
+                    <div class="item-right dark" style="margin-right:0">
+                                            <a class="hidden-xs" href="/department/25311" target="_blank">仪器学院</a>
+                      <span class="date"><i class="fa fa-clock-o yellow" aria-hidden="true"></i> 09-25</span>
+                    </div>
+                    <span class="item-left">
+                      <a href="/article/2024/09/25/116029" target="_blank">仪器学院召开2021级本科生年级大会</a>
+                    </span>
+                  </li>
+                                                                        <li data-container="body" data-toggle="tooltip" data-placement="right" title="“跨域融合·智创未来-中意建筑与设计创新学术论坛”成功举办">
+                    <div class="item-right dark" style="margin-right:0">
+                                            <a class="hidden-xs" href="/department/57" target="_blank">建筑学院</a>
+                      <span class="date"><i class="fa fa-clock-o yellow" aria-hidden="true"></i> 09-25</span>
+                    </div>
+                    <span class="item-left">
+                      <a href="/article/2024/09/25/116020" target="_blank">“跨域融合·智创未来-中意建筑与设计创新学术论坛”成功举办</a>
+                    </span>
+                  </li>
+                                                                        <li data-container="body" data-toggle="tooltip" data-placement="right" title="共育创新人才 共享合作成果｜计算学部召开第二届航天合作研讨会">
+                    <div class="item-right dark" style="margin-right:0">
+                                            <a class="hidden-xs" href="/department/60" target="_blank">计算学部</a>
+                      <span class="date"><i class="fa fa-clock-o yellow" aria-hidden="true"></i> 09-24</span>
+                    </div>
+                    <span class="item-left">
+                      <a href="/article/2024/09/24/115994" target="_blank">共育创新人才 共享合作成果｜计算学部召开第二届航天合作研讨会</a>
+                    </span>
+                  </li>
+                                                                        <li data-container="body" data-toggle="tooltip" data-placement="right" title="【健康科普】减盐行动 为健康加分">
+                    <div class="item-right dark" style="margin-right:0">
+                                            <a class="hidden-xs" href="/department/119" target="_blank">校医院</a>
+                      <span class="date"><i class="fa fa-clock-o yellow" aria-hidden="true"></i> 09-24</span>
+                    </div>
+                    <span class="item-left">
+                      <a href="/article/2024/09/24/115992" target="_blank">【健康科普】减盐行动 为健康加分</a>
+                    </span>
+                  </li>
+                                                                                                                                                                </ul>
+              </div>
+            </div>
+            <div class="col-xs-12"><div class="divider outside-min-b inside-min-lr"></div></div>
+                                                                                                                                                                                                  <div class="col-xs-12 col-sm-4">
+              <div class="card-v1">
+                <d

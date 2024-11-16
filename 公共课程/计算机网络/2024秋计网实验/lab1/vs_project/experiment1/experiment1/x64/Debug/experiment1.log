@@ -1,0 +1,10 @@
+﻿  experiment1.cpp
+D:\SystemPackage\Desktop\daily\24Fall\computer_network\experiment\1\vs_project\experiment1\experiment1.cpp(88,8): warning C4101: “dwThreadID”: 未引用的局部变量
+D:\SystemPackage\Desktop\daily\24Fall\computer_network\experiment\1\vs_project\experiment1\experiment1.cpp(274,78): warning C4267: “参数”: 从“size_t”转换到“int”，可能丢失数据
+D:\SystemPackage\Desktop\daily\24Fall\computer_network\experiment\1\vs_project\experiment1\experiment1.cpp(282,19): warning C4805: “==”: 在操作中将类型“boolean”与类型“bool”混合不安全
+D:\SystemPackage\Desktop\daily\24Fall\computer_network\experiment\1\vs_project\experiment1\experiment1.cpp(285,19): warning C4805: “==”: 在操作中将类型“boolean”与类型“bool”混合不安全
+D:\SystemPackage\Desktop\daily\24Fall\computer_network\experiment\1\vs_project\experiment1\experiment1.cpp(203,8): warning C4101: “fp”: 未引用的局部变量
+D:\SystemPackage\Desktop\daily\24Fall\computer_network\experiment\1\vs_project\experiment1\experiment1.cpp(201,8): warning C4101: “DateBuffer”: 未引用的局部变量
+D:\SystemPackage\Desktop\daily\24Fall\computer_network\experiment\1\vs_project\experiment1\experiment1.cpp(208,14): warning C4101: “clientAddr”: 未引用的局部变量
+D:\SystemPackage\Desktop\daily\24Fall\computer_network\experiment\1\vs_project\experiment1\experiment1.cpp(409,10): warning C4267: “初始化”: 从“size_t”转换到“int”，可能丢失数据
+  experiment1.vcxproj -> D:\SystemPackage\Desktop\daily\24Fall\computer_network\experiment\1\vs_project\experiment1\x64\Debug\experiment1.exe

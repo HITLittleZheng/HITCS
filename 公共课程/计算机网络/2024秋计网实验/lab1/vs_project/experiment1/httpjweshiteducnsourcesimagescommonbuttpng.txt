@@ -1,0 +1,9 @@
+HTTP/1.1 200 OK
+Server: Server           
+Last-Modified: Thu, 01 Sep 2022 01:32:54 GMT
+Content-Type: image/png;charset=UTF-8
+Content-Length: 16157
+Date: Thu, 26 Sep 2024 16:28:54 GMT
+
+‰PNG
+

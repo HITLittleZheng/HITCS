@@ -1,0 +1,20 @@
+HTTP/1.1 200 
+Server: Server 
+Date: Thu, 26 Sep 2024 16:30:54 GMT
+Content-Type: text/html;charset=UTF-8
+Transfer-Encoding: chunked
+Connection: keep-alive
+Vary: Accept-Encoding
+Set-Cookie: name=value; HttpOnly
+Pragma: no-cache
+Expires: Thu, 01 Jan 1970 00:00:00 GMT
+Cache-Control: no-cache
+Cache-Control: no-store
+Content-Language: zh-CN
+Access-Control-Allow-Origin: *
+Access-Control-Allow-Methods: GET, POST, OPTIONS, PUT, DELETE
+Access-Control-Allow-Headers: DNT,X-CustomHeader,Keep-Alive,User-Agent,X-Requested-With,If-Modified-Since,Cache-Control,Content-Type
+Content-Encoding: gzip
+
+48d
+‹

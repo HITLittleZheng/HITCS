@@ -1,0 +1,125 @@
+HTTP/1.1 200 OK
+Server: Server           
+Last-Modified: Thu, 01 Sep 2022 01:32:53 GMT
+Content-Type: text/css;charset=UTF-8
+Content-Length: 2748
+Date: Thu, 26 Sep 2024 16:28:49 GMT
+
+@charset "utf-8";
+/* CSS Document */
+
+/*common*/
+* {padding:0; margin:0}
+BODY {padding:0; margin:0}
+DIV {padding:0; margin:0}
+UL {padding:0; margin:0}
+LI {padding:0; margin:0}
+ol {padding:0; margin:0}
+FORM {padding:0; margin:0}
+P {padding:0; margin:0}
+BLOCKQUOTE {padding:0; margin:0}
+TH {padding:0; margin:0}
+TD {padding:0; margin:0}
+UL {LIST-STYLE-TYPE: none}
+LI {LIST-STYLE-TYPE: none}
+ol {LIST-STYLE-TYPE: none}
+img{ border:0px}
+/*common*/
+ 
+body{font-size:12px; color:#222222; font-family:"微软雅黑" }
+textarea{font-size:12px; color:#222222; font-family:"微软雅黑" }
+
+A {COLOR: #2989f6; TEXT-DECORATION: none}
+A:visited {COLOR:#2989f6}
+A:hover {COLOR: #000000; CURSOR: pointer; TEXT-DECORATION: none}
+
+.bottom{ width:100%;margin:0px auto;border-bottom:1px solid #d59870; height:100%}
+.clr{ clear:both;   height:0px; line-height:0px; font-size:0px;  }
+/*text*/
+.bold{ font-weight:bold}
+.red{ color:#C00}
+.blue{ color:#2989f6}
+.green{ color:#008209}
+.yellow{ color:#ce8d02}
+.gray{ color:#aaaaaa}
+.gray_01{ color:#555555}
+ /*margin*/
+ .mt4{ margin-top:4px}
+.mt5{ margin-top:5px}
+.mt10{ margin-top:10px}
+.mt15{ margin-top:15px}
+.mt22{ margin-top:22px}
+.mt33{ margin-top:33px}
+.mb10{ margin-bottom:10px}
+.mb5{ margin-bottom:5px}
+.ml15{ margin-left:15px}
+.ml10{ margin-left:10px}
+.mr15{ margin-right:15px}
+.mr10{ margin-right:10px}
+.mr5{ margin-right:5px}
+ /*margin*/
+ .pl15{padding-left:15px}
+ .pr15{padding-right:15px}
+ .pd10{padding:10px}
+/*input select*/
+input{ padding:3px; margin:0}
+select{padding:3px; margin:0}
+/*宽*/
+.Pct100{ width:100%}
+.Pct92{ width:92%}
+/*浮动*/
+.Floatleft{ float:left}
+.Floatright{ float:right}
+
+/*行高*/
+.LH18{ line-height:18px}
+.LH20{ line-height:20px}
+.LH24{ line-height:24px}
+.LH26{ line-height:26px}
+.LH28{ line-height:28px}
+.LH30{ line-height:30px}
+
+/*操作按钮宽*/
+.button_0{ width:58px}
+.button_1{ width:65px}
+.button_2{ width:90px}
+.button_3{ width:80px}
+.button_4{ width:115px}
+.button_5{ width:95px}
+.button_8{ width:136px}
+.button_9{ width:148px}
+
+.FONT14{ font-size:14px}
+.FONT16{ font-size:16px}
+
+/*select宽*/
+.sel4{width:80px}
+.sel6{width:112px}
+.sel8{width:136px}
+.sel10{width:160px}
+.sel14{width:218px}
+.sel18{width:266px}
+.sel22{width:345px}
+
+/*input宽*/
+.inp4{width:50px}
+.inp6{width:92px}
+.inp8{width:116px}
+.inp10{width:140px}
+.inp14{width:188px}
+.inp18{width:246px}
+.inp22{width:295px}
+ 
+/*size大小*/
+ .font8shrink{ 
+ 	 font-size:10px;  
+	 -webkit-text-size-adjust:none;
+	 -webkit-transform:scale(0.9);
+	 -o-transform:scale(1); 
+	 display:inline-block;
+ }
+.fonts8{font-size: 8px}
+.fonts10{font-size: 10px}
+.fonts12{font-size: 12px}
+.fonts14{font-size: 14px}
+ 

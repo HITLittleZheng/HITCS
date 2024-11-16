@@ -1,0 +1,17 @@
+HTTP/1.1 200 OK
+Content-Type: image/png
+Content-Length: 14717
+Connection: keep-alive
+Server:      
+Date: Thu, 26 Sep 2024 16:29:41 GMT
+Last-Modified: Mon, 08 Oct 2018 13:33:14 GMT
+ETag: "5bbb5c9a-397d"
+Access-Control-Allow-Origin: *
+X-Varnish: 216511667 207393725
+Age: 9
+Via: 1.1 varnish-v4
+X-Varnish-Cache: HIT
+Accept-Ranges: bytes
+
+‰PNG
+

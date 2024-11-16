@@ -1,0 +1,269 @@
+HTTP/1.1 200 OK
+Server: Server           
+Last-Modified: Thu, 01 Sep 2022 01:32:54 GMT
+Content-Type: application/javascript;charset=UTF-8
+Content-Length: 40657
+Date: Thu, 26 Sep 2024 16:28:51 GMT
+
+/*!
+ * jQuery Form Plugin
+ * version: 3.28.0-2013.02.06
+ * @requires jQuery v1.5 or later
+ *
+ * Examples and documentation at: http://malsup.com/jquery/form/
+ * Project repository: https://github.com/malsup/form
+ * Dual licensed under the MIT and GPL licenses:
+ *    http://malsup.github.com/mit-license.txt
+ *    http://malsup.github.com/gpl-license-v2.txt
+ */
+/*global ActiveXObject alert */
+;(function($) {
+"use strict";
+
+/*
+    Usage Note:
+    -----------
+    Do not use both ajaxSubmit and ajaxForm on the same form.  These
+    functions are mutually exclusive.  Use ajaxSubmit if you want
+    to bind your own submit handler to the form.  For example,
+
+    $(document).ready(function() {
+        $('#myForm').on('submit', function(e) {
+            e.preventDefault(); // <-- important
+            $(this).ajaxSubmit({
+                target: '#output'
+            });
+        });
+    });
+
+    Use ajaxForm when you want the plugin to manage all the event binding
+    for you.  For example,
+
+    $(document).ready(function() {
+        $('#myForm').ajaxForm({
+            target: '#output'
+        });
+    });
+
+    You can also use ajaxForm with delegation (requires jQuery v1.7+), so the
+    form does not have to exist when you invoke ajaxForm:
+
+    $('#myForm').ajaxForm({
+        delegation: true,
+        target: '#output'
+    });
+
+    When using ajaxForm, the ajaxSubmit function will be invoked for you
+    at the appropriate time.
+*/
+
+/**
+ * Feature detection
+ */
+var feature = {};
+feature.fileapi = $("<input type='file'/>").get(0).files !== undefined;
+feature.formdata = window.FormData !== undefined;
+
+/**
+ * ajaxSubmit() provides a mechanism for immediately submitting
+ * an HTML form using AJAX.
+ */
+$.fn.ajaxSubmit = function(options) {
+    /*jshint scripturl:true */
+
+    // fast fail if nothing selected (http://dev.jquery.com/ticket/2752)
+    if (!this.length) {
+        log('ajaxSubmit: skipping submit process - no element selected');
+        return this;
+    }
+
+    var method, action, url, $form = this;
+
+    if (typeof options == 'function') {
+        options = { success: options };
+    }
+
+    method = this.attr('method');
+    action = this.attr('action');
+    url = (typeof action === 'string') ? $.trim(action) : '';
+    url = url || window.location.href || '';
+    if (url) {
+        // clean url (don't include hash vaue)
+        url = (url.match(/^([^#]+)/)||[])[1];
+    }
+
+    options = $.extend(true, {
+        url:  url,
+        success: $.ajaxSettings.success,
+        type: method || 'GET',
+        iframeSrc: /^https/i.test(window.location.href || '') ? 'javascript:false' : 'about:blank'
+    }, options);
+
+    // hook for manipulating the form data before it is extracted;
+    // convenient for use with rich editors like tinyMCE or FCKEditor
+    var veto = {};
+    this.trigger('form-pre-serialize', [this, options, veto]);
+    if (veto.veto) {
+        log('ajaxSubmit: submit vetoed via form-pre-serialize trigger');
+        return this;
+    }
+
+    // provide opportunity to alter form data before it is serialized
+    if (options.beforeSerialize && options.beforeSerialize(this, options) === false) {
+        log('ajaxSubmit: submit aborted via beforeSerialize callback');
+        return this;
+    }
+
+    var traditional = options.traditional;
+    if ( traditional === undefined ) {
+        traditional = $.ajaxSettings.traditional;
+    }
+
+    var elements = [];
+    var qx, a = this.formToArray(options.semantic, elements);
+    if (options.data) {
+        options.extraData = options.data;
+        qx = $.param(options.data, traditional);
+    }
+
+    // give pre-submit callback an opportunity to abort the submit
+    if (options.beforeSubmit && options.beforeSubmit(a, this, options) === false) {
+        log('ajaxSubmit: submit aborted via beforeSubmit callback');
+        return this;
+    }
+
+    // fire vetoable 'validate' event
+    this.trigger('form-submit-validate', [a, this, options, veto]);
+    if (veto.veto) {
+        log('ajaxSubmit: submit vetoed via form-submit-validate trigger');
+        return this;
+    }
+
+    var q = $.param(a, traditional);
+    if (qx) {
+        q = ( q ? (q + '&' + qx) : qx );
+    }
+    if (options.type.toUpperCase() == 'GET') {
+        options.url += (options.url.indexOf('?') >= 0 ? '&' : '?') + q;
+        options.data = null;  // data is null for 'get'
+    }
+    else {
+        options.data = q; // data is the query string for 'post'
+    }
+
+    var callbacks = [];
+    if (options.resetForm) {
+        callbacks.push(function() { $form.resetForm(); });
+    }
+    if (options.clearForm) {
+        callbacks.push(function() { $form.clearForm(options.includeHidden); });
+    }
+
+    // perform a load on the target only if dataType is not provided
+    if (!options.dataType && options.target) {
+        var oldSuccess = options.success || function(){};
+        callbacks.push(function(data) {
+            var fn = options.replaceTarget ? 'replaceWith' : 'html';
+            $(options.target)[fn](data).each(oldSuccess, arguments);
+        });
+    }
+    else if (options.success) {
+        callbacks.push(options.success);
+    }
+
+    options.success = function(data, status, xhr) { // jQuery 1.4+ passes xhr as 3rd arg
+        var context = options.context || this ;    // jQuery 1.4+ supports scope context
+        for (var i=0, max=callbacks.length; i < max; i++) {
+            callbacks[i].apply(context, [data, status, xhr || $form, $form]);
+        }
+    };
+
+    // are there files to upload?
+
+    // [value] (issue #113), also see comment:
+    // https://github.com/malsup/form/commit/588306aedba1de01388032d5f42a60159eea9228#commitcomment-2180219
+    var fileInputs = $('input[type=file]:enabled[value!=""]', this);
+
+    var hasFileInputs = fileInputs.length > 0;
+    var mp = 'multipart/form-data';
+    var multipart = ($form.attr('enctype') == mp || $form.attr('encoding') == mp);
+
+    var fileAPI = feature.fileapi && feature.formdata;
+    log("fileAPI :" + fileAPI);
+    var shouldUseFrame = (hasFileInputs || multipart) && !fileAPI;
+
+    var jqxhr;
+
+    // options.iframe allows user to force iframe mode
+    // 06-NOV-09: now defaulting to iframe mode if file input is detected
+    if (options.iframe !== false && (options.iframe || shouldUseFrame)) {
+        // hack to fix Safari hang (thanks to Tim Molendijk for this)
+        // see:  http://groups.google.com/group/jquery-dev/browse_thread/thread/36395b7ab510dd5d
+        if (options.closeKeepAlive) {
+            $.get(options.closeKeepAlive, function() {
+                jqxhr = fileUploadIframe(a);
+            });
+        }
+        else {
+            jqxhr = fileUploadIframe(a);
+        }
+    }
+    else if ((hasFileInputs || multipart) && fileAPI) {
+        jqxhr = fileUploadXhr(a);
+    }
+    else {
+        jqxhr = $.ajax(options);
+    }
+
+    $form.removeData('jqxhr').data('jqxhr', jqxhr);
+
+    // clear element array
+    for (var k=0; k < elements.length; k++)
+        elements[k] = null;
+
+    // fire 'notify' event
+    this.trigger('form-submit-notify', [this, options]);
+    return this;
+
+    // utility fn for deep serialization
+    function deepSerialize(extraData){
+        var serialized = $.param(extraData).split('&');
+        var len = serialized.length;
+        var result = [];
+        var i, part;
+        for (i=0; i < len; i++) {
+            // #252; undo param space replacement
+            serialized[i] = serialized[i].replace(/\+/g,' ');
+            part = serialized[i].split('=');
+            // #278; use array instead of object storage, favoring array serializations
+            result.push([decodeURIComponent(part[0]), decodeURIComponent(part[1])]);
+        }
+        return result;
+    }
+
+     // XMLHttpRequest Level 2 file uploads (big hat tip to francois2metz)
+    function fileUploadXhr(a) {
+        var formdata = new FormData();
+
+        for (var i=0; i < a.length; i++) {
+            formdata.append(a[i].name, a[i].value);
+        }
+
+        if (options.extraData) {
+            var serializedData = deepSerialize(options.extraData);
+            for (i=0; i < serializedData.length; i++)
+                if (serializedData[i])
+                    formdata.append(serializedData[i][0], serializedData[i][1]);
+        }
+
+        options.data = null;
+
+        var s = $.extend(true, {}, $.ajaxSettings, options, {
+            contentType: false,
+            processData: false,
+            cache: false,
+            type: method || 'POST'
+        });
+
+        if (options.uploadProgress) {
+            // workaround because jqXHR does not exp

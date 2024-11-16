@@ -1,0 +1,155 @@
+HTTP/1.1 200 OK
+Server: Server           
+Last-Modified: Thu, 01 Sep 2022 01:32:53 GMT
+Content-Type: text/css;charset=UTF-8
+Content-Length: 38119
+Date: Thu, 26 Sep 2024 16:28:49 GMT
+
+@charset "utf-8";
+/* CSS Document */
+ 
+.Contentbox{ clear:both;border-top:none; height:100%;float:left; position:relative; width:100%}
+ #tabs_portal_0_panel{ background:url(../../images/common/index_18.gif) repeat-x top #ffffff}
+ .mainbg{ width:100%; height:0px; clear:both}
+ 
+/*主框架*/
+.main_left{ width:210px; border-bottom:1px solid #101115; height:100%; position:relative;  float:left; background: url(../../images/common/index_25.gif)  repeat-y }
+.main_center{width:10px;  border-bottom:1px solid #101115; height:100%; position:relative;  float:left ;  }
+.main_center img{ margin-top:200px}
+.main_right{  border-bottom:1px solid #101115; height:100%; position:relative;  margin-left:221px;}
+
+/*主框架main09*/
+.main09_left{ width:100px; border-bottom:1px solid #101115;border-right:1px solid #101115; height:100%; position:relative; background: url(../../images/common/left05/sidebar.jpg);  float:left;  }
+.main09_right{  border-bottom:1px solid #101115; height:100%; position:relative;  margin-left:111px;}
+ 
+/*主框架main05*/
+.main05{ padding:0px;height:100%;}
+ 
+ /*当前位、操作按钮 搜索*/
+.address{height:24px;line-height:24px;border-bottom:1px  dotted #bfbfbf;   }
+.address a{color:#3a9cff}
+.address a:hover{color:#0068d1}
+.address a:visited{color:#3a9cff}
+
+.butsea{ min-height:32px; height:auto; _height:32px;line-height:30px;  padding:0px; float:left; width:100%} 
+.butsea td{ padding-right:5px}
+ 
+
+.XNXQ_CON{width: 90px} 		/*学年学期*/
+.BBH_CON{width: 120px} 		/*版本号*/
+.YX_CON{width: 120px} 		/*所有关于院系的*/
+.NJ_CON{width: 65px} 		/*年级*/
+.ZY_CON{width: 120px} 		/*专业*/
+.ZYFX_CON{width: 120px} 	/*专业方向*/
+.BJ_CON{width: 120px} 		/*班级*/
+.KKXN_CON{width: 90px} 		/*开课学年*/
+.KKXQ_CON{width: 90px} 		/*开课学期*/
+.KC_CON{width: 90px} 		/*课程*/
+.KCXZ_CON{width: 90px} 		/*课程性质*/
+.SHZT_CON{width: 120px} 	/*审核状态*/
+.KSSJD_CON{width: 120px} 	/*考试时间段*/
+.YXKCLB_CON{width: 85px} 	/*院系课程类别*/
+.KCKSLB_CON{width: 85px} 	/*课程课时类别*/
+.ZC_CON{width: 80px} 		/*周次*/
+.JC_CON{width: 80px} 		/*节次*/
+.XQ_CON{width: 80px} 		/*星期*/
+.SXW_CON{width: 80px} 		/*上下午*/
+.XIAOQU_CON{width: 90px} 	/*校区*/
+.LH_CON{width: 90px} 		/*楼号*/
+.CD_CON{width: 90px} 		/*场地*/
+.CXBK_CON{width: 85px} 		/*重修补考*/
+.SFJG_CON{width: 85px} 		/*是否及格*/
+.JYS_CON{width: 120px} 		/*教研室*/
+.XM_CON{width: 90px} 		/*姓名*/
+.JFZ_CON{width: 100px} 		/*计分制*/
+.SFZC_CON{width: 90px} 		/*是否注册*/
+.SQLB_CON{width: 120px} 	/*申请类别*/
+.BKCXBJ_CON{width: 90px} 	/*补考重修标记*/
+ 
+ 
+ /*列表*/
+.list{width:100%;  margin-top:5px; min-height:320px; height:auto; _height:320px; background-color:#ffffff} 
+
+.bot_line td{ line-height:24px; padding:2px; border-bottom:1px solid #e9e9e9; }
+.bot_line th{ border-bottom:2px solid #828da9; line-height:24px; font-size:13px; text-align:left;padding:2px; color:#1f3773;
+    background:#e9ebf2; 
+	background: -moz-linear-gradient(top,  #ebeef4 0%, #cac9cf 100%);
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#ebeef4), color-stop(100%,#cac9cf));
+	background: -webkit-linear-gradient(top,  #ebeef4 0%,#cac9cf 100%);
+	background: -o-linear-gradient(top,  #ebeef4 0%,#cac9cf 100%);
+	background: -ms-linear-gradient(top,  #ebeef4 0%,#cac9cf 100%);
+	background: linear-gradient(top,  #ebeef4 0%,#cac9cf 100%); 
+ }
+.bot_line tr:hover{background:#e3ffff;}
+.bgcol{ background-color:none} 
+ 
+DIV.youtube {PADDING:0px 6px 4px 0px;FONT-SIZE: 12px; COLOR: #313031;TEXT-ALIGN: right; margin-top:10px; height:30px}
+
+ /*button*/
+ 
+ /*icon*/  
+.ico_button {float: left;margin-right: 4px;margin-top: 2px;cursor: pointer;}
+.ico_button  a {height:28px;cursor: pointer; display: block;border: 1px solid #ffffff; white-space: nowrap;}
+.ico_button  a:hover {border: 1px solid #cbe8e8;cursor: pointer;background: #e7ffff ; }
+.ico_button b {display: block;}
+
+.btn_ico1{ background: url(../../images/common/icon.png) no-repeat -2px -2px; }
+.btn_ico2{ background: url(../../images/common/icon.png) no-repeat -27px -2px; }
+.btn_ico3{background:  url(../../images/common/icon.png) no-repeat -51px -2px; }
+.btn_ico4{ background: url(../../images/common/icon.png) no-repeat -76px -2px; }
+.btn_ico5{ background: url(../../images/common/icon.png) no-repeat -101px -2px; }
+.btn_ico6{ background: url(../../images/common/icon.png) no-repeat -126px 0px; }
+.btn_ico7{ background: url(../../images/common/icon.png) no-repeat -152px -2px; }
+.btn_ico8{background:  url(../../images/common/icon.png) no-repeat -2px -28px; }
+.btn_ico9{ background: url(../../images/common/icon.png) no-repeat -27px -28px; }
+.btn_ico10{ background: url(../../images/common/icon.png) no-repeat -51px -28px; }
+.btn_ico11{ background: url(../../images/common/icon.png) no-repeat -76px -28px; }
+.btn_ico12{ background: url(../../images/common/icon.png) no-repeat -101px -28px; }
+.btn_ico13{ background: url(../../images/common/icon.png) no-repeat -126px -28px; }
+.btn_ico14{ background: url(../../images/common/icon.png) no-repeat -152px -27px; }
+.btn_ico15{ background: url(../../images/common/icon.png) no-repeat -2px -54px; }
+.btn_ico16{ background: url(../../images/common/icon.png) no-repeat -27px -54px; }
+.btn_ico17{ background: url(../../images/common/icon.png) no-repeat -51px -52px; }
+.btn_ico18{ background: url(../../images/common/icon.png) no-repeat -76px -52px; }
+.btn_ico19{ background: url(../../images/common/icon.png) no-repeat -101px -52px; }
+
+.ico_button_gray {float: left;margin-right: 4px;margin-top: 2px;cursor: pointer;}
+.ico_button_gray  a {height:28px;cursor:default; display: block;border: 1px solid #cccccc; background:#ebebeb; color:#777777; white-space: nowrap;}
+.ico_button_gray b {display: block;}
+
+
+.btn_ico1_gray{ background: url(../../images/common/icon_gray.png) no-repeat -2px -2px; }
+.btn_ico2_gray{ background: url(../../images/common/icon_gray.png) no-repeat -27px -2px; }
+.btn_ico3_gray{background:  url(../../images/common/icon_gray.png) no-repeat -51px -2px; }
+.btn_ico4_gray{ background: url(../../images/common/icon_gray.png) no-repeat -76px -2px; }
+.btn_ico5_gray{ background: url(../../images/common/icon_gray.png) no-repeat -101px -2px; }
+.btn_ico6_gray{ background: url(../../images/common/icon_gray.png) no-repeat -126px -2px; }
+.btn_ico7_gray{ background: url(../../images/common/icon_gray.png) no-repeat -152px -2px; }
+.btn_ico8_gray{background:  url(../../images/common/icon_gray.png) no-repeat -2px -28px; }
+.btn_ico9_gray{ background: url(../../images/common/icon_gray.png) no-repeat -27px -28px; }
+.btn_ico10_gray{ background: url(../../images/common/icon_gray.png) no-repeat -51px -28px; }
+.btn_ico11_gray{ background: url(../../images/common/icon_gray.png) no-repeat -76px -28px; }
+.btn_ico12_gray{ background: url(../../images/common/icon_gray.png) no-repeat -101px -28px; }
+.btn_ico13_gray{ background: url(../../images/common/icon_gray.png) no-repeat -126px -28px; }
+.btn_ico14_gray{ background: url(../../images/common/icon_gray.png) no-repeat -152px -28px; }
+.btn_ico15_gray{ background: url(../../images/common/icon_gray.png) no-repeat -2px -54px; }
+.btn_ico16_gray{ background: url(../../images/common/icon_gray.png) no-repeat -27px -54px; }
+.btn_ico17_gray{ background: url(../../images/common/icon_gray.png) no-repeat -51px -54px; }
+.btn_ico18_gray{ background: url(../../images/common/icon_gray.png) no-repeat -76px -52px; }
+.btn_ico19_gray{ background: url(../../images/common/icon_gray.png) no-repeat -101px -52px; }
+
+
+.btn_img{margin:4px 5px 2px; _margin:4px 2px 2px;width:20px; height:18px;float:left; }
+.ico_button span {display: block; float: left;padding: 0px 5px 0 2px; word-wrap: normal;  line-height:27px}
+/*====*/
+.ico_exit {float: right;margin-top: 10px;cursor: pointer;}
+.ico_exit  a {height:30px;cursor: pointer; display: block;border: 1px solid #ffffff; white-space: nowrap;}
+.ico_exit  a:hover {border: 1px solid #cbe8e8;cursor: pointer; background: #e7ffff ; }
+.ico_exit b {display: block;}
+.exit_img{margin:4px 5px 2px; _margin:4px 2px 2px;width:24px; height:24px;float:left; background: url(../../images/common/logout.png) no-repeat ;}
+.ico_exit span {display: block; float: left;padding: 0px 5px 0 2px; word-wrap: normal;  line-height:29px}
+/*====*/
+ 
+.addlist_button{ line-height:16px; float:left   } 
+.addlist_button a{background: url(../../images/common/button.png) no-repeat left 0;   text-decoration:none; height:26px; float:left; cursor:hand; margin:0;color:#ffffff;   }
+.addlist_button a span{background:url(../../images/common/button.png) no-repeat right -26px; padding:5px 15px 5px 8px; margin:0 0 0 10px; float:left

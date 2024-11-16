@@ -1,0 +1,64 @@
+HTTP/1.1 200 OK
+Server: Server           
+Last-Modified: Thu, 01 Sep 2022 01:32:53 GMT
+Content-Type: text/css;charset=UTF-8
+Content-Length: 1014
+Date: Mon, 14 Oct 2024 15:59:59 GMT
+
+ 
+.list-page-detail {
+	float: left;
+	padding: 3px 0;
+	font-size: 12px;
+	color: #333;
+}
+.list-page li{
+	display:block;
+	text-align:center;
+	float:left;
+	text-decoration:none;
+	list-style-type: none;
+	margin-left: 6px;
+	overflow:hidden;
+	line-height: 14px;box-shadow: 0px 1px 1px #777777; -webkit-box-shadow: 0px 1px 1px #777777; -moz-box-shadow: 0px 1px 1px #777777;
+	border-radius:2px;
+	border:1px solid #cfdaf9
+}
+
+.list-page-detail span {
+	padding: 3px 1px;
+	color: #333;
+	display: inline-block;
+	float: left;
+	background: #fffffff
+}
+
+.list-page {
+ 	float: right
+}
+
+.list-page a {
+	padding: 3px 8px;
+	color: #8893b2;
+	display: inline-block;
+	float: left;
+	background: #f3f9ff;	 
+}
+.list-page a.cur,.task-list-page a:hover,.list-page a:hover {
+	color: #fff;
+	background: #636f8d;
+	text-decoration: none;
+	
+}
+
+.list-page a.cur {
+	font-weight: bold
+}
+
+.dis{
+	padding: 3px 8px; 
+	color: #aaaaaa;
+	display: inline-block;
+	float: left;
+    background: #ecf3ff; 
+}

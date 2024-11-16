@@ -1,0 +1,76 @@
+# 风格：Google, LLVM, Chromium, Mozilla, WebKit, Microsoft, GUN
+BasedOnStyle: LLVM
+# 语言: None, Cpp, Java, JavaScript, ObjC, Proto, TableGen, TextProto
+Language: Cpp
+# 标准: Cpp03, Cpp11, Auto
+Standard: Cpp11
+# 去除C++11的列表初始化的大括号{后和}前的空格
+Cpp11BracedListStyle: true
+# 访问说明符(public、private等)的偏移
+AccessModifierOffset: -4
+# 开括号(开圆括号、开尖括号、开方括号)后的对齐: Align, DontAlign, AlwaysBreak(总是在开括号后换行)
+AlignAfterOpenBracket: AlwaysBreak
+# 水平对齐二元和三元表达式的操作数
+AlignOperands: false
+# 允许函数声明的所有参数在放在下一行
+# AllowAllParametersOfDeclarationOnNextLine: false
+# 允许短的块放在同一行
+AllowShortBlocksOnASingleLine: false
+# 允许短的case标签放在同一行
+AllowShortCaseLabelsOnASingleLine: false
+# 允许短的函数放在同一行: None, InlineOnly(定义在类中), Empty(空函数), Inline(定义在类中，空函数), All
+AllowShortFunctionsOnASingleLine: Empty
+# 允许短的if语句保持在同一行
+AllowShortIfStatementsOnASingleLine: false
+# 允许短的循环保持在同一行
+AllowShortLoopsOnASingleLine: false
+# 总是在返回类型后换行: None, All, TopLevel(顶级函数，不包括在类中的函数),  # AllDefinitions(所有的定义，不包括声明), TopLevelDefinitions(所有的顶级函数的定义)
+AlwaysBreakAfterReturnType: None
+# 总是在template声明后换行
+AlwaysBreakTemplateDeclarations: true
+# false表示函数实参要么都在同一行，要么都各自一行
+BinPackArguments: false
+# false表示所有形参要么都在同一行，要么都各自一行
+BinPackParameters: false
+# 构造函数的初始化列表换行
+BreakConstructorInitializers: AfterColon
+# 每行字符的限制，0表示没有限制
+ColumnLimit: 0
+# 构造函数的初始化列表的缩进宽度
+ConstructorInitializerIndentWidth: 8
+# 延续的行的缩进宽度
+ContinuationIndentWidth: 4
+# 继承最常用的指针和引用的对齐方式
+DerivePointerAlignment: true
+# 为命名空间添加缺失的命名空间结束注释
+FixNamespaceComments: true
+# 缩进case标签
+IndentCaseLabels: false
+# 使用tab字符: Never, ForIndentation, ForContinuationAddIddentation, Always
+UseTab: Never
+# 缩进宽度
+IndentWidth: 4
+# 连续空行的最大数量
+MaxEmptyLinesToKeep: 1
+# 命名空间的缩进: None, Inner(缩进嵌套的命名空间中的内容), All
+NamespaceIndentation: None
+
+PenaltyBreakAssignment: 2
+# 在call(后对函数调用换行的penalty
+PenaltyBreakBeforeFirstCallParameter: 1
+# 在一个注释中引入换行的penalty
+PenaltyBreakComment: 500
+# 第一次在<<前换行的penalty
+PenaltyBreakFirstLessLess: 120
+# 在一个字符串字面量中引入换行的penalty
+PenaltyBreakString: 1000
+# 对于每个在行字符数限制之外的字符的penalty
+PenaltyExcessCharacter: 1000000
+# 将函数的返回类型放到它自己的行的penalty
+PenaltyReturnTypeOnItsOwnLine: 400
+# 指针和引用的对齐: Left, Right, Middle
+PointerAlignment: Right
+# 允许排序#include
+SortIncludes: false
+# 连续宏定义的值对齐
+AlignConsecutiveMacros: true

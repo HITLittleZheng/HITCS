@@ -1,0 +1,28 @@
+HTTP/1.1 200 OK
+Server: Server           
+Last-Modified: Thu, 01 Sep 2022 01:32:53 GMT
+Content-Type: text/css;charset=UTF-8
+Content-Length: 967
+Date: Thu, 26 Sep 2024 16:29:12 GMT
+
+@charset "utf-8";
+/* CSS Document */
+/*common*/
+
+*{padding:0; margin:0} 
+
+body{font-size:16px; color:#222; font-family:"微软雅黑";  overflow:hidden; width:100%;
+    background:url(../../images/common/login_bg.jpg) no-repeat center top #2c7fb5;}
+
+/*login*/
+.box{ width:1003px; height:340px; padding-top:390px; position:relative; margin:0 auto}
+
+.login_but{ background:url(../../images/common/butt.png) no-repeat left top; float:left; width:244px; height:44px; margin-left:570px;  color:#ffffff; font-size:16px;line-height:44px;
+text-align:center}
+.login_but:hover{ background:url(../../images/common/butt_01.png) no-repeat left top; text-decoration:underline; cursor:pointer;}
+.mt20{margin-top:20px}
+
+.zysx_text{ height: 300px; position: absolute; left: 0; line-height: 18px;position: absolute;top: 228px; width: 464px; font-size: 12px;color:#ffffff;}
+.red{ color:#fffc00; }
+.bold{font-weight: bold;}
+.font14{font-size: 12px;line-height: 24px;}

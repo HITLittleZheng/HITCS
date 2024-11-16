@@ -1,0 +1,20 @@
+﻿  client.cpp
+D:\SystemPackage\Desktop\daily\24Fall\computer_network\experiment\2\VS\Client\Client\client.cpp(78,29): warning C4477: “sscanf_s”: 格式字符串“%s”需要类型“unsigned int”的参数，但可变参数 2 拥有了类型“unsigned __int64”
+      D:\SystemPackage\Desktop\daily\24Fall\computer_network\experiment\2\VS\Client\Client\client.cpp(78,29):
+      此参数用作缓冲区大小
+  
+D:\SystemPackage\Desktop\daily\24Fall\computer_network\experiment\2\VS\Client\Client\client.cpp(78,29): warning C4477: “sscanf_s”: 格式字符串“%s”需要类型“unsigned int”的参数，但可变参数 4 拥有了类型“unsigned __int64”
+      D:\SystemPackage\Desktop\daily\24Fall\computer_network\experiment\2\VS\Client\Client\client.cpp(78,29):
+      此参数用作缓冲区大小
+  
+D:\SystemPackage\Desktop\daily\24Fall\computer_network\experiment\2\VS\Client\Client\client.cpp(108,97): warning C4267: “参数”: 从“size_t”转换到“int”，可能丢失数据
+D:\SystemPackage\Desktop\daily\24Fall\computer_network\experiment\2\VS\Client\Client\client.cpp(137,73): warning C4267: “参数”: 从“size_t”转换到“int”，可能丢失数据
+D:\SystemPackage\Desktop\daily\24Fall\computer_network\experiment\2\VS\Client\Client\client.cpp(145,97): warning C4267: “参数”: 从“size_t”转换到“int”，可能丢失数据
+D:\SystemPackage\Desktop\daily\24Fall\computer_network\experiment\2\VS\Client\Client\client.cpp(201,97): warning C4267: “参数”: 从“size_t”转换到“int”，可能丢失数据
+D:\SystemPackage\Desktop\daily\24Fall\computer_network\experiment\2\VS\Client\Client\client.cpp(226,69): warning C4267: “参数”: 从“size_t”转换到“int”，可能丢失数据
+D:\SystemPackage\Desktop\daily\24Fall\computer_network\experiment\2\VS\Client\Client\client.cpp(232,97): warning C4267: “参数”: 从“size_t”转换到“int”，可能丢失数据
+D:\SystemPackage\Desktop\daily\24Fall\computer_network\experiment\2\VS\Client\Client\client.cpp(264,73): warning C4267: “参数”: 从“size_t”转换到“int”，可能丢失数据
+D:\SystemPackage\Desktop\daily\24Fall\computer_network\experiment\2\VS\Client\Client\client.cpp(270,73): warning C4267: “参数”: 从“size_t”转换到“int”，可能丢失数据
+D:\SystemPackage\Desktop\daily\24Fall\computer_network\experiment\2\VS\Client\Client\client.cpp(308,13): warning C4244: “初始化”: 从“std::streamsize”转换到“int”，可能丢失数据
+D:\SystemPackage\Desktop\daily\24Fall\computer_network\experiment\2\VS\Client\Client\client.cpp(346,75): warning C4267: “参数”: 从“size_t”转换到“int”，可能丢失数据
+  Client.vcxproj -> D:\SystemPackage\Desktop\daily\24Fall\computer_network\experiment\2\VS\Client\x64\Debug\Client.exe

@@ -1,0 +1,274 @@
+HTTP/1.1 200 OK
+Server: Server           
+Last-Modified: Thu, 01 Sep 2022 01:32:54 GMT
+Content-Type: application/javascript;charset=UTF-8
+Content-Length: 10724
+Date: Thu, 26 Sep 2024 16:28:51 GMT
+
+/*************************************************
+Validator v1.05
+code by 我佛山人
+wfsr@msn.com
+*************************************************/
+Validator = {
+	TimeToTime :/^(([0-1]?[0-9]|2[0-3]):([0-5][0-9]))-(([0-1]?[0-9]|2[0-3]):([0-5][0-9]))$/,
+	Require : /.+/,
+	Email : /^\w+([-+.]\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*$/,
+	Phone : /^((\(\d{2,3}\))|(\d{3}\-))?(\(0\d{2,3}\)|0\d{2,3}-)?[1-9]\d{6,7}(\-\d{1,4})?$/,
+	Mobile : /^((\(\d{2,3}\))|(\d{3}\-))?13\d{9}$/,	
+	Url : /^http:\/\/[A-Za-z0-9]+\.[A-Za-z0-9]+[\/=\?%\-&_~`@[\]\':+!]*([^<>\"\"])*$/,
+	IdCard : "this.IsIdCard(value)",
+	newphone :/^1\d{10}$/,
+	Currency : /^\d+(\.\d+)?$/,
+	Number : /^\d+$/,
+	floatNumber : /^0.\d{1,4}$/,
+	Zip : /^[1-9]\d{5}$/,
+	QQ : /^[1-9]\d{4,8}$/,
+	Integer : /^[-\+]?\d+$/,
+	Double : /^[-\+]?\d+(\.\d+)?$/,
+	English : /^[A-Za-z]+$/,
+	Chinese : /^[\u0391-\uFFE5]+$/,
+	Id : /^[A-Za-z0-9]+$/,
+	Username : /^[a-z]\w{4,16}$/i,
+	NotNumBegin : /[^0-9](.)*/,
+	UnSafe : /^(([A-Z]*|[a-z]*|\d*|[-_\~!@#\$%\^&\*\.\(\)\[\]\{\}<>\?\\\/\'\"]*)|.{0,5})$|\s/,
+	oto100 : /^(?:0|[1-9][0-9]?|100)$/,
+	ototo100 : /^(?:0|[1-9][0-9]?|100)-(?:0|[1-9][0-9]?|100)$/,  
+	ototo999 : /^(?:0|[1-9]|[1-9][0-9]|[1-9][0-9][0-9]?|999)-(?:0|[1-9]|[1-9][0-9]|[1-9][0-9][0-9]?|999)$/,  
+	qujian :  /^([[\(][\d]*\,[\d]*[)\]])|([[\(](\d+%)*\,(\d+%)*[)\]])$/,  
+	kzm: /^\w+([-+.]\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*$/,
+	IsSafe : function(str){
+		return !this.UnSafe.test(str);
+	},
+	SafeString : "this.IsSafe(value)",
+	PhoneMobile : "this.Execpm(value)",
+	Filter : "this.DoFilter(value, getAttribute('accept'))",
+	Limit : "this.limit(value.length,getAttribute('min'), getAttribute('max'))",
+	LimitB : "this.limit(this.LenB(value), getAttribute('min'), getAttribute('max'))",
+	Date : "this.IsDate(value, getAttribute('min'), getAttribute('format'))",
+	Repeat : "value == document.getElementsByName(getAttribute('to'))[0].value",
+	Range : "getAttribute('min')*1.0 <= (value) && (value) <= getAttribute('max')*1.0 && (value!='') ",
+//	Range : "getAttribute('min') <= parseFloat(value) && parseFloat(value) <= getAttribute('max')",
+	//Range : "getAttribute('min') < (value|0) && (value|0) < getAttribute('max')",
+	Compare : "this.compare(value,getAttribute('operator'),getAttribute('to'))",
+	CompareTo : "this.compareto(value,getAttribute('operator'),document.getElementsByName(getAttribute('to'))[0].value,document.getElementsByName(getAttribute('to'))[0])",
+	CompareToType : "this.comparetype(value,getAttribute('operator'),document.getElementsByName(getAttribute('to'))[0].value,getAttribute('totype'),document.getElementsByName(getAttribute('to'))[0])",
+	Custom : "this.Exec(value, getAttribute('regexp'))",	
+	Group : "this.MustChecked(getAttribute('name'), getAttribute('min'), getAttribute('max'))",
+	ErrorItem : [document.forms[0]],
+	ErrorMessage : ["提示：\t\t\t\t"],
+	Validate : function(theForm, mode){
+		var obj = theForm || event.srcElement;
+		var count = obj.elements.length;
+		this.ErrorMessage.length = 1;
+		this.ErrorItem.length = 1;
+		this.ErrorItem[0] = obj;
+		for(var i=0;i<count;i++){
+			with(obj.elements[i]){
+				var _dataType = getAttribute("dataType");
+				if(typeof(_dataType) == "object" || typeof(this[_dataType]) == "undefined") continue;
+				this.ClearState(obj.elements[i]);
+				if(getAttribute("require") == "false" && value == "") continue;
+				switch(_dataType){
+					case "PhoneMobile" :
+					case "IdCard" :
+					case "Date" :
+					case "Repeat" :
+					case "Range" :
+					case "Compare" :
+					case "CompareTo" :
+					case "CompareToType" :
+					case "Custom" :
+					case "Group" : 
+					case "Limit" :
+					case "LimitB" :
+					case "SafeString" :
+					case "Filter" :
+						if(!eval(this[_dataType])) {
+							this.AddError(i, getAttribute("msg"));
+						}
+						break;
+					default :
+						if(!this[_dataType].test(value)){
+							this.AddError(i, getAttribute("msg"));
+						}
+						break;
+				}
+			}
+		}
+		if(this.ErrorMessage.length > 1){
+			mode = mode || 1;
+			var errCount = this.ErrorItem.length;
+			switch(mode){
+				case 2 :
+					for(var i=1;i<errCount;i++)
+					this.ErrorItem[i].style.color = "red";
+				case 1 :
+					alert(this.ErrorMessage.join("\n"));
+					this.ErrorItem[1].focus();
+					break;
+				case 3 :
+					for(var i=1;i<errCount;i++){
+						try{
+							var span = document.createElement("SPAN");
+							span.id = "__ErrorMessagePanel";
+							span.style.color = "red";
+							this.ErrorItem[i].parentNode.appendChild(span);
+							span.innerHTML =this.ErrorMessage[i].replace(/\d+:/,"");
+						}catch(e){
+							alert(e.description);
+						}
+					}
+					this.ErrorItem[1].focus();
+					break;
+				default :
+					alert(this.ErrorMessage.join("\n"));
+					break;
+			}
+			return false;
+		}
+		return true;
+	},
+	limit : function(len,min, max){
+		min = min || 0;
+		max = max || Number.MAX_VALUE;
+		return min <= len && len <= max;
+	},
+	LenB : function(str){
+		return str.replace(/[^\x00-\xff]/g,"**").length;
+	},
+	ClearState : function(elem){
+		with(elem){
+			if(style.color == "red")
+			style.color = "";
+			var lastNode = parentNode.childNodes[parentNode.childNodes.length-1];
+			if(lastNode.id == "__ErrorMessagePanel")
+			parentNode.removeChild(lastNode);
+		}
+	},
+	ClearForm : function(FormName){
+    	for(var i=0;i<document.getElementById(FormName).elements.length;i++){
+    		Validator.ClearState(document.getElementById(FormName).elements[i]);
+    	}
+	},
+	AddError : function(index, str){
+		this.ErrorItem[this.ErrorItem.length] = this.ErrorItem[0].elements[index];
+		this.ErrorMessage[this.ErrorMessage.length] = this.ErrorMessage.length + ":" + str;
+	},
+	Exec : function(op, reg){
+		return new RegExp(reg,"g").test(op);
+	},
+	Execpm : function(op){
+		if(this['Phone'].test(op) || this['Mobile'].test(op)){	
+			return true;
+		}
+		return false;
+	},
+	compare : function(op1,operator,op2){
+		if(op1=="" && op2=="") return true;
+		if(op1.length < op2.length){
+			return false;
+		}
+		switch (operator) {
+			case "NotEqual":
+				return (op1 != op2);
+			case "GreaterThan":
+				return (op1 > op2);
+			case "GreaterThanEqual":
+				return (op1 >= op2);
+			case "LessThan":
+				return (op1 < op2);
+			case "LessThanEqual":
+				return (op1 <= op2);
+			default:
+				return (op1 == op2); 
+		}
+	},
+	compareto : function(op1,operator,op2,objop2){
+		if(op1=="" && op2=="") return true;	
+			
+		var rtn = false;	
+		switch (operator) {
+			case "NotEqual":
+				rtn = (op1 != op2);
+				break;
+			case "GreaterThan":
+				rtn = (op1 > op2);
+				break;
+			case "GreaterThanEqual":
+				rtn = (op1 >= op2);
+				break;
+			case "LessThan":
+				rtn = (op1 < op2);
+				break;
+			case "LessThanEqual":
+				rtn = (op1 <= op2);
+				break;
+			default:
+				rtn = (op1 == op2); 
+				break;
+		}
+		if(op1.length < op2.length){
+			rtn = false;
+		}
+		if(!rtn){
+			this.ErrorItem[this.ErrorItem.length] = objop2;
+			this.ErrorMessage[this.ErrorItem.length-1]="";
+		}
+		return rtn;
+		
+	},
+	comparetype : function(op1,operator,op2,type,objop2){
+		if(op1=="" && op2=="") return true;		
+		if(!this[type].test(op1) || !this[type].test(op2)){
+			this.ErrorItem[this.ErrorItem.length] = objop2;
+			this.ErrorMessage[this.ErrorItem.length]="";
+			return false;
+		}		
+		var rtn = false;	
+		switch (operator) {
+			case "NotEqual":
+				rtn = (op1 != op2);
+				break;
+			case "GreaterThan":
+				rtn = (op1 > op2);
+				break;
+			case "GreaterThanEqual":
+				rtn = (op1 >= op2);
+				break;
+			case "LessThan":
+				rtn = (op1 < op2);
+				break;
+			case "LessThanEqual":
+				rtn = (op1 <= op2);
+				break;
+			default:
+				rtn = (op1 == op2); 
+				break;
+		}
+		if(op1.length < op2.length){
+			rtn = false;
+		}
+		if(!rtn){
+			this.ErrorItem[this.ErrorItem.length] = objop2;
+			this.ErrorMessage[this.ErrorItem.length-1]="";
+		}
+		return rtn;
+	},
+	MustChecked : function(name, min, max){
+		var groups = document.getElementsByName(name);
+		var hasChecked = 0;
+		min = min || 1;
+		max = max || groups.length;
+		for(var i=groups.length-1;i>=0;i--)
+		if(groups[i].checked) hasChecked++;
+		return min <= hasChecked && hasChecked <= max;
+	},
+	DoFilter : function(input, filter){
+		return new RegExp("^.+\.(?=EXT)(EXT)$".replace(/EXT/g, filter.split(/\s*,\s*/).join("|")), "gi").test(input);
+	},
+	IsIdCard : function(number){
+		var date, Ai;
+		var verify = "10X98765432";
+		var Wi = [7, 9, 10, 5, 8, 4, 2, 1, 6, 3, 7, 9, 10, 5, 8, 4, 2];
+		var area = ['','','','','','','','','','','','北京','天津','河北','山西','内蒙古','','','','','','辽宁','吉林','黑龙江','','','','','','','','上海','江苏','浙江','安微','福建','江西','山东','','','','河南','湖北',

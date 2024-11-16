@@ -1,0 +1,17 @@
+HTTP/1.1 200 OK
+Content-Type: image/png
+Content-Length: 12203
+Connection: keep-alive
+Server:      
+Date: Thu, 26 Sep 2024 16:29:41 GMT
+Last-Modified: Fri, 18 Oct 2019 13:02:20 GMT
+ETag: "5da9b7dc-2fab"
+Access-Control-Allow-Origin: *
+X-Varnish: 191309762 196055008
+Age: 9
+Via: 1.1 varnish-v4
+X-Varnish-Cache: HIT
+Accept-Ranges: bytes
+
+‰PNG
+

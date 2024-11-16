@@ -1,0 +1,114 @@
+HTTP/1.1 200 OK
+Server: Server           
+Pragma: no-cache
+Expires: Thu, 01 Jan 1970 00:00:00 GMT
+Cache-Control: no-cache
+Cache-Control: no-store
+Set-Cookie: JSESSIONID=6D8D8ACFAEDFC7DDCCC8D0E0B4A4F0A2; Path=/; HttpOnly
+Content-Type: text/html;charset=UTF-8
+Content-Language: zh-CN
+Content-Length: 5624
+Date: Thu, 26 Sep 2024 16:29:12 GMT
+
+
+
+
+
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>本科生网上服务系统</title>
+<script src="/resources/js/jquery/jquery-1.7.2.min.js" type="text/javascript" ></script>
+<link href="/resources/css/common/style1.css" rel="stylesheet" type="text/css" />
+
+
+<link href="/resources/css/common/style.css" rel="stylesheet" type="text/css" />
+<link href="/resources/css/common/content.css" rel="stylesheet" type="text/css" />
+<link href="/resources/css/common/pageTag.css" rel="stylesheet" type="text/css" />
+<script type="text/javascript" src="/resources/js/jquery/jquery-1.7.2.min.js"></script>
+
+ <script src="/resources/js/jquery/jquery.form.js"  type="text/javascript"></script>
+<script type="text/javascript" src="/resources/js/common/validator.js" ></script>
+<script type="text/javascript" src="/resources/js/common/jqcheckBox.js"></script>
+<script type="text/javascript" src="/resources/js/jquery/jquery.chained.remote.js"></script>
+<script type="text/javascript" src="/resources/js/common/jqreload.js"></script>
+<style type="text/css">
+	html, body { height:100%; }
+	.Contentbox { width:100%; min-height:100%;height:auto }
+	*html .Contentbox { height:100% }
+</style>
+<script type="text/javascript" src="/resources/js/My97DatePicker/WdatePicker.js"></script>
+<script type="text/javascript" src="/resources/js/common/modalpopup.js"></script>
+<script type="text/javascript">
+$().ready(function(){
+	
+});
+function ts(){
+BOX_show('NeworEdit1');
+}
+</script>
+
+</head>
+<body style=" overflow-y:hidden;" scroll="no" onload="ts();">
+<div class="box">
+  <a href="/queryWsyyIndex"><div class="login_but">统一身份认证登录</div></a>
+  <a href="/tologin"><div class="login_but mt20">其他用户</div></a>
+  
+  <div class="zysx_text">
+    <span class="red bold font14">注意事项：</span>
+	<p class="bold font14">登录：</p>
+	<p>1. 本系统为全校本科生提供材料制作预约、学生证补办、成绩查询等网上服务，在校园网内、外均可登录。</p>
+	<p>2. 未毕业同学、已毕业但未超过一年的同学均请选择“统一身份认证登录”入口；毕业时间超过一年的同学不能使用本系统。</p>
+	<p class="bold font14">材料预约：</p>
+	
+	<p>1. 预约并缴费成功后，请在工作日到师生服务中心<span class="red bold">（化学楼E栋一楼服务中心大厅）</span>
+	操作“本科生材料制作”服务一体机进行自助打印，打印完成后到<span class="red bold">本科生院窗口（14-16号）</span>交由工作人员盖章。<br/>根据“关于师生服务中心试运行的通知”，“师生服务中心”的办公时间为：<br/>
+	<span class="red bold">周一至周四  &nbsp;&nbsp;&nbsp;上午8:00-11:30  下午13:30-16:30（16:30之后进行内部业务处理）</span><br/>
+	<span class="red bold">周五            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;上午8:00-11:30  下午13:30-15:00（15:00之后进行业务学习及培训）</span>
+	
+	</p>
+	<p>2. 如果无法进行网上预约（例如研究生），请于工作日到师生服务中心本科生院窗口现场办理。</p>
+	<p>3. 毕业离校超过一年的学生只能办理四、六级成绩单及排名证明，其他材料请到学校档案馆办理。</p>
+	<p class="bold font14">学生证（含购票优惠卡）补办：</p>
+	<p>缴费成功后，请持本人壹寸照片1张到师生服务中心本科生院窗口办理。</p>
+  </div>
+  
+  
+</div>
+
+
+<div id="NeworEdit1" style="display:none; width: 550px;border: 1px solid #2c4f72;-webkit-box-shadow: 0px 0px 5px #000;-moz-box-shadow: 0px 0px 5px #000;box-shadow: 0px 0px 5px #000; " >
+        <div class="Floatleft Pct100 popup_bg">
+            <div class="popup_left">提示</div>
+<!--            <a href="#" class="btn_close" onclick="javascript:BOX_remove('NeworEdit1');return false;"></a> </div>-->
+            <div class="clr"></div>
+         <div class="popup">
+           </div>
+	       <table width="100%" cellspacing="0" cellpadding="0" style="border-collapse:collapse" class="addlist" id="divtab">
+		      <tr>
+			         <td style="font-weight: bold;font-size: 13px;">
+			         	<!-- <p> 温馨提示：</p>
+			         					        <p>因正在陆续进行应届毕业生的论文答辩和毕业审核工作</p>
+			         					        <p>毕业年级成绩单预约功能暂停开放</p>
+			         					        <p>预计6月3日起再行开放。</p> -->
+			         					        <p>  同学们请注意:</p>
+			         					        <p>1、预约成绩单等材料时，缴费后请务必到“已预约信息”页面中查询一下缴费完成状态，如果是“未完成”状态，请点击最后操作列中的“复查”按钮，复查成功后才能够在自助机上进行打印!</p>
+			         					        <p>2、寒暑假期间，每周周一(春节期间除外)集中制作和发送电子成绩单。请同学们耐心等待</p>
+			         </td>
+		      </tr>
+        	 <tr>
+	          <td colspan="2">
+	          <div style="float:right" class="addlist_button1 ml15"><a onclick="javascript:BOX_remove('NeworEdit1');return false;" ><span>确定</span></a> </div>
+	          </td>
+	        </tr>		    
+	     </table>
+	    <div class="clr"></div>
+    </div>
+</form>
+</div>
+<div id="setting"> </div>
+</body>
+</html>
