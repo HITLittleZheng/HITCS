@@ -1,0 +1,13 @@
+{
+    "C_Cpp.errorSquiggles": "Enabled",
+    "files.associations": {
+        "string": "cpp",
+        "istream": "cpp",
+        "*.tcc": "cpp",
+        "filesystem": "cpp",
+        "xstring": "cpp",
+        "ostream": "cpp",
+        "iostream": "cpp",
+        "iosfwd": "cpp"
+    }
+}
