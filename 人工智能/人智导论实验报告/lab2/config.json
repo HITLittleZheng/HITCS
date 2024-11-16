@@ -1,5 +1,0 @@
-{
-    "model_algorithm": "image_classification",
-    "model_type": "PyTorch",
-    "runtime": "pytorch_1.8.0-cuda_10.2-py_3.7-ubuntu_18.04-x86_64"
-}
