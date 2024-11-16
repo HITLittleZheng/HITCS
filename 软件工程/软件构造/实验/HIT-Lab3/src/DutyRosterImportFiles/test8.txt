@@ -1,0 +1,33 @@
+Period{2021-01-10,2021-03-06}
+Employee{
+    JohnDoe{Manager,139-0451-0000}
+    EmilyAdams{Secretary,151-0101-0000}
+    WilliamSmith{Associate Dean,177-2021-0301}
+    AliceJohnsonA{Professor,138-1920-3912}
+    MichaelLeeB{Lecturer,138-1921-3912}
+    SarahWilsonC{Professor,138-1922-3912}
+    JamesHallD{Lecturer,198-1920-3912}
+    EmilyMartinE{Professor,178-1920-3912}
+    RobertBrownF{Lecturer,138-1929-3912}
+    MichaelTaylorG{Professor,138-1920-0000}
+    SarahAndersonH{Associate Professor,138-1929-0000}
+    JamesMartinI{Professor,138-1920-0200}
+    WilliamBrownJ{Associate Professor,138-1920-0044}
+    AliceClarkK{Professor,188-1920-0000}
+}
+Roster{
+    JohnDoe{2021-01-10,2021-01-11}
+    EmilyAdams{2021-01-12,2021-01-20}
+    WilliamSmith{2021-01-21,2021-01-21}
+    AliceJohnsonA{2021-01-22,2021-01-22}
+    MichaelLeeB{2021-01-23,2021-01-29}
+    SarahWilsonC{2021-01-30,2021-01-31}
+    JamesHallD{2021-02-01,2021-02-08}
+    EmilyMartinE{2021-02-09,2021-02-15}
+    RobertBrownF{2021-02-16,2021-02-24}
+    MichaelTaylorG{2021-02-25,2021-02-28}
+    SarahAndersonH{2021-03-01,2021-03-01}
+    JamesMartinI{2021-03-02,2021-03-04}
+    WilliamBrownJ{2021-03-05,2021-03-05}
+    AliceClarkK{2021-03-06,2021-03-06}
+}

@@ -1,0 +1,30 @@
+Period{2021-01-10,2021-03-06}
+Employee{
+    AlexJohnson{Manager,139-0451-0000}
+    EmilyDavis{Secretary,151-0101-0000}
+    DanielWilson{Associate Dean,177-2021-0301}
+    AliceTaylor{Professor,138-1920-3912}
+    MichaelAnderson{Lecturer,138-1921-3912}
+    SophiaThomas{Professor,138-1922-3912}
+    JamesHarris{Lecturer,198-1920-3912}
+    OliviaMartin{Professor,138-1920-0000}
+    BenjaminLewis{Associate Professor,138-1929-0000}
+    AvaScott{Associate Professor,138-1920-0044}
+    EthanWhite{Professor,188-1920-0000}
+}
+Roster{
+    AlexJohnson{2021-01-10,2021-01-11}
+    EmilyDavis{2021-01-12,2021-01-20}
+    DanielWilson{2021-01-21,2021-01-21}
+    AliceTaylor{2021-01-22,2021-01-22}
+    MichaelAnderson{2021-01-23,2021-01-29}
+    SophiaThomas{2021-01-30,2021-01-31}
+    JamesHarris{2021-02-01,2021-02-08}
+    OliviaMartin{2021-02-09,2021-02-15}
+    BenjaminLewis{2021-02-16,2021-02-24}
+    AvaScott{2021-02-25,2021-02-28}
+    EthanWhite{2021-03-01,2021-03-01}
+    AvaScott{2021-03-02,2021-03-04}
+    EthanWhite{2021-03-05,2021-03-05}
+    BenjaminLewis{2021-03-06,2021-03-06}
+}

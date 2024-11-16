@@ -1,0 +1,33 @@
+Period{2021-01-10,2021-03-06}
+Employee{
+    AlexJohnson{Manager,139-0451-0000}
+    EmilyDavis{Secretary,151-0101-0000}
+    DanielLee{Associate Dean,177-2021-0301}
+    AliceWang1{Professor,138-1920-3912}
+    MichaelLi2{Lecturer,138-1921-3912}
+    SophiaZhou3{Professor,138-1922-3912}
+    JamesHuang4{Lecturer,198-1920-3912}
+    TaylorZhao5{Professor,178-1920-3912}
+    BenjaminChen6{Lecturer,138-1929-3912}
+    AvaZhou7{Professor,138-1920-0000}
+    GraceLi8{Associate Professor,138-1929-0000}
+    DylanWang9{Professor,138-1920-0200}
+    AvaLi10{Associate Professor,138-1920-0044}
+    EthanZhou11{Professor,188-1920-0000}
+}
+Roster{
+    AlexJohnson{2021-01-10,2021-01-11}
+    EmilyDavis{2021-01-11,2021-01-18}
+    DanielLee{2021-01-21,2021-01-21}
+    AliceWang1{2021-01-22,2021-01-22}
+    MichaelLi2{2021-01-23,2021-01-29}
+    SophiaZhou3{2021-01-30,2021-01-31}
+    JamesHuang4{2021-02-01,2021-02-08}
+    TaylorZhao5{2021-02-09,2021-02-15}
+    BenjaminChen6{2021-02-16,2021-02-27}
+    AvaZhou7{2021-02-25,2021-02-28}
+    GraceLi8{2021-03-01,2021-03-01}
+    DylanWang9{2021-03-02,2021-03-04}
+    AvaLi10{2021-03-05,2021-03-05}
+    EthanZhou11{2021-03-06,2021-03-06}
+}

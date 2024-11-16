@@ -1,0 +1,33 @@
+Period{2021-01-10,2021-03-06}
+Employee{
+    JohnSmith{Manager,139-0451-0000}
+    EmilyJohnson{Secretary,151-0101-0000}
+    RobertWilliams{Associate Dean,177-2021-0301}
+    AliceJones1{Professor,138-1920-3912}
+    MichaelBrown2{Lecturer,138-1921-3912}
+    SophiaDavis3{Professor,138-1922-3912}
+    JamesWilson4{Lecturer,198-1920-3912}
+    OliviaTaylor5{Professor,178-1920-3912}
+    BenjaminMiller6{Lecturer,138-1929-3912}
+    AmeliaSmith7{Professor,138-1920-0000}
+    CharlotteClark8{Associate Professor,138-1929-0000}
+    MasonHall9{Professor,138-1920-0200}
+    HaileyMartin10{Associate Professor,138-1920-0044}
+    EthanKing11{Professor,188-1920-0000}
+}
+Roster{
+    JohnSmith{2021-01-10,2021-01-11}
+    EmilyJohnson{2021-01-12,2021-01-20}
+    RobertWilliams{2021-01-21,2021-01-21}
+    AliceJones1{2021-01-22,2021-01-22}
+    MichaelBrown2{2021-01-23,2021-01-29}
+    SophiaDavis3{2021-01-30,2021-01-31}
+    JamesWilson4{2021-02-01,21-02-08}
+    OliviaTaylor5{2021-02-09,2021-02-15}
+    BenjaminMiller6{2021-02-16,2021-02-24}
+    AmeliaSmith7{2021-02-25,2021-02-28}
+    CharlotteClark8{2021-03-01,2021-03-01}
+    MasonHall9{2021-03-02,2021-03-04}
+    HaileyMartin10{2021-03-05,2021-03-05}
+    EthanKing11{2021-03-06,2021-03-06}
+}

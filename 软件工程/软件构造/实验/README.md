@@ -1,0 +1,3 @@
+- HIT 2024 Spring Software Construction teached by Rainy Wang Lab files
+- contact me at phantasia_march@outlook.com please
+- hope that it can be helpful to you

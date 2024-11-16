@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="Encoding">
+    <file url="file://$PROJECT_DIR$/src/DutyRosterImportFiles/test1.txt" charset="GB2312" />
+    <file url="file://$PROJECT_DIR$/src/DutyRosterImportFiles/test2.txt" charset="GB2312" />
+    <file url="file://$PROJECT_DIR$/src/DutyRosterImportFiles/test3.txt" charset="GB2312" />
+    <file url="file://$PROJECT_DIR$/src/DutyRosterImportFiles/test4.txt" charset="GB2312" />
+    <file url="file://$PROJECT_DIR$/src/DutyRosterImportFiles/test5.txt" charset="GB2312" />
+    <file url="file://$PROJECT_DIR$/src/DutyRosterImportFiles/test6.txt" charset="GB2312" />
+    <file url="file://$PROJECT_DIR$/src/DutyRosterImportFiles/test7.txt" charset="GB2312" />
+    <file url="file://$PROJECT_DIR$/src/DutyRosterImportFiles/test8.txt" charset="GB2312" />
+    <file url="file://$PROJECT_DIR$/test/test1.txt" charset="GB2312" />
+    <file url="file://$PROJECT_DIR$/test/test2.txt" charset="GB2312" />
+    <file url="file://$PROJECT_DIR$/test/test3.txt" charset="GB2312" />
+    <file url="file://$PROJECT_DIR$/test/test4.txt" charset="GB2312" />
+    <file url="file://$PROJECT_DIR$/test/test5.txt" charset="GB2312" />
+    <file url="file://$PROJECT_DIR$/test/test6.txt" charset="GB2312" />
+    <file url="file://$PROJECT_DIR$/test/test7.txt" charset="GB2312" />
+    <file url="file://$PROJECT_DIR$/test/test8.txt" charset="GB2312" />
+  </component>
+</project>
