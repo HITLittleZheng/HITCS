@@ -1,5 +1,5 @@
 <div align="center">
-    <img src="LOGO.png" alt="计算学部 | 课程资料共享计划">
+    <img src="" alt="计算学部 | 课程资料共享计划">
 </div>
 
 <div align="center">
