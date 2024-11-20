@@ -1,6 +1,4 @@
-<div align="center">
-    <img src="HITCS.png" alt="计算学部 | 课程资料共享计划">
-</div>
+<h1 align="center">哈工大计算机专业 | 课程资料共享计划</h1> 
 
 <div align="center">
      <a href="https://github.com/HITLittleZheng/HITCS/watchers">
@@ -48,30 +46,18 @@
 
 ## :ledger: 计算学部 | 课程资料共享计划
 
-📚 受 [浙江大学相关项目](https://github.com/QSCTech/zju-icicles) 、 [清华大学相关项目](https://github.com/PKUanonym/REKCARC-TSC-UHT) 和 [哈工大（深圳）相关项目](https://github.com/HITSZ-OpenCS/HITSZ-OpenCS)启发，计算学部金牌讲师团创立了课程资源分享项目
-
-🔑 由于项目的两位负责人[rookiexiong7](https://github.com/rookiexiong7)、[Ralph-Zhou](https://github.com/Ralph-Zhou)已推免至外校，同时也没有精力维护项目，应负责人邀请，本人将计算学部金牌讲师团的项目与本人的课程资源分享项目整合，形成此项目
+📚 受 [浙江大学相关项目](https://github.com/QSCTech/zju-icicles) 、 [清华大学相关项目](https://github.com/PKUanonym/REKCARC-TSC-UHT) 和 [哈工大（深圳）相关项目](https://github.com/HITSZ-OpenCS/HITSZ-OpenCS)启发，创立了本项目。
 
 🙏 感谢对本项目贡献的同学：[rookiexiong7](https://github.com/rookiexiong7)、[Ralph-Zhou](https://github.com/Ralph-Zhou)、[skyrimforest](https://github.com/skyrimforest)、[decemberboy04](https://github.com/decemberboy04)、[tloly-Roc](https://github.com/tloly-Roc)、[StellaLin030](https://github.com/StellaLin030)、[cpu095](https://github.com/cpu095)、[ymd2002](https://github.com/ymd2002)、[jielahou](https://github.com/jielahou)、[Mubuky](https://github.com/Mubuky)、[jjuuulll](https://github.com/jjuuulll)、[pmczx](https://github.com/pmczx)、[HITjunle](https://github.com/HITjunle)、[Dodojordi](https://github.com/Dodojordi)、[HITLittleZheng](https://github.com/HITLittleZheng)、[WhtyBi](https://github.com/WhtyBi)、[ZephyrVictor](https://github.com/ZephyrVictor)、[wiwyil2tr](https://github.com/wiwyil2tr)、[MarchPhantasia](https://github.com/MarchPhantasia)
 
 
-## :fire: 更新 | News
-
-- [24/11/14] 🎉 课程资料共享平台正式合并！
-- [24/03/05] 📷 上传计算学部金牌讲师团LOGO
-- [24/01/10] 🚀 计算学部课程资料共享平台正式启动！
-- [24/01/07] 🎆 本人课程资料分享平台正式启动！
-
-<details><summary>Full News</summary>
-</details>
 
 ## :sparkles: 愿景 | Vision
 
-📦 **此仓库主要包括金牌讲师团在同学们学习过程中的学业支持活动记录，主要包括开箱手册、期末复习讲座及复习手册等资料**
+📦 **此仓库主要包括同学们学习过程中的资料，主要包括实验、期末往年题及复习笔记等资料**
 
 🤝 **同时也希望更多同学参与到本项目，旨在打破信息壁垒，减少同学对课程学习的不熟悉，帮助各位同学更好的找到合适的学习方法及资料，学长学姐们的经验也可以很大程度上帮助到学弟学妹们！**
 
-🌟 计算学部金牌讲师团始终以贺信精神为指导，传承“诲人不倦，甘为人梯；追求真理，坦诚待人”的光熙精神。坚持问题导向，根据各年级学生的实际需求，开展一系列有针对性的学业帮扶工作，致力于打通学业帮扶“最后一公里”。
 
 
 ## :raised_hands: 贡献 | Contribution
