@@ -101,6 +101,6 @@
 
 
 
-## :star2: 关注 | Star History
+## ⭐ 关注 | Star History
 
 ![Star History Chart](https://api.star-history.com/svg?repos=HITLittleZheng/HITCS&type=Date)
