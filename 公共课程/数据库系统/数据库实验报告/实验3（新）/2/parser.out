@@ -1,0 +1,422 @@
+Created by PLY version 3.11 (http://www.dabeaz.com/ply)
+
+Grammar
+
+Rule 0     S' -> query
+Rule 1     query -> operation
+Rule 2     operation -> SELECT LBRACKET condition RBRACKET LPAREN operation RPAREN
+Rule 3     operation -> PROJECTION LBRACKET attributes RBRACKET LPAREN operation RPAREN
+Rule 4     operation -> AVG LBRACKET IDENT RBRACKET LPAREN operation RPAREN
+Rule 5     operation -> operation JOIN operation
+Rule 6     operation -> IDENT
+Rule 7     condition -> condition AND condition
+Rule 8     condition -> IDENT EQUALS value
+Rule 9     condition -> IDENT LT value
+Rule 10    value -> STRING
+Rule 11    value -> NUMBER
+Rule 12    attributes -> attributes COMMA IDENT
+Rule 13    attributes -> IDENT
+
+Terminals, with rules where they appear
+
+AND                  : 7
+AVG                  : 4
+COMMA                : 12
+EQUALS               : 8
+IDENT                : 4 6 8 9 12 13
+JOIN                 : 5
+LBRACKET             : 2 3 4
+LPAREN               : 2 3 4
+LT                   : 9
+NUMBER               : 11
+PROJECTION           : 3
+RBRACKET             : 2 3 4
+RPAREN               : 2 3 4
+SELECT               : 2
+STRING               : 10
+error                : 
+
+Nonterminals, with rules where they appear
+
+attributes           : 3 12
+condition            : 2 7 7
+operation            : 1 2 3 4 5 5
+query                : 0
+value                : 8 9
+
+Parsing method: LALR
+
+state 0
+
+    (0) S' -> . query
+    (1) query -> . operation
+    (2) operation -> . SELECT LBRACKET condition RBRACKET LPAREN operation RPAREN
+    (3) operation -> . PROJECTION LBRACKET attributes RBRACKET LPAREN operation RPAREN
+    (4) operation -> . AVG LBRACKET IDENT RBRACKET LPAREN operation RPAREN
+    (5) operation -> . operation JOIN operation
+    (6) operation -> . IDENT
+
+    SELECT          shift and go to state 3
+    PROJECTION      shift and go to state 4
+    AVG             shift and go to state 5
+    IDENT           shift and go to state 6
+
+    query                          shift and go to state 1
+    operation                      shift and go to state 2
+
+state 1
+
+    (0) S' -> query .
+
+
+
+state 2
+
+    (1) query -> operation .
+    (5) operation -> operation . JOIN operation
+
+    $end            reduce using rule 1 (query -> operation .)
+    JOIN            shift and go to state 7
+
+
+state 3
+
+    (2) operation -> SELECT . LBRACKET condition RBRACKET LPAREN operation RPAREN
+
+    LBRACKET        shift and go to state 8
+
+
+state 4
+
+    (3) operation -> PROJECTION . LBRACKET attributes RBRACKET LPAREN operation RPAREN
+
+    LBRACKET        shift and go to state 9
+
+
+state 5
+
+    (4) operation -> AVG . LBRACKET IDENT RBRACKET LPAREN operation RPAREN
+
+    LBRACKET        shift and go to state 10
+
+
+state 6
+
+    (6) operation -> IDENT .
+
+    JOIN            reduce using rule 6 (operation -> IDENT .)
+    $end            reduce using rule 6 (operation -> IDENT .)
+    RPAREN          reduce using rule 6 (operation -> IDENT .)
+
+
+state 7
+
+    (5) operation -> operation JOIN . operation
+    (2) operation -> . SELECT LBRACKET condition RBRACKET LPAREN operation RPAREN
+    (3) operation -> . PROJECTION LBRACKET attributes RBRACKET LPAREN operation RPAREN
+    (4) operation -> . AVG LBRACKET IDENT RBRACKET LPAREN operation RPAREN
+    (5) operation -> . operation JOIN operation
+    (6) operation -> . IDENT
+
+    SELECT          shift and go to state 3
+    PROJECTION      shift and go to state 4
+    AVG             shift and go to state 5
+    IDENT           shift and go to state 6
+
+    operation                      shift and go to state 11
+
+state 8
+
+    (2) operation -> SELECT LBRACKET . condition RBRACKET LPAREN operation RPAREN
+    (7) condition -> . condition AND condition
+    (8) condition -> . IDENT EQUALS value
+    (9) condition -> . IDENT LT value
+
+    IDENT           shift and go to state 13
+
+    condition                      shift and go to state 12
+
+state 9
+
+    (3) operation -> PROJECTION LBRACKET . attributes RBRACKET LPAREN operation RPAREN
+    (12) attributes -> . attributes COMMA IDENT
+    (13) attributes -> . IDENT
+
+    IDENT           shift and go to state 15
+
+    attributes                     shift and go to state 14
+
+state 10
+
+    (4) operation -> AVG LBRACKET . IDENT RBRACKET LPAREN operation RPAREN
+
+    IDENT           shift and go to state 16
+
+
+state 11
+
+    (5) operation -> operation JOIN operation .
+    (5) operation -> operation . JOIN operation
+
+    JOIN            reduce using rule 5 (operation -> operation JOIN operation .)
+    $end            reduce using rule 5 (operation -> operation JOIN operation .)
+    RPAREN          reduce using rule 5 (operation -> operation JOIN operation .)
+
+  ! JOIN            [ shift and go to state 7 ]
+
+
+state 12
+
+    (2) operation -> SELECT LBRACKET condition . RBRACKET LPAREN operation RPAREN
+    (7) condition -> condition . AND condition
+
+    RBRACKET        shift and go to state 17
+    AND             shift and go to state 18
+
+
+state 13
+
+    (8) condition -> IDENT . EQUALS value
+    (9) condition -> IDENT . LT value
+
+    EQUALS          shift and go to state 19
+    LT              shift and go to state 20
+
+
+state 14
+
+    (3) operation -> PROJECTION LBRACKET attributes . RBRACKET LPAREN operation RPAREN
+    (12) attributes -> attributes . COMMA IDENT
+
+    RBRACKET        shift and go to state 21
+    COMMA           shift and go to state 22
+
+
+state 15
+
+    (13) attributes -> IDENT .
+
+    RBRACKET        reduce using rule 13 (attributes -> IDENT .)
+    COMMA           reduce using rule 13 (attributes -> IDENT .)
+
+
+state 16
+
+    (4) operation -> AVG LBRACKET IDENT . RBRACKET LPAREN operation RPAREN
+
+    RBRACKET        shift and go to state 23
+
+
+state 17
+
+    (2) operation -> SELECT LBRACKET condition RBRACKET . LPAREN operation RPAREN
+
+    LPAREN          shift and go to state 24
+
+
+state 18
+
+    (7) condition -> condition AND . condition
+    (7) condition -> . condition AND condition
+    (8) condition -> . IDENT EQUALS value
+    (9) condition -> . IDENT LT value
+
+    IDENT           shift and go to state 13
+
+    condition                      shift and go to state 25
+
+state 19
+
+    (8) condition -> IDENT EQUALS . value
+    (10) value -> . STRING
+    (11) value -> . NUMBER
+
+    STRING          shift and go to state 27
+    NUMBER          shift and go to state 28
+
+    value                          shift and go to state 26
+
+state 20
+
+    (9) condition -> IDENT LT . value
+    (10) value -> . STRING
+    (11) value -> . NUMBER
+
+    STRING          shift and go to state 27
+    NUMBER          shift and go to state 28
+
+    value                          shift and go to state 29
+
+state 21
+
+    (3) operation -> PROJECTION LBRACKET attributes RBRACKET . LPAREN operation RPAREN
+
+    LPAREN          shift and go to state 30
+
+
+state 22
+
+    (12) attributes -> attributes COMMA . IDENT
+
+    IDENT           shift and go to state 31
+
+
+state 23
+
+    (4) operation -> AVG LBRACKET IDENT RBRACKET . LPAREN operation RPAREN
+
+    LPAREN          shift and go to state 32
+
+
+state 24
+
+    (2) operation -> SELECT LBRACKET condition RBRACKET LPAREN . operation RPAREN
+    (2) operation -> . SELECT LBRACKET condition RBRACKET LPAREN operation RPAREN
+    (3) operation -> . PROJECTION LBRACKET attributes RBRACKET LPAREN operation RPAREN
+    (4) operation -> . AVG LBRACKET IDENT RBRACKET LPAREN operation RPAREN
+    (5) operation -> . operation JOIN operation
+    (6) operation -> . IDENT
+
+    SELECT          shift and go to state 3
+    PROJECTION      shift and go to state 4
+    AVG             shift and go to state 5
+    IDENT           shift and go to state 6
+
+    operation                      shift and go to state 33
+
+state 25
+
+    (7) condition -> condition AND condition .
+    (7) condition -> condition . AND condition
+
+    RBRACKET        reduce using rule 7 (condition -> condition AND condition .)
+    AND             reduce using rule 7 (condition -> condition AND condition .)
+
+  ! AND             [ shift and go to state 18 ]
+
+
+state 26
+
+    (8) condition -> IDENT EQUALS value .
+
+    RBRACKET        reduce using rule 8 (condition -> IDENT EQUALS value .)
+    AND             reduce using rule 8 (condition -> IDENT EQUALS value .)
+
+
+state 27
+
+    (10) value -> STRING .
+
+    RBRACKET        reduce using rule 10 (value -> STRING .)
+    AND             reduce using rule 10 (value -> STRING .)
+
+
+state 28
+
+    (11) value -> NUMBER .
+
+    RBRACKET        reduce using rule 11 (value -> NUMBER .)
+    AND             reduce using rule 11 (value -> NUMBER .)
+
+
+state 29
+
+    (9) condition -> IDENT LT value .
+
+    RBRACKET        reduce using rule 9 (condition -> IDENT LT value .)
+    AND             reduce using rule 9 (condition -> IDENT LT value .)
+
+
+state 30
+
+    (3) operation -> PROJECTION LBRACKET attributes RBRACKET LPAREN . operation RPAREN
+    (2) operation -> . SELECT LBRACKET condition RBRACKET LPAREN operation RPAREN
+    (3) operation -> . PROJECTION LBRACKET attributes RBRACKET LPAREN operation RPAREN
+    (4) operation -> . AVG LBRACKET IDENT RBRACKET LPAREN operation RPAREN
+    (5) operation -> . operation JOIN operation
+    (6) operation -> . IDENT
+
+    SELECT          shift and go to state 3
+    PROJECTION      shift and go to state 4
+    AVG             shift and go to state 5
+    IDENT           shift and go to state 6
+
+    operation                      shift and go to state 34
+
+state 31
+
+    (12) attributes -> attributes COMMA IDENT .
+
+    RBRACKET        reduce using rule 12 (attributes -> attributes COMMA IDENT .)
+    COMMA           reduce using rule 12 (attributes -> attributes COMMA IDENT .)
+
+
+state 32
+
+    (4) operation -> AVG LBRACKET IDENT RBRACKET LPAREN . operation RPAREN
+    (2) operation -> . SELECT LBRACKET condition RBRACKET LPAREN operation RPAREN
+    (3) operation -> . PROJECTION LBRACKET attributes RBRACKET LPAREN operation RPAREN
+    (4) operation -> . AVG LBRACKET IDENT RBRACKET LPAREN operation RPAREN
+    (5) operation -> . operation JOIN operation
+    (6) operation -> . IDENT
+
+    SELECT          shift and go to state 3
+    PROJECTION      shift and go to state 4
+    AVG             shift and go to state 5
+    IDENT           shift and go to state 6
+
+    operation                      shift and go to state 35
+
+state 33
+
+    (2) operation -> SELECT LBRACKET condition RBRACKET LPAREN operation . RPAREN
+    (5) operation -> operation . JOIN operation
+
+    RPAREN          shift and go to state 36
+    JOIN            shift and go to state 7
+
+
+state 34
+
+    (3) operation -> PROJECTION LBRACKET attributes RBRACKET LPAREN operation . RPAREN
+    (5) operation -> operation . JOIN operation
+
+    RPAREN          shift and go to state 37
+    JOIN            shift and go to state 7
+
+
+state 35
+
+    (4) operation -> AVG LBRACKET IDENT RBRACKET LPAREN operation . RPAREN
+    (5) operation -> operation . JOIN operation
+
+    RPAREN          shift and go to state 38
+    JOIN            shift and go to state 7
+
+
+state 36
+
+    (2) operation -> SELECT LBRACKET condition RBRACKET LPAREN operation RPAREN .
+
+    JOIN            reduce using rule 2 (operation -> SELECT LBRACKET condition RBRACKET LPAREN operation RPAREN .)
+    $end            reduce using rule 2 (operation -> SELECT LBRACKET condition RBRACKET LPAREN operation RPAREN .)
+    RPAREN          reduce using rule 2 (operation -> SELECT LBRACKET condition RBRACKET LPAREN operation RPAREN .)
+
+
+state 37
+
+    (3) operation -> PROJECTION LBRACKET attributes RBRACKET LPAREN operation RPAREN .
+
+    JOIN            reduce using rule 3 (operation -> PROJECTION LBRACKET attributes RBRACKET LPAREN operation RPAREN .)
+    $end            reduce using rule 3 (operation -> PROJECTION LBRACKET attributes RBRACKET LPAREN operation RPAREN .)
+    RPAREN          reduce using rule 3 (operation -> PROJECTION LBRACKET attributes RBRACKET LPAREN operation RPAREN .)
+
+
+state 38
+
+    (4) operation -> AVG LBRACKET IDENT RBRACKET LPAREN operation RPAREN .
+
+    JOIN            reduce using rule 4 (operation -> AVG LBRACKET IDENT RBRACKET LPAREN operation RPAREN .)
+    $end            reduce using rule 4 (operation -> AVG LBRACKET IDENT RBRACKET LPAREN operation RPAREN .)
+    RPAREN          reduce using rule 4 (operation -> AVG LBRACKET IDENT RBRACKET LPAREN operation RPAREN .)
+
