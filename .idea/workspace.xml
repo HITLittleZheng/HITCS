@@ -9,10 +9,7 @@
     </configurations>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="2dc00e69-25f5-4e65-b0b8-f64d79270836" name="Changes" comment="增加文件">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/信息安全/信息内容安全/labs.zip" beforeDir="false" />
-    </list>
+    <list default="true" id="2dc00e69-25f5-4e65-b0b8-f64d79270836" name="Changes" comment="增加文件" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -60,11 +57,11 @@
       <recent name="E:\HITCS\选修课程" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
-      <recent name="E:\HITCS\信息安全\信息内容安全" />
       <recent name="E:\HITCS\选修课程\GPU计算" />
       <recent name="E:\HITCS\信息安全\密码学" />
       <recent name="E:\HITCS\网络空间安全\互联网基础设施安全" />
       <recent name="E:\HITCS\网络空间安全\网络攻防技术" />
+      <recent name="E:\HITCS\软件工程\软件构造" />
     </key>
   </component>
   <component name="SharedIndexes">
@@ -92,7 +89,7 @@
       <workItem from="1732438402515" duration="220000" />
       <workItem from="1733130757991" duration="604000" />
       <workItem from="1733131371420" duration="4235000" />
-      <workItem from="1733142129639" duration="3493000" />
+      <workItem from="1733142129639" duration="1005000" />
     </task>
     <task id="LOCAL-00001" summary="删除文件">
       <option name="closed" value="true" />
@@ -174,15 +171,7 @@
       <option name="project" value="LOCAL" />
       <updated>1733143049092</updated>
     </task>
-    <task id="LOCAL-00011" summary="增加文件">
-      <option name="closed" value="true" />
-      <created>1733143368915</created>
-      <option name="number" value="00011" />
-      <option name="presentableId" value="LOCAL-00011" />
-      <option name="project" value="LOCAL" />
-      <updated>1733143368915</updated>
-    </task>
-    <option name="localTasksCounter" value="12" />
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
