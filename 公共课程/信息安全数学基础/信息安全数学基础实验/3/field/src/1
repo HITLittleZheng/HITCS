@@ -1,0 +1,51 @@
+public class AESKeyExpansion {
+    private static final int[][] s_box = { /* ... 您已提供的S盒 ... */ };
+    private static final int[] Rcon = {
+        0x01000000, 0x02000000, 0x04000000, 0x08000000, 
+        0x10000000, 0x20000000, 0x40000000, 0x80000000, 
+        0x1b000000, 0x36000000 // 前10个轮常量
+    };
+
+    // 字循环
+    private static int rotateWord(int word) {
+        return ((word << 8) | (word >>> 24)) & 0xFFFFFFFF;
+    }
+
+    // 字代换
+    private static int subWord(int word) {
+        return (s_box[(word >>> 24) & 0xFF][0] << 24) |
+               (s_box[(word >>> 16) & 0xFF][1] << 16) |
+               (s_box[(word >>> 8) & 0xFF][2] << 8) |
+               (s_box[word & 0xFF][3]);
+    }
+
+    // T函数
+    private static int T(int word, int round) {
+        return subWord(rotateWord(word)) ^ Rcon[round];
+    }
+
+    // 密钥扩展
+    public static int[] keyExpansion(byte[] key) {
+        int[] w = new int[44];
+        int temp;
+
+        // 将初始密钥复制到w[0]到w[3]
+        for (int i = 0; i < 4; i++) {
+            w[i] = 0;
+            for (int j = 0; j < 4; j++) {
+                w[i] |= (key[i * 4 + j] & 0xFF) << (24 - j * 8);
+            }
+        }
+
+        // 生成扩展密钥
+        for (int i = 4; i < 44; i++) {
+            temp = w[i - 1];
+            if (i % 4 == 0) {
+                temp = T(temp, i / 4 - 1);
+            }
+            w[i] = w[i - 4] ^ temp;
+        }
+
+        return w;
+    }
+}
