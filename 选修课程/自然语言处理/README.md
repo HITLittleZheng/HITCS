@@ -49,13 +49,11 @@
 
 考试内容和前几年差不多
 
-哈工大2022秋自然语言处理NLP期末考试回忆版试题
+[哈工大2022秋自然语言处理NLP期末考试回忆版试题](https://blog.csdn.net/qq_51661180/article/details/129103296)
 
-http://t.csdnimg.cn/7Cbat
 
-哈工大2022年秋自然语言处理期末考试
 
-http://t.csdnimg.cn/HLsee
+[哈工大2022年秋自然语言处理期末考试](https://blog.csdn.net/sanjinpal/article/details/129139369)
 
 
 
