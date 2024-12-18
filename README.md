@@ -51,6 +51,13 @@
 
 🙏 其他贡献者：[skyrimforest](https://github.com/skyrimforest)、[decemberboy04](https://github.com/decemberboy04)、[tloly-Roc](https://github.com/tloly-Roc)、[StellaLin030](https://github.com/StellaLin030)、[cpu095](https://github.com/cpu095)、[ymd2002](https://github.com/ymd2002)、[jielahou](https://github.com/jielahou)、[Mubuky](https://github.com/Mubuky)、[jjuuulll](https://github.com/jjuuulll)、[pmczx](https://github.com/pmczx)、[HITjunle](https://github.com/HITjunle)、[Dodojordi](https://github.com/Dodojordi)、[WhtyBi](https://github.com/WhtyBi)、[wangziyu12](https://github.com/wangziyu12)、[FlyMachinee](https://github.com/FlyMachinee)、[ZephyrVictor](https://github.com/ZephyrVictor)、[wiwyil2tr](https://github.com/wiwyil2tr)、[MarchPhantasia](https://github.com/MarchPhantasia)
 
+## :fire: 更新 | News
+
+- [24/12/18] :tada: 我们制作的前端网页正式上线 [https://hitcs.cc/](https://hitcs.cc/) ！
+- [24/01/07] :tada: Github课程资料共享平台正式启动！
+
+<details><summary>Full News</summary>
+</details>
 
 
 ## :sparkles: 愿景 | Vision
