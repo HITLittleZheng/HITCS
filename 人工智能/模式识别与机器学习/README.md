@@ -64,7 +64,9 @@
   - 2021深度学习与模式识别回忆：https://blog.csdn.net/qq_43887432/article/details/118492953
   - 2022深度学习与模式识别回忆：https://blog.csdn.net/weixin_48751654/article/details/125212607
   - 2023模式识别与深度学习回忆：https://blog.csdn.net/sanjinpal/article/details/131262641
-
+- 模式识别与机器学习回忆往年题
+  - 2023模式识别与机器学习A回忆：https://zhuanlan.zhihu.com/p/681977670
+  - 2024模式识别与机器学习A回忆：https://blog.csdn.net/awawawawawawawaa/article/details/144856589?spm=1001.2014.3001.5502
 
 
 ### 学习经验
