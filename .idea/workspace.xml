@@ -10,8 +10,6 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="2dc00e69-25f5-4e65-b0b8-f64d79270836" name="Changes" comment="增加文件">
-      <change afterPath="$PROJECT_DIR$/公共课程/操作系统/孙老师PPT/孙老师23秋ppt（中文）.pdf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/公共课程/操作系统/孙老师PPT/孙老师24秋ppt（英文）.pdf" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -23,6 +21,12 @@
     <option name="formatViaClangd" value="false" />
   </component>
   <component name="Git.Settings">
+    <option name="PUSH_TAGS">
+      <GitPushTagMode>
+        <option name="argument" value="--tags" />
+        <option name="title" value="All" />
+      </GitPushTagMode>
+    </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="MarkdownSettingsMigration">
@@ -63,11 +67,11 @@
       <recent name="E:\HITCS\选修课程" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="E:\HITCS\人工智能\模式识别与机器学习\课件" />
+      <recent name="E:\HITCS\公共课程\操作系统\孙老师PPT" />
       <recent name="E:\HITCS\信息安全\信息内容安全" />
       <recent name="E:\HITCS\选修课程\GPU计算" />
       <recent name="E:\HITCS\信息安全\密码学" />
-      <recent name="E:\HITCS\网络空间安全\互联网基础设施安全" />
-      <recent name="E:\HITCS\网络空间安全\网络攻防技术" />
     </key>
   </component>
   <component name="SharedIndexes">
@@ -100,7 +104,8 @@
       <workItem from="1734743779119" duration="450000" />
       <workItem from="1734744262582" duration="35000" />
       <workItem from="1734744329163" duration="1066000" />
-      <workItem from="1735881576433" duration="302000" />
+      <workItem from="1735881576433" duration="835000" />
+      <workItem from="1735891048042" duration="350000" />
     </task>
     <task id="LOCAL-00001" summary="删除文件">
       <option name="closed" value="true" />
@@ -206,7 +211,15 @@
       <option name="project" value="LOCAL" />
       <updated>1734745245106</updated>
     </task>
-    <option name="localTasksCounter" value="14" />
+    <task id="LOCAL-00014" summary="增加文件">
+      <option name="closed" value="true" />
+      <created>1735882039131</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1735882039131</updated>
+    </task>
+    <option name="localTasksCounter" value="15" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
