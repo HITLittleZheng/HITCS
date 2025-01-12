@@ -9,16 +9,7 @@
     </configurations>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="2dc00e69-25f5-4e65-b0b8-f64d79270836" name="Changes" comment="增加文件">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/公共课程/数据库系统/课程练习题目/2023秋数据库系统期末答案（无试题）.pdf" beforeDir="false" afterPath="$PROJECT_DIR$/公共课程/数据库系统/课程练习题目/2023秋数据库系统模拟B答案（无试题）.pdf" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/公共课程/数据库系统/课程练习题目/2023秋数据库系统模拟答案（无试题）.docx" beforeDir="false" afterPath="$PROJECT_DIR$/公共课程/数据库系统/课程练习题目/2023秋数据库系统期末题答案（无试题）.docx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/公共课程/数据库系统/课程练习题目/2023秋数据库系统模拟试题（无答案）.docx" beforeDir="false" afterPath="$PROJECT_DIR$/公共课程/数据库系统/课程练习题目/2023秋数据库系统模拟试题A（无答案）.docx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/公共课程/数据库系统/课程练习题目/23春数据库模拟试题.pdf" beforeDir="false" afterPath="$PROJECT_DIR$/公共课程/数据库系统/课程练习题目/2023春数据库模拟试题.pdf" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/公共课程/数据库系统/课程练习题目/23春数据库模拟试题答案.pdf" beforeDir="false" afterPath="$PROJECT_DIR$/公共课程/数据库系统/课程练习题目/2023春数据库模拟试题答案.pdf" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/公共课程/数据库系统/课程练习题目/数据库系统-2023秋-作业题答案.zip" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/公共课程/数据库系统/课程练习题目/数据库系统-2023秋-题型回忆.pdf" beforeDir="false" afterPath="$PROJECT_DIR$/公共课程/数据库系统/课程练习题目/2023秋数据库系统期末题型回忆.pdf" afterDir="false" />
-    </list>
+    <list default="true" id="2dc00e69-25f5-4e65-b0b8-f64d79270836" name="Changes" comment="增加文件" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -113,7 +104,7 @@
       <workItem from="1734744329163" duration="1066000" />
       <workItem from="1735881576433" duration="835000" />
       <workItem from="1735891048042" duration="1124000" />
-      <workItem from="1736582358724" duration="637000" />
+      <workItem from="1736582358724" duration="721000" />
     </task>
     <task id="LOCAL-00001" summary="删除文件">
       <option name="closed" value="true" />
@@ -235,7 +226,15 @@
       <option name="project" value="LOCAL" />
       <updated>1735891490589</updated>
     </task>
-    <option name="localTasksCounter" value="16" />
+    <task id="LOCAL-00016" summary="增加文件">
+      <option name="closed" value="true" />
+      <created>1736583021319</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1736583021319</updated>
+    </task>
+    <option name="localTasksCounter" value="17" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
