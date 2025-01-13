@@ -41,6 +41,12 @@
 
 🐧 QQ: 3565989732，💬 微信: zwx13292293911，📧 邮箱: wxzheng@ir.hit.edu.cn
 
+📱 **社交媒体：**
+ <a href="https://space.bilibili.com/1134241976/"><img src="https://img.shields.io/badge/Bilibili-B站-ff69b4" /></a>&emsp;&emsp;
+ <a href="https://blog.csdn.net/aa12367/category_12577037.html?spm=1001.2014.3001.5482"><img src="https://img.shields.io/badge/CSDN-论坛-c32136" /></a>&emsp;&emsp;
+<a href="https://www.zhihu.com/column/c_1785044713151188992"><img src="https://img.shields.io/badge/Zhihu-知乎-blue" /></a>&emsp;&emsp;   
+
+
 🔬 **想加入赛尔实验室，或在赛尔实验室进行科研实习的大二大三学生，可找我了解实验室相关情况~**
 
 ## :ledger: 计算学部 | 课程资料共享计划
