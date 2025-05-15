@@ -45,6 +45,7 @@
 - 哈工大2024春编译原理期末题回忆版[https://blog.csdn.net/aa12367/article/details/139379391](https://blog.csdn.net/aa12367/article/details/139379391)
 - 哈工大本部2023编译系统、编译原理期末试题回忆版[https://blog.csdn.net/weixin_52027058/article/details/131024813](https://blog.csdn.net/weixin_52027058/article/details/131024813)
 - 哈工大2022春编译系统（编译原理）课程总结http://t.csdnimg.cn/Jd1IA
+- 哈工大2024春编译原理复习经验[https://blog.csdn.net/aa12367/article/details/139678227?spm=1001.2014.3001.5501](https://blog.csdn.net/aa12367/article/details/139678227?spm=1001.2014.3001.5501)
 
 ### 学习经验
 
