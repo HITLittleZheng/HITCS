@@ -9,7 +9,18 @@
     </configurations>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="2dc00e69-25f5-4e65-b0b8-f64d79270836" name="Changes" comment="增加文件" />
+    <list default="true" id="2dc00e69-25f5-4e65-b0b8-f64d79270836" name="Changes" comment="增加文件">
+      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/profiles_settings.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/公共课程/人工智能导论.zip" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/公共课程/计算机系统/哈工大计统复习.zip" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/公共课程/计算机系统/计算机系统实验.zip" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/公共课程/计算机系统/课程复习资料.zip" beforeDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -38,38 +49,43 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;ASKED_SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.cidr.known.project.marker&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.readMode.enableVisualFormatting&quot;: &quot;true&quot;,
-    &quot;cf.first.check.clang-format&quot;: &quot;false&quot;,
-    &quot;cidr.known.project.marker&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
-    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;E:/HITCS&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.general&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "ASKED_SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.cidr.known.project.marker": "true",
+    "RunOnceActivity.readMode.enableVisualFormatting": "true",
+    "cf.first.check.clang-format": "false",
+    "cidr.known.project.marker": "true",
+    "git-widget-placeholder": "main",
+    "kotlin-language-version-configured": "true",
+    "last_opened_file_path": "E:/HITCS",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "settings.editor.selected.configurable": "preferences.general",
+    "vue.rearranger.settings.migration": "true"
+  },
+  "keyToStringList": {
+    "ChangesTree.GroupingKeys": [
+      "directory"
+    ]
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="E:\HITCS\人工智能" />
       <recent name="E:\HITCS\选修课程" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="E:\HITCS\人工智能\知识表示与推理\期末题" />
       <recent name="E:\HITCS\公共课程\数据库系统\数据库系统作业及答案(部分答案有问题）" />
       <recent name="E:\HITCS\网络空间安全\网络攻防技术" />
       <recent name="E:\HITCS\网络空间安全\互联网基础设施安全" />
       <recent name="E:\HITCS\人工智能\模式识别与机器学习\课件" />
-      <recent name="E:\HITCS\公共课程\操作系统\孙老师PPT" />
     </key>
   </component>
   <component name="SharedIndexes">
@@ -107,6 +123,10 @@
       <workItem from="1736582358724" duration="721000" />
       <workItem from="1736640422001" duration="170000" />
       <workItem from="1736732924164" duration="218000" />
+      <workItem from="1736906428386" duration="1107000" />
+      <workItem from="1740538833532" duration="17000" />
+      <workItem from="1746246946347" duration="690000" />
+      <workItem from="1747145196117" duration="798000" />
     </task>
     <task id="LOCAL-00001" summary="删除文件">
       <option name="closed" value="true" />
@@ -252,7 +272,31 @@
       <option name="project" value="LOCAL" />
       <updated>1736733076191</updated>
     </task>
-    <option name="localTasksCounter" value="19" />
+    <task id="LOCAL-00019" summary="增加文件">
+      <option name="closed" value="true" />
+      <created>1736906580083</created>
+      <option name="number" value="00019" />
+      <option name="presentableId" value="LOCAL-00019" />
+      <option name="project" value="LOCAL" />
+      <updated>1736906580083</updated>
+    </task>
+    <task id="LOCAL-00020" summary="增加文件">
+      <option name="closed" value="true" />
+      <created>1736906820643</created>
+      <option name="number" value="00020" />
+      <option name="presentableId" value="LOCAL-00020" />
+      <option name="project" value="LOCAL" />
+      <updated>1736906820643</updated>
+    </task>
+    <task id="LOCAL-00021" summary="增加文件">
+      <option name="closed" value="true" />
+      <created>1747145336263</created>
+      <option name="number" value="00021" />
+      <option name="presentableId" value="LOCAL-00021" />
+      <option name="project" value="LOCAL" />
+      <updated>1747145336263</updated>
+    </task>
+    <option name="localTasksCounter" value="22" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -273,6 +317,7 @@
     <MESSAGE value="Remove deleted file" />
     <MESSAGE value="删除文件" />
     <MESSAGE value="改变路径" />
+    <MESSAGE value="Update README.md" />
     <MESSAGE value="增加文件" />
     <option name="LAST_COMMIT_MESSAGE" value="增加文件" />
   </component>
