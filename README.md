@@ -42,7 +42,7 @@
 
 🏅 曾担任计算学部学生会主席团成员，计算学部金牌讲师团成员
 
-🐧 QQ: 3565989732（备注来意，非哈工学生不会通过），📧 邮箱: wxzheng@ir.hit.edu.cn
+🐧 QQ: 3565989732，也可联系2016307096 📧 邮箱: wxzheng@ir.hit.edu.cn
 
 📱 **社交媒体：**
  <a href="https://space.bilibili.com/1134241976/"><img src="https://img.shields.io/badge/Bilibili-B站-ff69b4" /></a>&emsp;&emsp;
