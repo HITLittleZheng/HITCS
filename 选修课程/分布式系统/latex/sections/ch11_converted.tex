@@ -1,0 +1,84 @@
+Pure Proof of Stake in detail: The Algorand consensus is reached in three mandatory phases, plus one optional phase:
+
+\subsection{Algorand 共识由三个强制性阶段和一个可选阶段达成:}
+
+\begin{enumerate}
+    \item Block proposal 区块提议
+    \item Soft Vote 软投票
+    \item Certify Vote 验证投票
+    \item Recovery mode [疑似: 恢复模式]
+\end{enumerate}
+
+\subsection{The first phase: Block Proposal 第一阶段: 区块提案}
+
+第一阶段，选出多个向网络提议新区块的账户，两个步骤:
+
+\begin{itemize}
+    \item \textbf{第一步: 选账户}
+    \begin{itemize}
+        \item 由 SPP 管辖、具有有效参与键的每个在线账户，运行 VRF，决定此账户是否被选中来提议区块。
+        \item 拥有 Algos (代表权益) 数量越多，被选中概率越大。
+        \item 可对每个 Algo 运行一次 VRF —— VRF 作用如同加权抽彩。
+        \item 一旦某账户被 VRF 选中，节点将在网络中传播提议区块和 VRF 的输出。
+    \end{itemize}
+    \item \textbf{第二步: 广播验证}
+    \begin{itemize}
+        \item 后者用于证实提议者的有效性。
+    \end{itemize}
+\end{itemize}
+进入软投票阶段。
+
+\subsection{The second phase: Soft vote 第二阶段: 软投票}
+
+此阶段目的是过滤提案，只保证一个区块获得认证。
+\begin{enumerate}
+    \item \textbf{Soft vote committee 选出软投票委员}
+
+    每个节点对其管理的每个参与共识帐户重新运行 VRF，以抽选软投票委员会。基于账户拥有的 Algo 数量进行加权抽彩。
+
+    \item \textbf{Voting 委员投票}
+
+    每个节点都会从其他节点获得许多提议消息。如果它是委员会成员，它将在网上进行加权投票。节点验证，并用 VRF 和凭证验证有效性。节点将选择通过验证的最小散列凭证，并传播其提议区块 (最小散列凭证 + 提议区块)。此过程将持续一个固定时间，以便投票在网络中传播。此过程需要运行多次，直到多数派 (法定人数) 支持。最后进入认证投票阶段。
+\end{enumerate}
+
+\subsection{The third phase: Certify vote 第三阶段: 认证投票}
+
+\begin{itemize}
+    \item 抽选认证委员会:
+    再次通过 VRF 抽选一个新委员会。同样每个节点遍历其管理的账户以选出委员会。
+    \item 新委员会必须检验软投票阶段提出的区块: 检验是否存在双花，或任何其他问题。
+    \item 如果有效，新委员会进行投票 (加权投票) 来认证该区块。
+    \item 每个节点收集验证投票 (通过 VRF)，直到达到法定人数，触发此轮结束，为区块创建证书，并将其广播到网络。
+    \item 开始新一轮共识流程，如此无限反复。
+\end{itemize}
+
+\subsection{Algorand 共识过程}
+
+交易发送到交易区块上链的步骤:
+\begin{enumerate}
+    \item 从 Algorand 创建交易，并将其发送到网络;
+    \item 一个节点接收交易后，通过八卦协议在网络上进行传播;
+    \item 每个节点都会将一组交易放在一个新块中;
+    \item 一轮共识开始;
+    \item 区块提议;
+    \item 软投票;
+    \item 认证投票;
+    \item 共识结束;
+    \item 结束;
+    \item 开始新一轮共识。
+\end{enumerate}
+
+\subsection{Algorand: 主要亮点}
+
+\begin{itemize}
+    \item Proof of Stake based Cryptocurrency
+    \item 基于权益证明的加密货币
+    \item High throughput: $\sim$1 min to confirm transactions vs an hour in Bitcoin
+    \item - [疑似: Low latency: ...]
+    \item Public ledger with low probability of forks
+    \item 公共分类账: 分叉概率低
+    \item Assumes 2/3-honest stake majority
+    \item 假设 2/3 诚实的多数股权 (权益)
+    \item Uses a gossip communication protocol
+    \item 使用八卦通信协议
+\end{itemize}

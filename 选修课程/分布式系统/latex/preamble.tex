@@ -1,0 +1,35 @@
+\usepackage{amsmath, amssymb, amsfonts}
+\usepackage{graphicx}
+\usepackage{booktabs}
+\usepackage{longtable}
+\usepackage{tabularx}
+\usepackage{array}
+\usepackage{geometry}
+\usepackage{hyperref}
+\usepackage{xcolor}
+\usepackage{float}
+\usepackage{caption}
+\usepackage{subcaption}
+\usepackage{enumitem}
+\usepackage{listings}
+\usepackage{verbatim}
+
+\geometry{left=2.6cm,right=2.6cm,top=2.8cm,bottom=2.8cm}
+\setlength{\parindent}{2em}
+\setlength{\parskip}{0.3em}
+
+\setcounter{tocdepth}{2}
+\hypersetup{colorlinks=true,linkcolor=blue!55!black,urlcolor=blue!55!black}
+\setlist[itemize]{leftmargin=2em,itemsep=0.3em,topsep=0.35em}
+\setlist[enumerate]{leftmargin=2em,itemsep=0.3em,topsep=0.35em}
+\renewcommand{\arraystretch}{1.25}
+\captionsetup{font=small}
+
+\newcommand{\blue}[1]{\textcolor{blue!70!black}{#1}}
+\newcommand{\red}[1]{\textcolor{red!75!black}{#1}}
+\newcommand{\green}[1]{\textcolor{green!45!black}{#1}}
+\newcommand{\code}[1]{\texttt{#1}}
+\newcommand{\term}[2]{\blue{#1} (#2)}
+\newcommand{\figimg}[2][]{%
+  \includegraphics[width=\linewidth,height=0.78\textheight,keepaspectratio,#1]{#2}%
+}

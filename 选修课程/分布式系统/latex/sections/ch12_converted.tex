@@ -1,0 +1,449 @@
+\section{分布式文件系统：目标与挑战}
+
+文件系统基本功能：
+\begin{itemize}
+    \item 组织、存储、提取、管理内容+属性
+    \item 命名、共享、保护文件 （类型、创建时间、权限等）
+\end{itemize}
+
+分布式场景核心需求：
+\begin{itemize}
+    \item 透明性 (Transparency)：访问远程文件如同本地
+    \begin{itemize}
+        \item 位置透明性 (Location Transparency)
+        \item 位置无关性 (Location Independence)：名字解析由目录结构实现（路径名）
+    \end{itemize}
+\end{itemize}
+
+核心挑战：
+\begin{itemize}
+    \item 网络延迟与故障
+    \item 并发访问一致性
+    \item 缓存协调
+    \item 容错与状态管理
+\end{itemize}
+
+\section{1 抽象模型与设计问题}
+
+\subsection{分布式文件系统抽象模型}
+
+\subsubsection{1. 客户端}
+\begin{itemize}
+    \item 发起文件操作请求
+    \item 可能进行本地缓存
+\end{itemize}
+
+\subsubsection{2. 服务器端}
+\begin{itemize}
+    \item 目录服务：路径名 + UFID 映射
+    \item 文件服务：操作文件内容与属性
+    \item 客户请求 → UFID (Unique File Identifier) → 服务器
+\end{itemize}
+
+\subsubsection{3. 通信}
+\begin{itemize}
+    \item 网络与基于 RPC
+    \item 客户端与服务器
+\end{itemize}
+
+\textbf{思考}：UFID 应包含哪些信息？为何不直接用路径名作标识？(提示：防 rename race、支持 snapshot \& migration)
+
+\subsection{分布式文件系统设计问题 (1/5)}
+
+\subsubsection{1. 文件使用模式（经验、数据驱动设计）}
+\begin{itemize}
+    \item 多数文件长度 < 10KB
+    \item 寿命短（临时文件）
+    \item 多数文件性全本地暂存 + 普通数据
+    \item 能被文件可共享 → 需一致性保障
+\end{itemize}
+
+\subsubsection{2. 命名与名字解析}
+\begin{itemize}
+    \item 构造名字空间（矩形、图、全局？局部？）
+    \item 解析机制：路径遍历 vs. 缓存 vs. 委托
+\end{itemize}
+
+\subsection{分布式文件系统设计问题 (2/5)}
+
+\subsubsection{3. 结构与接口}
+\begin{itemize}
+    \item 远程访问模型 (Remote Access)：操作粒度为 block/byte (NFS)
+    \item 上载/下载 (Upload/Download)：下载/上传整个文件 (早期)
+\end{itemize}
+
+\subsection{分布式文件系统设计问题 (3/5)}
+
+\subsubsection{4. 缓存策略与一致性}
+
+客户端缓存一致性是指一套管理协议或规则，目的是在客户端本地访问速度与全局数据一致性之间寻求平衡。如果客户端总是直接读/写服务器，性能会很差；如果客户端只读/写本地缓存，又会出现数据不一致。
+
+客户端缓存一致性策略：
+\begin{itemize}
+    \item Write-Through（直写）
+    \item Delayed Write（延迟写）
+    \item Write-on-Close（关闭写） (NFS 默认)
+    \item Centralized Control（集中控制）
+\end{itemize}
+
+\subsubsection{Write-Through（直写）}
+机制描述：客户端修改缓存数据的同时，直接同步到服务器端。
+核心特点：
+\begin{itemize}
+    \item 数据一致性极高：服务器始终保持最新状态。
+    \item 缺点：延迟较高，每次写操作都严重受限于网络带宽与延迟，性能开销大。
+    \item 适用场景：对数据安全性要求极高的场景。
+\end{itemize}
+
+\subsubsection{Delayed Write（延迟写）}
+机制描述：仅更新本地缓存，服务器端的同步操作被推迟到稍后时刻进行（如定时或缓冲区满）。
+核心特点：
+\begin{itemize}
+    \item 性能极高：大部分写操作在本地内存完成。
+    \item 一致性风险：若客户端在刷新到磁盘前崩溃，数据将丢失。
+    \item 缺点：存在不可靠性，不适用于关键业务数据。
+    \item 适用场景：对性能要求极高，且允许少量数据丢失的临时环境。
+\end{itemize}
+
+\subsubsection{Write-on-Close（关闭写）}
+机制描述（NFS 默认策略）：文件打开期间的所有修改仅在本地，只有在执行 close() 操作时才将所有修改刷回服务器。
+核心优势：
+\begin{itemize}
+    \item 平衡了性能与一致性：减少了频繁的网络交互。
+    \item 符合应用习惯：符合“打开-编辑-保存”的常规流程。
+\end{itemize}
+潜在局限：
+\begin{itemize}
+    \item 若多客户端并发修改，在关闭前可能产生数据冲突或读到过期数据。
+\end{itemize}
+
+\subsubsection{Centralized Control（集中控制）}
+机制描述：由服务器进行统一管理（如租约 Lease 或回调 Callback 机制），客户端遵循服务器指令。
+核心特点：
+\begin{itemize}
+    \item 提供强一致性：支持原子操作。
+    \item 动态管理：服务器可随时通知客户端作废旧缓存。
+\end{itemize}
+挑战：
+\begin{itemize}
+    \item 实现复杂，服务器开销大（需维护客户端状态）。
+    \item 适用场景：共享在线系统、分布式数据库。
+\end{itemize}
+
+\subsection{分布式文件系统设计问题 (4/5)}
+
+\subsubsection{5. 文件共享语义}
+定义了多个客户端同时访问和修改时，如何处理读/写操作以保证“预期”的数据行为。
+\begin{itemize}
+    \item UNIX 语义：顺序一致性 (Sequential Consistency)
+    \item 会话语义 (Session Semantics)：修改仅本地会话内可见。
+    \item 事务语义：原子性保证。
+\end{itemize}
+
+\subsubsection{UNIX 语义 (Sequential Consistency)}
+核心定义：基于本地文件系统的标准模型，提供顺序一致性。
+机制：写操作立即生效，对所有用户可见。
+行为：任何进程执行 write() 后，随后任何进程执行 read() 均能立即读到最新修改。
+优点：编程模型简单，符合直觉。
+缺点：分布式环境下性能极低（频繁网络通信）。
+
+\subsubsection{会话语义 (Session Semantics)}
+核心定义：一种折中方案，修改仅在当前会话内。
+机制：
+\begin{itemize}
+    \item 修改仅在本地缓存进行。
+    \item 关闭文件 (close) 时修改才同步回服务器。
+    \item 打开文件 (open) 时才能获取最新更新。
+\end{itemize}
+典型应用：NFS (Network File System)。
+优点：大幅减少网络交互，性能优异。
+问题：存在“最后写者胜出”冲突。
+
+\subsubsection{事务语义 (Transaction Semantics)}
+核心定义：基于 ACID 原则的强一致性模型。
+机制：所有操作视为一个原子事务。
+特性：
+\begin{itemize}
+    \item 原子性：要么全成功，要么全失败。
+    \item 中间状态不可见：直到 commit 提交为止。
+\end{itemize}
+技术支撑：通常依赖锁机制 (Locking) 或版本控制。
+场景：分布式数据库、协同编辑系统。
+
+\subsubsection{总结与对比}
+\begin{center}
+\begin{tabular}{lcc}
+\toprule
+语义 & 可见性/一致性 & 性能 \\
+\midrule
+UNIX & 立即 & 低 \\
+会话 & 关闭时 & 高 \\
+事务 & 提交时 & 低/中 \\
+\bottomrule
+\end{tabular}
+\end{center}
+选择原则：
+\begin{itemize}
+    \item 追求简单与一致 → UNIX 语义
+    \item 追求高吞吐性能与 → 会话语义
+    \item 追求强一致性和有严格要求 → 事务语义
+\end{itemize}
+
+\subsection{分布式文件系统设计问题 (5/5)}
+
+\subsubsection{6. 断开操作与容错}
+\begin{itemize}
+    \item 有状态 vs. 无状态服务
+    \item 服务器多副本 (Replication)
+    \item 断开操作 (Disconnected Operation)
+\end{itemize}
+
+\subsubsection{服务模式：有状态 vs 无状态}
+
+\textbf{无状态服务 (Stateless)}：服务器不保存客户端的信息（如打开的文件、锁）。\\
+优势：容错简单，服务器崩溃重启后无需恢复状态。\\
+挑战：每次请求都需包含完整上下文，可能增加开销。
+
+\textbf{有状态服务 (Stateful)}：服务器记录客户端行为（如租约、打开的文件描述符）。\\
+优势：性能更优，减少通信量。\\
+挑战：故障恢复复杂，需精密的“状态重建”机制。
+
+\subsubsection{服务器多副本 (Replication)}
+核心目标：高可用性 (High Availability)：通过在不同节点存储多份数据，防止单点故障导致的数据丢失或服务不可用。
+
+同步策略：
+\begin{itemize}
+    \item 强一致性：写操作需同步至所有副本（如 Paxos, Raft 协议）。
+    \item 最终一致性：允许副本间短时延迟，通过后台异步同步。
+\end{itemize}
+
+技术挑战：
+\begin{itemize}
+    \item 副本间的数据不一致（Split-Brain 脑裂）。
+    \item 写入性能下降（需等待多数派写入成功）。
+\end{itemize}
+
+\subsubsection{断开操作 (Disconnected Operation)}
+定义：指客户端在网络不可用（或主动断开）的情况下，仍能使用读取/写访问。
+
+关键技术：
+\begin{itemize}
+    \item Hoarding (预存)：在联网时先将可能使用的文件缓存到本地。
+    \item Local Logging：断网期间所有修改记录在本地日志中。
+    \item 重连挑战 (Reintegration)：
+    \begin{itemize}
+        \item 如何处理断网期间的修改冲突？
+        \item 需通过版本控制或语义化合并来解决数据冲突。
+    \end{itemize}
+\end{itemize}
+
+\subsubsection{权衡总结}
+\begin{center}
+\begin{tabular}{ll}
+\toprule
+设计重点维度 & 权衡 \\
+\midrule
+状态化 & 性能 vs 容错难度 \\
+副本 & 可用性 vs 一致性成本 \\
+断开 & 灵活性 vs 冲突处理复杂 \\
+\bottomrule
+\end{tabular}
+\end{center}
+
+原则：
+\begin{itemize}
+    \item 容错性往往以牺牲一部分写入性能为代价。
+    \item 复杂的断开操作支持（如 Coda 文件系统）通常为已提升可用性。
+\end{itemize}
+
+\section{三、网络文件系统 NFS}
+
+\begin{itemize}
+    \item Sun 开发，事实标准
+    \item POSIX 兼容
+    \item 基于远程文件访问模型
+    \item 通信：RPC
+    \item 接口标准化：VFS (Virtual File System)
+    \begin{itemize}
+        \item 隐藏底层差异
+        \item 本地操作 → 本地 FS
+        \item 远程操作 → NFS
+        \item VFS 接口上的操作或 client stub 下 server stub 传送到本地文件系统，或传送到 NFS 客户端的桩上（负责处理对存储在远程服务器上文件的访问，该访问通过 RPC 实现的）。
+        \item 用户桩发出 RPC 调用
+    \end{itemize}
+\end{itemize}
+
+\subsection{系统关键对象}
+\textbf{文件句柄 (File Handle)}：服务器分配的不透明标识符。\\
+客户端：解析路径 → 获取句柄 → 后续操作均使用句柄。\\
+支持硬链接、符号链接。
+
+\subsection{VFS}
+% VFS 内容占位
+
+\subsection{NFSv3 vs NFSv4}
+\begin{center}
+\begin{tabular}{lcc}
+\toprule
+操作 & NFSv3 & NFSv4 \\
+\midrule
+Create & $\checkmark$ & $\checkmark$ \\
+Link & $\checkmark$ & $\checkmark$ \\
+Symlink & $\checkmark$ & $\checkmark$ \\
+Mkdir & $\checkmark$ & $\checkmark$ \\
+Mknod & $\checkmark$ & $\checkmark$ \\
+Rename & $\checkmark$ & $\checkmark$ \\
+Remove & $\checkmark$ & $\checkmark$ \\
+Rmdir & $\checkmark$ & $\checkmark$ \\
+Open & $\times$ & $\checkmark$ \\
+Close & $\times$ & $\checkmark$ \\
+Lookup & $\checkmark$ & $\checkmark$ \\
+\bottomrule
+\end{tabular}
+\end{center}
+
+\subsection{文件句柄演进}
+
+\textbf{持久文件句柄 (Persistent FileHandle)}：
+\begin{itemize}
+    \item 生命期内固定
+    \item 对象删除/FS 卸载后失效
+\end{itemize}
+
+\textbf{挥发性句柄 (Volatile Handle, NFSv4)}：
+\begin{itemize}
+    \item 可随时失效（服务器可控）
+    \item boot-time 结构：[vol=1|slot] slot：句柄表索引；
+\end{itemize}
+
+\subsection{NFS 命名与安装}
+
+\subsubsection{1. 名字空间}
+\begin{itemize}
+    \item 服务器“导出”(export)
+    \item 客户端“挂载”(mount) 到本地挂接点 (mount point)
+    \item 可只挂载子树（非整个文件系统）
+\end{itemize}
+
+\subsubsection{安装协议}
+远程文件安装协议：选定的挂接点。\\
+服务器提供一组过程，由客户调用在本接点实现远程文件安装。
+
+\subsection{NFS 文件属性}
+可以用数据结构、布尔值、无符号整数或其他表示：
+\begin{itemize}
+    \item 强制属性 (Mandatory Attribute) --- 文件系统实现时必须支持
+    \item 推荐属性 (Recommended Attribute)
+    \item 命名属性 (Named Attribute)
+\end{itemize}
+
+\subsection{NFS 复合调用 (Compound Calls, NFSv4)}
+将一系列操作合并为一个 RPC 调用以减少延迟。\\
+(如：LOOKUP, OPEN, READ, WRITE, GETATTR 等)
+
+属性列表：
+\begin{itemize}
+    \item object type：对象类型
+    \item filehandle expiration：文件句柄过期时间
+    \item change indicator：修改指示
+    \item size：大小
+    \item unix link support：UNIX 硬链接支持
+    \item unix symlink support：UNIX 符号链接支持
+    \item named attr：命名属性
+    \item fsid：文件系统标识符
+    \item lease duration：租用期限（秒）
+    \item unique handle：唯一句柄
+    \item readdir error：readdir 时返回的错误
+    \item filehandle：文件句柄
+    \item [generation]：防过期引用
+\end{itemize}
+
+操作说明：
+\begin{itemize}
+    \item CREATE：创建一个常规文件
+    \item CREATE (特殊)：创建一个非常规文件
+    \item LINK：创建一个文件的硬连接
+    \item SYMLINK：创建一个文件的符号连接
+    \item MKDIR：在给定目录下创建一个子目录
+    \item MKNOD：创建一个特殊文件
+    \item RENAME：更改文件名
+    \item REMOVE：从文件系统删除一个文件
+    \item RMDIR：从一个目录中删除一个空的子目录
+    \item OPEN：打开一个文件
+    \item CLOSE：关闭一个文件
+    \item LOOKUP：根据文件名搜索文件
+\end{itemize}
+
+\subsection{持久文件句柄的格式}
+\texttt{[文件系统标识符 | 文件 inode | inode 生成号 | ...]}
+
+\subsection{VFS 层架构}
+\begin{verbatim}
+应用层
+  |
+VFS 层
+  |
+客户桩 --------- 服务桩
+  |              |
+本地文件接口    远程 SCSI 或 FC_SAN
+\end{verbatim}
+
+\subsection{NFS 远程过程调用与安全语义}
+
+\subsubsection{1. RPC 重传}
+客户发出一个 RPC 请求，并启动计时器。如果计时器超时，客户还没有收到响应，客户便使用原先相同的 XID (事务标识符) 重传原先的请求。如果文件服务器还没有处理完请求，服务器只需简单地忽略这个重传的请求。服务器通过 XID + 响应缓存实现 at-most-once 语义。
+
+\subsubsection{2. 安全机制}
+\begin{itemize}
+    \item v2/v3：UNIX auth、Kerberos、Diffie-Hellman 密钥交换
+    \item v4：RPCSEC\_GSS (通用安全服务 API)
+    \begin{itemize}
+        \item 支持多种安全机制 (Kerberos v5, SPKM, LIPKEY)
+    \end{itemize}
+\end{itemize}
+
+\subsection{NFS 文件共享与加锁}
+
+\subsubsection{1. 文件加锁}
+\begin{itemize}
+    \item NFS v2/v3：依赖独立协议 NLM (Network Lock Manager)
+    \item NFS v4：内建加锁操作 (LOCK, LOCKU, LOCKT, RENEW)
+\end{itemize}
+
+\subsubsection{2. 访问控制}
+每项指定用户/组 + 权限位 (read/write/execute/…)
+
+% image: 图片路径未提供，保留注释
+
+\subsection{NFS 缓存、委托与复制 (1/2)}
+
+\subsubsection{1. 客户端缓存一致性}
+\begin{itemize}
+    \item 数据可缓存 (read/write)
+    \item Write-on-Close：关闭时回写
+    \item 缓存重验证 (Revalidation)：
+    \begin{itemize}
+        \item 重开已缓存文件时；比对 mtime / ctime
+        \item 过期则丢弃缓存
+    \end{itemize}
+\end{itemize}
+
+% image: 图片路径未提供，保留注释
+
+\subsection{NFS 缓存、委托与复制 (2/2)}
+
+\subsubsection{2. 委托 (Delegation, NFSv4)}
+\begin{itemize}
+    \item 服务器将责任委托给客户端
+    \item READ delegation：客户保证期间无人写
+    \item WRITE delegation：客户保证期间无人读/写
+    \item 权衡：性能提升，但服务器故障时状态恢复复杂度增加（有状态代价）
+\end{itemize}
+
+\subsubsection{3. 服务器复制与迁移}
+复制：仅支持整个文件系统级复制（逻辑设备）。由于复制情况下，客户在服务器之间的切换不受服务器控制，状态信息的处理是不同的。
+
+迁移：用于负载均衡，需迁移全部状态，所有服务器状态要从原服务器传送到新服务器。NFSv4 对文件复制只提供最低限度的支持。只有整个文件系统可以被复制（包括文件、属性、目录和数据块组成的逻辑设备）。
+
+\medskip
+汇报完毕，欢迎同学们批评指教！本次课内容教材上没有。

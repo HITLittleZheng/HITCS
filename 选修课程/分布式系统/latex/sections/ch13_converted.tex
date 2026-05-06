@@ -1,0 +1,609 @@
+\section{事务语义：ACID}
+
+\subsection{事务属性}
+
+\begin{itemize}
+  \item \textbf{Atomic（原子性）：全有或全无}
+  \begin{itemize}
+    \item 事务要么完全执行，要么完全不执行。
+  \end{itemize}
+  \item \textbf{Consistent（一致性）：维持所需规则}
+  \item \textbf{Isolation（隔离性）：多个事务互不干扰}
+  \begin{itemize}
+    \item 等价于事务孤立执行。
+  \end{itemize}
+  \item \textbf{Durability（持久性）：即使发生崩溃，值仍被保留}
+\end{itemize}
+
+\subsection{隔离性}
+
+多个客户端在单服务器上并发执行事务。可能出现什么问题？
+
+\begin{itemize}
+  \item 丢失更新问题（Lost Update Problem）
+  \item 不一致检索问题（Inconsistent Retrieval Problem）
+\end{itemize}
+
+如何防止事务相互影响？
+
+\subsection{隔离性（续）}
+
+如何防止事务相互影响？
+
+\begin{itemize}
+  \item 简单方案：在服务器上串行执行（一次一个）。
+  \begin{itemize}
+    \item 执行任何事务前获取全局锁，事务提交（或中止）后释放锁。
+    \item 但这会减少并发事务数量。
+  \end{itemize}
+  \item 目标：在保持正确性（ACID）的同时提高并发度。
+\end{itemize}
+
+\section{串行等价性}
+
+\subsection{并发事务}
+
+\begin{itemize}
+  \item 目标：在保持正确性（ACID）的同时提高并发度。
+  \item 如何提高并发度？
+  \item 不追求严格的串行执行，而是追求串行等价性（serial equivalence）。
+  \item 交错执行（Interleaving）：跨多个事务的操作的有序序列，其中每个事务的操作遵循该事务定义的顺序。
+\end{itemize}
+
+例如，若
+\[
+T_1=\{\mathit{op}_1,\mathit{op}_2,\mathit{op}_3\}, \qquad
+T_2=\{\mathit{op}_4,\mathit{op}_5,\mathit{op}_6\},
+\]
+则
+\[
+O=\{\mathit{op}_1,\mathit{op}_2,\mathit{op}_4,\mathit{op}_3,\mathit{op}_5,\mathit{op}_6\}
+\]
+是一个交错示例。
+
+\subsection{并发事务（续）}
+
+\begin{itemize}
+  \item 允许事务操作相互交错可提高并发度。
+  \item 为避免事务相互影响，跨事务的操作交错必须是串行等价的。
+\end{itemize}
+
+\subsection{串行等价性}
+
+串行等价性（Serial Equivalence）：事务操作的交错（记为 $O$）是串行等价的，当且仅当（iff）：
+
+\begin{itemize}
+  \item 存在这些事务的某种排序（记为 $O'$），一次一个事务；
+  \item 每个事务的操作连续出现（成批）；
+  \item 其最终结果（对所有对象和事务）与原始交错 $O$ 相同。
+\end{itemize}
+
+含义：无法区分给定交错 $O$ 的最终结果与某个（虚构的）串行交错 $O'$。
+
+例如，若
+\[
+T_1=\{\mathit{op}_1,\mathit{op}_2,\mathit{op}_3\}, \qquad
+T_2=\{\mathit{op}_4,\mathit{op}_5,\mathit{op}_6\},
+\]
+则
+\[
+O=\{\mathit{op}_1,\mathit{op}_2,\mathit{op}_4,\mathit{op}_3,\mathit{op}_5,\mathit{op}_6\}
+\]
+是串行等价的，如果：
+
+\begin{itemize}
+  \item $O$ 的最终结果与
+  $\{\mathit{op}_1,\mathit{op}_2,\mathit{op}_3,\mathit{op}_4,\mathit{op}_5,\mathit{op}_6\}$ 相同；
+  \item 或 $O$ 的最终结果与
+  $\{\mathit{op}_4,\mathit{op}_5,\mathit{op}_6,\mathit{op}_1,\mathit{op}_2,\mathit{op}_3\}$ 相同。
+\end{itemize}
+
+\subsection{丢失更新问题}
+
+在服务器端：\code{seats = 10}。$T_1$ 或 $T_2$ 的更新丢失了！非串行等价。
+
+\begin{figure}[H]
+  \centering
+  \figimg[width=0.92\linewidth]{figures/ch13/fig01-lost-update.png}
+  \caption{丢失更新问题：两个事务都读取到 \code{x = 10}，各自写回 \code{x - 1}。}
+\end{figure}
+
+\begin{minipage}[t]{0.47\textwidth}
+\textbf{Transaction T1}
+\begin{verbatim}
+x = getSeats(ABC123);
+// x = 10
+
+if(x > 1)
+    x = x - 1;
+
+write(x, ABC123);
+
+commit
+\end{verbatim}
+\end{minipage}\hfill
+\begin{minipage}[t]{0.47\textwidth}
+\textbf{Transaction T2}
+\begin{verbatim}
+x = getSeats(ABC123);
+
+if(x > 1)          // x = 10
+    x = x - 1;
+
+write(x, ABC123);
+
+commit
+\end{verbatim}
+\end{minipage}
+
+\subsection{不一致检索问题}
+
+在服务器端：\code{ABC123 = 10, ABC789 = 15}。$T_2$ 的总和是错误值！应为 ``Total: 25''。非串行等价。
+
+\begin{figure}[H]
+  \centering
+  \figimg[width=0.92\linewidth]{figures/ch13/fig02-inconsistent-retrieval.png}
+  \caption{不一致检索问题：$T_2$ 读取到了 $T_1$ 对一个对象的更新，但没有读取到另一个对象的对应更新。}
+\end{figure}
+
+\begin{minipage}[t]{0.47\textwidth}
+\textbf{Transaction T1}
+\begin{verbatim}
+x = getSeats(ABC123);
+y = getSeats(ABC789);
+write(x-5, ABC123);
+// ABC123 = 5 now
+
+write(y+5, ABC789);
+
+commit
+\end{verbatim}
+\end{minipage}\hfill
+\begin{minipage}[t]{0.47\textwidth}
+\textbf{Transaction T2}
+\begin{verbatim}
+x = getSeats(ABC123);
+y = getSeats(ABC789);
+// x = 5, y = 15
+
+print("Total:" x+y);
+// Prints "Total: 20"
+commit
+\end{verbatim}
+\end{minipage}
+
+\subsection{检查串行等价性}
+
+一个操作的影响对象：
+
+\begin{itemize}
+  \item 若是写操作：影响服务器对象。
+  \item 若是读操作：影响客户端（返回值）。
+\end{itemize}
+
+两个操作称为冲突操作，如果它们的组合效果依赖于执行顺序：
+
+\begin{itemize}
+  \item \code{read(x)} 与 \code{write(x)}：冲突。
+  \item \code{write(x)} 与 \code{read(x)}：冲突。
+  \item \code{write(x)} 与 \code{write(x)}：冲突。
+  \item \code{read(x)} 与 \code{read(x)}：不冲突。
+  \begin{itemize}
+    \item 交换它们不会改变效果。
+  \end{itemize}
+  \item \code{read/write(x)} 与 \code{read/write(y)}：不冲突。
+  \begin{itemize}
+    \item 可交换，因访问不同对象。
+  \end{itemize}
+\end{itemize}
+
+\subsection{检查串行等价性（续）}
+
+两个事务是串行等价的，当且仅当：所有冲突操作对（每对包含来自每个事务的一个操作）对于它们共同访问的所有对象（数据），都按相同的事务顺序执行。
+
+步骤：
+
+\begin{enumerate}
+  \item 取出所有冲突操作对，一个来自 $T_1$，一个来自 $T_2$。
+  \item 若 $T_1$ 的操作先在服务器上反映，标记该对为 ``$(T_1,T_2)$''；否则标记为 ``$(T_2,T_1)$''。
+  \item 所有对应标记应全为 ``$(T_1,T_2)$'' 或全为 ``$(T_2,T_1)$''。
+\end{enumerate}
+
+\subsection{丢失更新问题（冲突分析）}
+
+在服务器端：\code{seats = 10}。冲突操作对的事务顺序不一致。非串行等价。
+
+\begin{itemize}
+  \item 标记：\red{$(T_2,T_1)$}, \blue{$(T_1,T_2)$}, \blue{$(T_1,T_2)$}。
+\end{itemize}
+
+\subsection{不一致检索问题（冲突分析）}
+
+在服务器端：\code{ABC123 = 10, ABC789 = 15}。
+
+在服务器端：\code{ABC123 = 10, ABC789 = 15}。
+
+冲突操作对的事务顺序不一致。非串行等价。
+
+\begin{itemize}
+  \item 标记：\blue{$(T_1,T_2)$}, \red{$(T_2,T_1)$}。
+\end{itemize}
+
+\begin{figure}[H]
+  \centering
+  \figimg[width=0.86\linewidth]{figures/ch13/fig03-conflict-annotations.png}
+  \caption{两个例子的冲突分析标记：丢失更新问题与不一致检索问题都出现了不一致的事务顺序。}
+\end{figure}
+
+\subsection{如何处理此类冲突？}
+
+\begin{itemize}
+  \item 方案 1：在服务器上串行执行（一次一个）。
+  \item 方案 2：
+  \begin{itemize}
+    \item 在事务 $T$ 的提交点，检查其与所有其他事务的串行等价性。
+    \item 可限定为与 $T$ 时间重叠的事务。
+    \item 若非串行等价：
+    \begin{itemize}
+      \item 中止 $T$；
+      \item 回滚（撤销）$T$ 对服务器对象的所有写操作。
+    \end{itemize}
+    \item 中止所有此类事务会浪费工作。
+    \item 能否做得更好？
+    \item 能否预防违规发生？
+  \end{itemize}
+\end{itemize}
+
+\section{并发控制方法}
+
+\subsection{两种方法}
+
+Preventing isolation from being violated can be done in two ways：
+
+\begin{enumerate}
+  \item 悲观并发控制（Pessimistic concurrency control）
+  \item 乐观并发控制（Optimistic concurrency control）
+\end{enumerate}
+
+\subsection{悲观 vs. 乐观}
+
+\begin{itemize}
+  \item 悲观：假设最坏情况，防止事务访问同一对象。
+  \begin{itemize}
+    \item 例如：锁定（Locking）。
+  \end{itemize}
+  \item 乐观：假设最好情况，允许事务写入，但稍后检查。
+  \begin{itemize}
+    \item 例如：在提交时检查。
+  \end{itemize}
+\end{itemize}
+
+\subsection{悲观并发控制}
+
+\subsubsection{悲观：独占锁定}
+
+\begin{itemize}
+  \item 获取全局锁是浪费的。
+  \begin{itemize}
+    \item 若没有两个事务访问同一对象呢？
+  \end{itemize}
+  \item 每个对象有一个锁。
+  \begin{itemize}
+    \item 最多一个事务可进入该锁。
+    \item 在读或写对象 $O$ 前，事务 $T$ 必须调用 \code{lock(O)}。
+    \item 若另一事务已在该锁内，则阻塞。
+    \item 进入 \code{lock(O)} 后，$T$ 可多次读写 $O$。
+    \item 完成后（或在提交点），$T$ 调用 \code{unlock(O)}。
+    \item 若有其他事务在 \code{lock(O)} 等待，允许其中一个进入。
+  \end{itemize}
+  \item 听起来熟悉？
+  \item 这就是互斥（Mutual Exclusion）！
+\end{itemize}
+
+\subsubsection{能否提高并发度？}
+
+\begin{itemize}
+  \item 更高并发 $\rightarrow$ 更高每秒事务数 $\rightarrow$ 更高收入（\$\$\$）。
+  \item 现实工作负载包含大量只读或读多写少的事务。
+  \item 每对象独占锁定降低并发度。
+  \item 允许两个事务并发读取同一对象是可接受的，因为 read-read 不是冲突对。
+\end{itemize}
+
+\subsubsection{另一种方法：读写锁（Read-Write Locks）}
+
+每个对象的锁可处于两种模式之一：
+
+\begin{itemize}
+  \item 读模式：允许多个事务进入。
+  \item 写模式：独占锁。
+\end{itemize}
+
+在首次读取 $O$ 前，事务 $T$ 调用 \code{read\_lock(O)}：
+
+\begin{itemize}
+  \item 仅当锁内所有事务均通过读模式进入时，$T$ 才被允许（不等待）。
+  \item 若锁内有任何事务通过写模式进入，则 $T$ 不被允许（必须等待）。
+\end{itemize}
+
+\subsubsection{读锁示例}
+
+\begin{figure}[H]
+  \centering
+  \figimg[width=0.78\linewidth]{figures/ch13/fig04-read-lock-example.png}
+  \caption{读锁示例：读锁与读锁兼容；写锁存在时，读锁请求被阻塞。}
+\end{figure}
+
+\subsubsection{读写锁（续）}
+
+\begin{itemize}
+  \item 在首次写入 $O$ 前，调用 \code{write\_lock(O)}。
+  \begin{itemize}
+    \item 仅当锁内无其他事务时才被允许进入。
+  \end{itemize}
+  \item 若 $T$ 已持有 \code{read\_lock(O)} 且想写入，调用 \code{write\_lock(O)} 将锁从读模式提升为写模式。
+  \begin{itemize}
+    \item 仅当锁内无其他事务（无论读写模式）时才成功。
+    \item 否则，$T$ 阻塞。
+  \end{itemize}
+  \item \code{unlock(O)} 由事务 $T$ 调用，释放 $T$ 在 $O$ 上的任何锁。
+\end{itemize}
+
+\subsubsection{写锁示例}
+
+\begin{figure}[H]
+  \centering
+  \figimg[width=0.72\linewidth]{figures/ch13/fig05-write-lock-example.png}
+  \caption{写锁示例：读锁会阻塞写锁；写锁会阻塞写锁；已有读锁时另一个读锁被允许但写锁仍被阻塞。}
+\end{figure}
+
+\subsubsection{何时释放锁？}
+
+\begin{itemize}
+  \item 我们可使用两种模式的每对象锁来提高并发度。
+  \item 在尝试访问对象时，以适当模式获取该对象的锁。
+  \item 何时释放锁？
+\end{itemize}
+
+\subsubsection{用锁保证串行等价性}
+
+\begin{figure}[H]
+  \centering
+  \figimg[width=0.92\linewidth]{figures/ch13/fig06-not-allowed-2pl.png}
+  \caption{在两阶段锁定中，释放锁后再获取或提升锁是不允许的。}
+\end{figure}
+
+\subsubsection{两阶段锁定（Two-phase locking）}
+
+\begin{itemize}
+  \item 事务在开始释放任何锁之后，不能再获取（或提升）任何锁。
+  \item 事务有两个阶段：
+  \begin{enumerate}
+    \item 增长阶段（Growing phase）：仅获取或提升锁。
+    \item 收缩阶段（Shrinking phase）：仅释放锁。
+  \end{enumerate}
+  \item 严格两阶段锁定（Strict two-phase locking）：仅在提交点释放锁。
+\end{itemize}
+
+\subsubsection{两阶段锁定示例}
+
+\begin{itemize}
+  \item 两阶段锁定下不允许。
+  \item 非串行等价。
+\end{itemize}
+
+\subsubsection{两阶段锁定示例（续）}
+
+\begin{itemize}
+  \item 串行等价！
+\end{itemize}
+
+\begin{figure}[H]
+  \centering
+  \figimg[width=0.86\linewidth]{figures/ch13/fig07-2pl-deadlock-example.png}
+  \caption{两阶段锁定示例片段：左侧事务等待右侧事务释放锁，交错中被划去的释放或获取步骤体现两阶段限制。}
+\end{figure}
+
+\subsubsection{为何两阶段锁定 \texorpdfstring{$\rightarrow$}{→} 串行等价性？}
+
+反证法证明。假设存在一个两阶段锁定系统，其中某两个事务 $T_1,T_2$ 违反了串行等价性。则以下两个事实必须同时成立：
+
+\begin{itemize}
+  \item (A) 对某对象 $O_1$，$T_1$ 与 $T_2$ 存在冲突操作，且时间顺序为 $(T_1,T_2)$。
+  \item (B) 对某对象 $O_2$，冲突操作对为 $(T_2,T_1)$。
+\end{itemize}
+
+由 (A) 可知，$T_1$ 释放了 $O_1$ 的锁，之后 $T_2$ 才获取它。$T_1$ 的收缩阶段在 $T_2$ 的增长阶段之前或与其重叠。
+
+同理，由 (B) 可知，$T_2$ 的收缩阶段在 $T_1$ 的增长阶段之前或与其重叠。
+
+但这两者不可能同时成立！
+
+\subsubsection{丢失更新问题：2PL 示例}
+
+$T_1$ 等待 $T_2$ 释放 \code{lock(x)}；$T_2$ 等待 $T_1$ 释放 \code{lock(x)}。
+
+\textbf{死锁！}
+
+\begin{figure}[H]
+  \centering
+  \figimg[width=0.96\linewidth]{figures/ch13/fig08-deadlock-wait-for.png}
+  \caption{丢失更新问题的 2PL 死锁示例及等待图：$T_1$ 与 $T_2$ 互相等待。}
+\end{figure}
+
+\begin{minipage}[t]{0.47\textwidth}
+\textbf{Transaction T1}
+\begin{verbatim}
+read_lock(x)
+x = getSeats(ABC123);
+
+if(x > 1)
+    x = x - 1;
+
+write_lock(x) Blocked!
+write(x, ABC123);
+
+unlock(x)
+commit
+\end{verbatim}
+\end{minipage}\hfill
+\begin{minipage}[t]{0.47\textwidth}
+\textbf{Transaction T2}
+\begin{verbatim}
+read_lock(x)
+x = getSeats(ABC123);
+
+if(x > 1)
+    x = x - 1;
+
+write_lock(x) Blocked!
+write(x, ABC123);
+
+unlock(x)
+commit
+\end{verbatim}
+\end{minipage}
+
+\subsubsection{死锁何时发生？}
+
+\paragraph{死锁发生的 3 个必要条件}
+
+\begin{enumerate}
+  \item 某些对象以独占锁模式被访问。
+  \item 持有锁的事务不被抢占。
+  \item 等待图中存在循环等待（环）。
+\end{enumerate}
+
+``必要'' = 若存在死锁，则这些条件必定全部成立。
+
+（条件不充分：即使它们存在，也不意味着一定存在死锁。）
+
+\subsubsection{应对死锁}
+
+\begin{enumerate}
+  \item 开始时原子性地锁定所有对象。
+  \begin{itemize}
+    \item 不会形成循环等待图（打破第 3 个死锁条件）。
+    \item 但可能无法预先知道所有操作。
+  \end{itemize}
+  \item 锁超时（Lock timeout）：若在超时内无法获取锁，则中止事务。
+  \begin{itemize}
+    \item 打破第 2 个死锁条件。
+    \item 代价高；导致工作浪费。
+    \item 如何确定超时值？
+    \begin{itemize}
+      \item 太大：延迟长。
+      \item 太小：误报多。
+    \end{itemize}
+  \end{itemize}
+  \item 死锁检测（Deadlock Detection）：
+  \begin{itemize}
+    \item 维护等待图，定期检测环（例如）。
+    \item 若发现环，则存在死锁。
+    \item 中止一个或多个事务以打破环（打破第 2 个死锁条件）。
+  \end{itemize}
+\end{enumerate}
+
+\subsection{乐观并发控制}
+
+\subsubsection{并发控制：两种方法}
+
+\begin{itemize}
+  \item 悲观：假设最坏情况，防止事务访问同一对象。
+  \begin{itemize}
+    \item 例如：锁定（Locking）。
+  \end{itemize}
+  \item 乐观：假设最好情况，允许事务写入，但稍后检查。
+  \begin{itemize}
+    \item 例如：在提交时检查。
+  \end{itemize}
+\end{itemize}
+
+\subsubsection{乐观并发控制}
+
+\begin{itemize}
+  \item 比悲观并发控制提供更高并发度。
+  \item 被 Dropbox、Google Apps、Wikipedia、键值存储（如 Cassandra、Riak、Amazon Dynamo）采用。
+  \item 当冲突预期较罕见时，优于悲观方法。
+  \item 但仍需确保捕获冲突！
+\end{itemize}
+
+\subsubsection{OCC：基本思想}
+
+OCC（Optimistic Concurrency Control）：乐观并发控制。
+
+核心假设：事务冲突较少，因此事务执行时先不加锁。
+
+基本思路：
+
+\begin{enumerate}
+  \item 事务先在本地执行读写。
+  \item 提交前统一检查是否与其他事务冲突。
+  \item 若验证通过，则提交；否则中止并重试。
+\end{enumerate}
+
+直观理解：
+
+\begin{itemize}
+  \item 先乐观地做，最后再确认是否“互相干扰”。
+\end{itemize}
+
+特点：
+
+\begin{itemize}
+  \item 无死锁。
+  \item 低冲突场景下性能好。
+  \item 高冲突场景下可能频繁 abort。
+\end{itemize}
+
+\subsubsection{OCC 的三个阶段}
+
+\begin{enumerate}
+  \item \textbf{Read Phase（读阶段）}
+  \begin{itemize}
+    \item 事务读取数据库中的对象，并在本地工作区更新；此时不直接写回数据库。
+  \end{itemize}
+  \item \textbf{Validation Phase（验证阶段）}
+  \begin{itemize}
+    \item 事务准备提交时，检查其 read / write set 是否与并发事务冲突。
+    \item 若冲突会破坏串行化，则该事务 abort。
+  \end{itemize}
+  \item \textbf{Write Phase（写阶段）}
+  \begin{itemize}
+    \item 若验证成功，则将本地修改一次性写回数据库并提交。
+  \end{itemize}
+\end{enumerate}
+
+一句话总结：
+
+\[
+\boxed{\text{Read / Compute } \rightarrow \text{ Validate } \rightarrow \text{ Write}}
+\]
+
+\begin{itemize}
+  \item 验证失败：abort \& retry。
+  \item 验证成功：commit。
+\end{itemize}
+
+\subsubsection{OCC 的优缺点}
+
+\paragraph{优点}
+\begin{itemize}
+  \item 执行阶段通常无需加锁。
+  \item 不会死锁。
+  \item 读多写少、冲突低时效率高。
+  \item 并发度高，适合短事务。
+\end{itemize}
+
+\paragraph{缺点}
+\begin{itemize}
+  \item 冲突高时会频繁 abort / retry。
+  \item 长事务代价较大。
+  \item 验证阶段可能成为瓶颈。
+\end{itemize}
+
+\section*{结尾}
+\addcontentsline{toc}{section}{结尾}
+
+汇报完毕，欢迎同学们批评指教！
+
+本次课内容教材上没有。
