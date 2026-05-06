@@ -1,0 +1,311 @@
+\section{目录}
+
+\begin{itemize}
+\item 1 数据一致性模型
+  \begin{itemize}
+  \item 1.1 顺序一致性
+  \item 1.2 线性一致性
+  \item 1.3 因果一致性
+  \item 1.4 最终一致性
+  \end{itemize}
+\item 2 客户端一致性模型
+\item 3 副本管理 (对应 7.4 Replica management)
+\end{itemize}
+
+复制 (Replication) 为什么复制？
+\begin{itemize}
+\item 提高可靠性：如果一个副本失效，可以切换到另一个副本。
+\item 提高性能与可扩展性：分散请求负载，或利用地理位置接近性实现快速响应。
+\end{itemize}
+
+现实问题：
+\begin{itemize}
+\item 拥有多个副本意味着当任何副本发生更改时，该更改必须在所有副本上执行。
+\item 副本需要保持一致。
+\end{itemize}
+
+性能与可扩展性主要问题：
+\begin{itemize}
+\item 为了保持副本一致性，通常需要确保所有冲突操作在各处以相同顺序执行。
+\item 冲突操作：来自事务领域的概念。
+  \begin{itemize}
+  \item 读-写冲突：读操作和写操作并发执行。
+  \item 写-写冲突：两个并发写操作。
+  \end{itemize}
+\end{itemize}
+
+挑战：保证不发生冲突操作的全局排序可能代价高昂，会降低可扩展性。
+解决方案：弱化一致性要求，以避免全局同步。
+
+\section{数据一致性模型}
+
+数据一致性模型
+一致性模型：
+\begin{itemize}
+\item 分布式数据存储与进程之间的契约。
+\item 精确说明在并发情况下读写操作的结果。
+\end{itemize}
+
+\begin{verbatim}
+Process   Process   Process
+  |         |         |
+Local copy  Local copy  Local copy
+  \         |         /
+   Distributed data store
+\end{verbatim}
+
+符号约定
+读写操作符号：
+\begin{itemize}
+\item $W_i(x)a$：进程 $P_i$ 向数据项 $x$ 写入值 $a$。
+\item $R_i(x)b$：进程 $P_i$ 从数据项 $x$ 读出值 $b$。
+\end{itemize}
+所有数据项初始值为 NIL。
+
+示例：$P_i: W(x)a \;\rightarrow\; P_j: R(x)\text{NIL} \;\rightarrow\; R(x)a$
+
+\subsection{顺序一致性}
+
+顺序一致性 (Sequential Consistency) 定义：
+\begin{itemize}
+\item 所有结果需等同于所有进程按某种特定顺序执行，且
+\item 该顺序执行结果要和每个进程自己代码里写的操作顺序一致。
+\end{itemize}
+
+例子：一个共享的在线文档，虽然每个人的更新到达时间可能不同，但系统最终会保证所有人看到的修改历史是同一个顺序 (比如：A 先改，然后 B 改，然后 C 改)，并且 A 的修改一定发生在 B 之前，B 在 C 之前。
+
+顺序一致性示例。三个并发进程 (初始值: 0)：
+\begin{itemize}
+\item P1: x = x + 1; print(y, z);
+\item P2: y = y + 1; print(x, z);
+\item P3: z = z + 1; print(x, y);
+\end{itemize}
+
+执行序列：
+
+\begin{verbatim}
+Execution 1   Execution 2   Execution 3   Execution 4
+P1: x=1;      P1: x=1;      P2: y=1;      P3: z=1;
+P2: y=1;      P3: z=1;      P1: x=1;      P1: x=1;
+P3: z=1;      P2: y=1;      P3: z=1;      P2: y=1;
+print(x,y,z); print(x,y,z); print(x,y,z); print(x,y,z);
+Prints: 001011  Prints: 101011  Prints: 010111  Prints: 111111
+Signature:001011 | Signature:101011 | Signature:110101 | Signature:111111
+ (a)             (b)              (c)              (d)
+\end{verbatim}
+
+小测验：看如下 P1 与 P2 并发的例子：这个运行结果满足顺序一致性吗？不满足，因为我们无法找到某个能产生这样效果的全局序。
+
+\subsection{线性一致性}
+
+线性一致性 (Linearizability) 定义：
+\begin{itemize}
+\item 每个操作都应该看起来在其开始和完成之间的某个时刻瞬间生效。
+\end{itemize}
+
+与顺序一致性的区别：
+\begin{itemize}
+\item 线性一致性要求操作具有实时性 (原子性)，即操作的效果看起来是瞬间发生的。
+\item 顺序一致性只要求操作的最终顺序，不要求实时性。
+\item 线性一致性 = 顺序一致性 + 实时性约束。要求每个操作在调用与返回之间的某个“瞬间”原子生效，且跨进程的操作顺序必须与真实时间先后严格一致。
+\item 顺序一致性只要求：所有节点看到相同的全局操作总序；该顺序不违反单个进程内的程序执行顺序。不要求符合跨进程的真实时间先后。
+\end{itemize}
+
+示例对比：
+
+\begin{table}[htbp]
+\centering
+\caption{线性一致性示例}
+\begin{tabular}{ll}
+\toprule
+Result & Possible ordering of operations \\
+\midrule
+R1(x)b | R2(y)b & W1(x)a; W1(y)a; W2(y)b; W2(x)b \\
+R1(y)b | R2(x)a & W1(x)a; W2(y)b; W1(y)a; W2(x)b \\
+R1(x)b | R2(y)a & W1(x)a; W2(y)b; W2(x)b; W1(y)a \\
+R1(y)b | R2(x)a & W2(y)b; W1(x)a; W1(y)a; W2(x)b \\
+R1(x)b | R2(y)a & W2(y)b; W1(x)a; W2(x)b; W1(y)a \\
+R1(x)a | R2(y)a & W2(y)b; W2(x)b; W1(x)a; W1(y)a \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\subsection{因果一致性}
+
+因果一致性 (Causal Consistency)：
+\begin{itemize}
+\item 潜在因果相关的写操作必须被所有进程以相同顺序看到。
+\item 并发的写操作可能被不同进程以不同顺序看到。
+\end{itemize}
+
+(a) 因果不一致的数据存储 (因为 P2 的 R(x)a 对 W(c)b 产生影响，所以 W(a)a -> W(c)b)
+\begin{verbatim}
+P1: W(x)a
+P2: R(x)a  W(x)b
+P3: R(x)a  R(x)b
+P4:        R(x)a R(x)b
+\end{verbatim}
+(b) 因果一致的数据存储
+\begin{verbatim}
+P1: W(x)b
+P2: R(x)b R(x)a W(x)b
+P3: R(x)a R(x)b
+P4: R(x)a R(x)b
+\end{verbatim}
+
+可串行化 / 事务可串行化 (serializability)：对一组事务中的所有操作进行排序，使得最终结果与这些事务的某种串行执行相匹配。
+
+示例：
+\begin{verbatim}
+BEGIN_TRANSACTION
+x=0
+x=x+1
+END_TRANSACTION
+
+BEGIN_TRANSACTION
+x=0
+x=x+2
+END_TRANSACTION
+
+BEGIN_TRANSACTION
+x=0
+x=x+3
+END_TRANSACTION
+
+Transaction T1  Transaction T2  Transaction T3
+A number of schedules
+Time ->
+S1 | x=0
+S2 | x=0
+S3 | x=0
+S4 | x=0
+x=x+1
+x=0
+x=0
+x=0
+x=x+2
+x=x+1
+x=x+1
+x=x+2
+x=0
+x=0
+x=x+3
+x=0
+考虑数据
+x=0
+x=0
+x=x+2
+x=x+3 | Legal
+x=x+3 | Legal
+x=x+3 | Illegal
+x=x+1
+x=x+2 | Illegal
+\end{verbatim}
+
+\subsection{最终一致性}
+
+最终一致性 (Eventual Consistency) 定义：
+在某一时刻停止更新后，所有更新都会传播，使得所有副本存储相同数据 (直到再次出现更新)。
+
+直观例子：分布式系统存储集合和并发写操作。最终所有副本收敛一致。
+
+一致性模型对比：
+
+\begin{table}[htbp]
+\centering
+\caption{一致性模型对比}
+\begin{tabular}{llll}
+\toprule
+一致性模型 & 核心特征 & 示例 & 强度 \\
+\midrule
+线性一致性 & 操作实时性约束，符合真实时间，严格原子生效，跨进程 & 银行转账: ATM取款后，全球查询余额立刻同步。 & 极强 (Real-time) \\
+顺序一致性 & 所有节点看到相同的全局总序，且不违反进程内顺序。 & 网络游戏：所有玩家看到的击杀顺序必须一致，虽然可能有延迟。 & 中 (Logical-time) \\
+因果一致性 & 仅保证有因果关系的写操作在所有节点顺序一致。 & 论坛发帖：先看到主贴 (因)，后看到回复 (果)。 & 中 (Causal-order) \\
+最终一致性 & 不保证中间读取得结果，但系统最终会收敛到一致。 & DNS 修改：全球各处生效时间不一。 & 弱 (No guarantee) \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\section{客户端一致性模型}
+
+核心思想：不追求全局一致，只保证单个客户端访问这个分布式数据库时，在任意位置读取得结果与之前在另一位置离开时的状态一致，即数据对该客户端而言是一致的。具体包括以下内容：
+\begin{itemize}
+\item 单调读：读不会“时光倒流” (应当越读越新)
+\item 单调写：写不会“顺序颠倒” (应当先写先到)
+\item 读你所写：自己写的，自己立刻能读到
+\item 读后写：基于读的写，存在于读之后更新读版本 (因果)
+\end{itemize}
+
+客户端一致性实现基本思想：
+\begin{itemize}
+\item 每个写操作由其源服务器分配全局唯一标识符
+\item 为每个客户端跟踪两个写操作集：读集和写集。
+\end{itemize}
+
+实现：
+\begin{itemize}
+\item 单调读：客户端传递读集，服务器拉取更新并更新读集。
+\item 单调写：客户端传递写集，服务器拉取更新、排序并执行写操作，更新写集。
+\item 读你所写：客户端传递写集，服务器拉取更新并执行读操作，更新读集。
+\item 读后写：客户端传递读集，服务器拉取更新、排序并执行写操作，更新写集。
+\end{itemize}
+
+\section{副本管理 (对应 7.4 Replica management)}
+
+\subsection{副本放置 (Replica Placement)}
+
+目标：从 $N$ 个可能位置中找出最佳的 $K$ 个位置。
+策略：
+\begin{itemize}
+\item 选择平均客户端距离最小的位置。(计算量大)
+\item 选择第 $K$ 大自治系统，并在连接最好的主机上放置服务器。(计算量大)
+\item 在反映延迟的 $d$ 维几何空间中定位节点，识别密度最高的 $K$ 个区域并在每个区域放置服务器。(计算量小)
+\end{itemize}
+
+\subsection{内容复制 (Content Replication)}
+
+副本类型：
+\begin{itemize}
+\item 永久副本 (Permanent replicas)：始终拥有副本的进程/机器，可以被视为构成分布式数据存储的初始副本集。
+\item 服务器发起副本 (Server-initiated replica)：是数据存储的副本，其存在是为了提升性能，并且是由数据存储的所有者主动创建的。托管副本设施，客户端使用它。
+\item 客户端发起副本 (Client-initiated replica)：根据客户端请求动态的进程 (客户端缓存)。本质上，缓存是一种本地存储来临时存储刚刚请求的数据副本。
+\end{itemize}
+
+\subsection{内容分发 (Content Distribution)}
+
+方式：
+\begin{itemize}
+\item 传播更新通知/失效 (常用于缓存)。
+\item 在副本间传输数据 (分布式数据库)：被动复制。
+\item 传播更新操作到其他副本：主动复制。
+\end{itemize}
+
+推送 (Push) 与拉取 (Pull)：
+\begin{itemize}
+\item 推送：服务器发起，无论目标是否请求。
+\item 拉取：客户端发起，客户端请求更新。
+\end{itemize}
+
+租约 (Leases)：
+\begin{itemize}
+\item 租约是一种契约，服务器承诺在租约到期前将更新推送给客户端。
+\item 自适应租约到期时间：基于年龄、续订频率、服务器状态。
+\end{itemize}
+
+\subsection{管理复制对象}
+
+目标：
+\begin{itemize}
+\item 防止对同一对象的多次调用并发执行。
+\item 确保复制状态的所有更改都相同。
+\end{itemize}
+
+解决方案：
+\begin{itemize}
+\item 使用本地锁定机制序列化对象内部数据访问。
+\item 需要确定性线程调度以确保状态更改一致。
+\end{itemize}
+
+汇报完毕，欢迎同学们批评指教！本次课大致对应课程教材第七章。
+
+% 原文可能存在不完整语句：“库对你而言是一致的。具有节 | [疑似: 未完]”，已忽略。

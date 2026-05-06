@@ -1,0 +1,408 @@
+\section*{转写说明}
+\addcontentsline{toc}{section}{转写说明}
+原 PDF 为图片型长页，无可提取文本层。本文按视觉内容逐页转写为可编译的 \LaTeX{} 文档；原讲义中的长图、跨页图和示意图已从页面图像中裁切为独立插图，并按 A4 页面宽度与高度自动约束排版。
+
+\section{实体与命名基础}
+
+\subsection{实体与名字}
+
+\paragraph{实体}
+\begin{itemize}
+  \item 主机、打印机、磁盘、文件；
+  \item 进程、用户、邮箱、新闻组；
+  \item 网络、页面等。
+\end{itemize}
+
+名字用来标识实体和指向实体的位置。
+
+要对实体进行操作，我们需要在访问点访问它。接入点是通过地址命名的实体。
+
+实体可拥有多个访问点，访问点随时间可能变化，如移动主机。
+
+\subsection{名字 vs. 地址 vs. 标识符}
+
+在计算机中称呼实体有很多方法，包括名字、地址和标识符：
+\begin{itemize}
+  \item \textbf{名字（Name）}：用于标注实体的字符串，如 \texttt{/etc/passwd}。
+  \item \textbf{标识符（Identifier）}：系统内部唯一引用，本质是满足如下性质的名字：
+  \begin{itemize}
+    \item 一个标识符最多引用一个实体；
+    \item 每个实体最多由一个标识符引用；
+    \item 永久绑定：一个标识符始终引用同一个实体。
+  \end{itemize}
+  \item \textbf{地址（Address）}：访问点（部分特殊实体）的标识，含网络层（IP）与传输层（端口号），例如 \texttt{192.168.1.10:80}。
+\end{itemize}
+
+\subsection{属性与查找}
+
+实体具有一组属性，形如 \(\langle\text{类型}, \text{值}\rangle\) 对。
+
+例如打印机可以有：
+\[
+\langle\text{型号}, \text{LaserJet Pro}\rangle,\quad
+\langle\text{类型}, \text{彩色}\rangle
+\]
+
+属性可用于查找实体。
+
+\section{命名机制}
+
+\subsection{命名机制分类}
+
+\begin{itemize}
+  \item 扁平命名（Flat Naming）；
+  \item 结构化命名（Structural Naming）。
+\end{itemize}
+
+\subsection{扁平命名（Flat Naming）}
+
+扁平命名：标识符只是随机的比特串，我们将其称为非结构化名称或扁平名称。
+
+如何解析扁平名称，即仅凭标识符定位实体：
+\begin{itemize}
+  \item \textbf{广播}：广播 ID，让实体返回它的当前地址。只能在本地网络进行，且实体必须保持监听并及时回应。例：ARP 协议（IP 地址 \(\to\) MAC）。
+  \item \textbf{向前指针}：地址变化后维护一个指向下个地址的指针。通过简单地跟踪指针链，可以实现对客户端完全透明的解引用。问题是地理可扩展性差，需要单独的链缩减机制；长链不具备容错性；会增加网络延迟。
+  \item \textbf{“基站”方法（home-based approaches）}：实体的基站在命名服务机构存档。基站中记录实体的最新地址。要查询首先联系命名服务机构，再查阅基站。基站的地址永久不变，且负责实体的整个生命周期，灵活性差。
+\end{itemize}
+
+\begin{figure}[H]
+  \centering
+  \figimg{figures/ch2/fig01-home-based.png}
+  \caption{基于基站的方法：先把包发送到主机的家乡位置，返回当前位置地址，再把包隧道转发到当前位置，后续包直接发往当前位置。}
+\end{figure}
+
+\subsection{分布式哈希表（DHT）}
+
+分布式哈希表（DHT）是将标识符解析为关联实体的地址的最典型应用之一。
+\begin{itemize}
+  \item 在 P2P 网络（如 BitTorrent）或分布式缓存（如 Dynamo、Cassandra）中运用。
+  \item 资源和节点都映射为一个固定长度的扁平位串。
+  \item 多个节点组织成一个逻辑环：
+  \begin{itemize}
+    \item 每个节点都被分配一个随机的 ID；
+    \item 每个实体都对应唯一的 Key；
+    \item Key 为 \(k\) 的实体属于 \(ID \ge k\) 的最小节点的管辖范围，称为 \(succ(k)\)。
+  \end{itemize}
+  \item \red{注意这里的实体和节点是两个概念。}
+  \item 目的：\blue{沿环搜索，以通过 \(k\) 找到 \(succ(k)\)}。
+  \item 但是如果沿着环逐个线性搜索，就太低效了。
+\end{itemize}
+
+\paragraph{DHT Chord 的简单演示}
+\begin{itemize}
+  \item 每个节点 \(p\) 维护一个最多 \(m\) 个条目的表格 \(FT_p[]\)：\(FT_p[i]=succ(p+2^{i-1})\)。
+  \item 第 \(i\) 个条目 \(FT_p\) 指向距离 \(p\) 至少 \(2^{i-1}\) 个索引位置的第一个节点。
+\end{itemize}
+
+\begin{figure}[H]
+  \centering
+  \figimg{figures/ch2/fig02-chord-panel.png}
+  \caption{Chord 环与 finger table 示例：图中展示实际节点、每个节点的 finger table，以及从节点 28 解析 \(k=12\)、从节点 1 解析 \(k=26\) 的路径。}
+\end{figure}
+
+\paragraph{DHT Chord 查询规则}
+\begin{itemize}
+  \item 要查 \(k\)，节点 \(q\) 将请求转发给节点 \(q\)，其在 \(FT_p\) 中的索引 \(j\) 满足 \(q=FT_p[j]\le k < FT_p[j+1]\)。
+  \item 如果 \(p < k < FT_p[1]\)，则请求也会转发给 \(FT_p[1]\)。
+\end{itemize}
+
+\subsection{扁平命名 -- 层次化位置服务}
+
+构建一个大规模搜索树，其底层网络被划分为多个层级域。每个域由一个单独的目录节点表示。最低级别的域称为叶域，通常对应于计算机网络中的局域网。
+
+\begin{figure}[H]
+  \centering
+  \figimg{figures/ch2/fig04-location-domain-tree.png}
+  \caption{层次化位置服务中的域、目录节点与位置记录。顶级域 \(T\) 包含子域 \(S\)，叶域位于层级底部。}
+\end{figure}
+
+层次化位置服务中：
+\begin{itemize}
+  \item 实体 \(E\) 的地址存储在叶节点或中间节点中。
+  \item 该节点的父节点（更高层）会记录一个“指针”，指向包含该实体的子区域。
+  \item 根节点知道所有实体的信息。
+\end{itemize}
+
+\paragraph{查询过程}
+\begin{itemize}
+  \item 从本地的叶子结点开始查询。
+  \item 如果在当前层级没找到，就向更高层查询。
+  \item 一旦找到记录了该实体指针的节点，查询就沿着指针向下“落”，最终定位到实体。
+\end{itemize}
+
+\begin{figure}[H]
+  \centering
+  \figimg{figures/ch2/fig05-location-lookup.png}
+  \caption{层次化位置服务的查找：本地节点无实体记录则上行到父节点；节点知道实体所在方向时，将请求转发给子节点。}
+\end{figure}
+
+像 Google Spanner 或 CockroachDB 这种跨全球部署的数据库，在处理数据副本的定位时，会利用层级化的拓扑（Region \(\to\) Zone \(\to\) Node）来优化延迟。
+
+\subsection{结构化命名（Structural Naming）}
+
+\subsubsection{命名机制分类}
+
+\begin{itemize}
+  \item 扁平命名（Flat Naming）；
+  \item \blue{结构化命名（Structural Naming）}。
+\end{itemize}
+
+\subsubsection{命名图}
+
+命名图（Naming Graph）通常为 DAG（有向无环图）。叶节点表示一个名字实体，目录节点是一个引用其他节点的实体。
+
+\paragraph{路径与名称}
+\begin{itemize}
+  \item \blue{绝对路径}：从根节点开始，如 \texttt{/remote/vn}；
+  \item \blue{相对路径}：从当前节点开始；
+  \item \blue{全局名称}：唯一标识实体；
+  \item 局部名称：依赖上下文。
+\end{itemize}
+
+\begin{figure}[H]
+  \centering
+  \figimg{figures/ch2/fig06-naming-graph.png}
+  \caption{命名图示例：节点 \(n1\) 存储 \texttt{elke}、\texttt{max}、\texttt{steen} 等条目；\texttt{/home/steen/keys} 指向节点 \(n6\)。}
+\end{figure}
+
+\subsubsection{命名空间（Name Space）}
+
+基本操作：
+\begin{itemize}
+  \item \blue{命名解析}：根据名字查找其属性（主要为地址）；
+  \item 增加名字项与绑定（实体加入）；
+  \item 删除名字项与绑定（实体离开）；
+  \item 修改名字项与绑定（实体迁移）。
+\end{itemize}
+
+\subsubsection{命名空间挂载（Mounting）}
+
+命名空间挂载可将外部命名空间子树透明地挂接到本地某目录节点。
+
+\begin{itemize}
+  \item \blue{挂接点（Mount Point）}：存放外部访问信息的目录节点。
+  \item 挂载需指定三项信息：
+  \begin{enumerate}
+    \item 访问协议名称，如 NFS、FTP；
+    \item 服务器名称，如 \texttt{flits.cs.vu.nl}；
+    \item 外部空间中被挂载的路径，如 \texttt{/home/steen}。
+  \end{enumerate}
+  \item 例：机器 B 的 \texttt{/home/steen} 挂接到机器 A 的 \texttt{/remote/vn}。
+\end{itemize}
+
+\begin{figure}[H]
+  \centering
+  \figimg{figures/ch2/fig07-mount-foreign-space.png}
+  \caption{命名空间挂载：机器 A 中的挂接点保存 \texttt{nfs://flits.cs.vu.nl/home/steen}，引用机器 B 中的外部命名空间。}
+\end{figure}
+
+\paragraph{结构化命名：NFS 中的命名（1）}
+\begin{itemize}
+  \item 服务器可以导出其文件系统的一部分，然后不同的客户端可以通过挂载导入。
+  \item 示例：网络文件系统。
+\end{itemize}
+
+\begin{figure}[H]
+  \centering
+  \figimg{figures/ch2/fig08-mount-nested-dirs.png}
+  \caption{NFS 挂载嵌套目录：多个客户端把服务器导出的目录挂载到各自本地命名空间中。}
+\end{figure}
+
+\paragraph{结构化命名：挂载嵌套目录}
+\begin{itemize}
+  \item 示例：网络文件系统。
+\end{itemize}
+
+\begin{figure}[H]
+  \centering
+  \figimg{figures/ch2/fig09-transitive-mounting.png}
+  \caption{传递式挂载示意：客户端从服务器 A 导入目录，服务器 A 又从服务器 B 导入子目录。}
+\end{figure}
+
+\section{命名服务器结构}
+
+\begin{itemize}
+  \item \blue{命名空间是由命名服务器实现与管理的}。
+  \item 命名服务器由\textbf{数据库 + 解析软件}构成。
+\end{itemize}
+
+\paragraph{组件角色}
+\begin{itemize}
+  \item 客户：发起请求。
+  \item 命名代理（Name Resolver）：客户端与服务器间的接口；负责缓存、协调。
+  \item 命名服务器：管理绑定上下文、执行解析、与其他服务器通信。
+  \item 命名解析上下文：含名字-地址绑定 + 额外信息（OS、架构等）。
+\end{itemize}
+
+\subsection{管理策略}
+
+\begin{itemize}
+  \item 集中式管理：单服务器管理全部上下文。优点：易实现、易管理；缺点：性能瓶颈、单点故障。
+  \item 分布式管理：命名空间划分为多个域（zones），由多个服务器分担。优点：可扩展、容错性好；缺点：实现复杂。
+  \item 多副本分布式管理：每个域有多个副本，如 NS1 与 NS4 同时存 Zone1。优点：负载均衡 + 高可用性。
+\end{itemize}
+
+\subsection{命名服务器功能}
+
+命名服务器需支持以下操作：
+\begin{itemize}
+  \item \textbf{管理操作}：增 / 删 / 改目录项；权限控制。
+  \item \blue{命名解析}：接收请求并返回地址。
+  \item \textbf{缓存}：存储查询结果，加速后续访问。
+  \item \textbf{多副本管理}：更新同步、一致性维护。
+  \item \textbf{通信}：与命名代理、其他命名服务器交互。
+  \item \textbf{数据库}：存储命名解析上下文或子域。
+\end{itemize}
+
+\section{命名解析方式}
+
+\subsection{方式 I：迭代解析}
+
+\blue{迭代解析（Iterative Resolution）}：
+\begin{itemize}
+  \item 服务器若不知答案，则返回“下一个应查询的服务器地址”；
+  \item 客户 / 代理继续向该服务器查询；
+  \item 通信开销大，但服务器负载轻。
+\end{itemize}
+
+\begin{figure}[H]
+  \centering
+  \figimg{figures/ch2/fig10-iterative-resolution.png}
+  \caption{迭代解析示意：客户端解析器依次查询 root、nl、vu、cs 等命名服务器，并接收下一步查询信息。}
+\end{figure}
+
+\subsection{方式 II：递归解析}
+
+\blue{递归解析（Recursive Resolution）}：
+\begin{itemize}
+  \item 服务器若不知答案，自行代客户继续查询；
+  \item 最终将结果返回给客户；
+  \item 服务器负载高，但客户通信轮次少；\textbf{缓存效果更佳}。
+\end{itemize}
+
+\begin{figure}[H]
+  \centering
+  \figimg{figures/ch2/fig11-recursive-resolution.png}
+  \caption{递归解析示意：客户端只向初始服务器发起请求，后续查询由服务器之间代为完成。}
+\end{figure}
+
+\section{DNS 实例分析}
+
+\subsection{DNS 命名空间}
+
+\begin{itemize}
+  \item 结构：倒置树形（根在顶部，无名）。
+  \item 结点标号 \(\le 63\) 字符；全路径 \(\le 255\) 字符。
+  \item 域名书写规范（右至左）：
+  \begin{itemize}
+    \item \texttt{flits.cs.vu.nl.}：末尾圆点表示根；
+    \item \texttt{vu.nl} 是 \texttt{cs.vu.nl} 的父域。
+  \end{itemize}
+  \item 区域（Zone）：命名空间中由单一权威服务器管理的子树（不重叠划分）。
+  \item 结点内容 = 一组资源记录（Resource Records, RR）。
+\end{itemize}
+
+\subsection{DNS 资源记录（RR）结构}
+
+每条 RR 包含字段：
+\begin{itemize}
+  \item \textbf{Owner}：域名，如 \texttt{cs.vu.nl}；
+  \item \textbf{Type}：16 位类型码；
+  \item \textbf{Class}：16 位类别，通常为 IN = Internet；
+  \item \textbf{TTL}：生存时间（秒）；
+  \item \textbf{RDATA}：资源数据，格式依 Type 而定。
+\end{itemize}
+
+\paragraph{常见 Type 编码}
+\begin{table}[H]
+\centering
+\begin{tabular}{@{}lll@{}}
+\toprule
+Name & Code & Meaning \\
+\midrule
+A & 1 & IPv4 address \\
+NS & 2 & Name server \\
+CNAME & 5 & Canonical name (alias) \\
+SOA & 6 & Start of Authority \\
+PTR & 12 & Pointer (for reverse lookup) \\
+MX & 15 & Mail exchange \\
+TXT & 16 & Text \\
+\bottomrule
+\end{tabular}
+\caption{DNS 常见资源记录类型。}
+\end{table}
+
+\subsection{域名服务器类型}
+
+三类 DNS 服务器：
+\begin{itemize}
+  \item \textbf{根域名服务器（Root Name Server）}：返回顶级域（TLD）服务器地址。
+  \item \textbf{本地域名服务器（Local Name Server）}：客户默认查询点。
+  \item \textbf{授权域名服务器（Authoritative Name Server）}：对某 zone 有权威回答权，当本地域名服务器不知道时会查询它。
+\end{itemize}
+
+\subsection{顶级域（TLD）分类}
+
+\paragraph{机构域（Generic TLDs）}
+\begin{itemize}
+  \item \texttt{.com} -- commercial；
+  \item \texttt{.edu} -- educational；
+  \item \texttt{.gov} -- government；
+  \item \texttt{.org} -- non-profit；
+  \item \texttt{.net} -- network provider；
+  \item \texttt{.mil} -- military；
+  \item \texttt{.biz}、\texttt{.info}、\texttt{.aero} 等。
+\end{itemize}
+
+\paragraph{地理域（Country Code TLDs）}
+\begin{itemize}
+  \item \texttt{.cn} -- China；
+  \item \texttt{.uk} -- United Kingdom；
+  \item \texttt{.jp} -- Japan；
+  \item \texttt{.de} -- Germany；
+  \item \texttt{.fr} -- France；
+  \item \texttt{.au} -- Australia。
+\end{itemize}
+
+\subsection{DNS 查询与解析}
+
+\begin{itemize}
+  \item \blue{名称解析}：将域名 \(\leftrightarrow\) IP 地址。
+  \item \blue{查询方式}：
+  \begin{itemize}
+    \item \blue{迭代查询}：服务器返回“下一个服务器地址”，由请求方继续查询；
+    \item \blue{递归查询}：服务器代为完成全程查询，返回最终结果。
+  \end{itemize}
+  \item \blue{正向解析}：域名 \(\to\) IP（最常见）。
+  \item \blue{逆向解析}：IP \(\to\) 域名，通过 PTR 记录，如 \texttt{in-addr.arpa} zone。
+\end{itemize}
+
+\subsection{结构化命名：现代 DNS}
+
+\begin{itemize}
+  \item DNS 实现的传统组织 vs DNS 的现代组织。
+\end{itemize}
+
+\begin{figure}[H]
+  \centering
+  \figimg[width=.86\linewidth]{figures/ch2/fig12-modern-dns.png}
+  \caption{现代 DNS 架构：多个客户端可以经本地 resolver 访问互联网中的多个 name server。}
+\end{figure}
+
+\begin{figure}[H]
+  \centering
+  \figimg[width=.86\linewidth]{figures/ch2/fig13-traditional-dns.png}
+  \caption{传统 DNS 架构：客户端经 resolver 与互联网上的命名服务器交互。}
+\end{figure}
+
+\section{总结}
+
+\begin{itemize}
+  \item 命名服务是分布式系统的基础设施。
+  \item 核心问题：命名 \(\to\) 属性，尤其是地址。
+  \item 命名空间为分层 DAG，支持挂载与扩展。
+  \item DNS 是典型实现：分层、分区、多副本、缓存优化（现代 DNS）。
+  \item 解析策略权衡：迭代 vs. 递归；集中 vs. 分布式。
+\end{itemize}
+
+汇报完毕，欢迎同学们批评指教！本次课大致对应课程教材第六章。
