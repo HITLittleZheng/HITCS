@@ -16,3 +16,32 @@ Desktop.ini
 
 node_modules/
 vendor/
+
+# Visual Studio and generated build artifacts
+.vs/
+*.ipch
+*.iobj
+*.pch
+*.pdb
+*.idb
+*.tlog
+*.lastbuildstate
+
+*.exe
+*.o
+*.obj
+*.dll
+*.so
+*.dylib
+*.lib
+*.a
+*.out
+
+[Dd]ebug/
+[Rr]elease/
+x64/
+x86/
+[Bb]uild/
+[Oo]bj/
+[Bb]in/
+*.log
