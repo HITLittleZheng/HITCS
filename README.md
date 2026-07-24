@@ -40,12 +40,7 @@
 
 👨‍🎓 2021级计算学部人工智能专业本科生，2025级社会计算与信息检索研究中心研究生
 
-🐧 QQ: 3565989732，也可联系[radiant-abyss](https://github.com/radiant-abyss): 2016307096 📧 邮箱: wxzheng@ir.hit.edu.cn
-
-📱 **社交媒体：**
- <a href="https://space.bilibili.com/1134241976/"><img src="https://img.shields.io/badge/Bilibili-B站-ff69b4" /></a>&emsp;&emsp;
- <a href="https://blog.csdn.net/aa12367/category_12577037.html?spm=1001.2014.3001.5482"><img src="https://img.shields.io/badge/CSDN-论坛-c32136" /></a>&emsp;&emsp;
-<a href="https://www.zhihu.com/column/c_1785044713151188992"><img src="https://img.shields.io/badge/Zhihu-知乎-blue" /></a>&emsp;&emsp;   
+🐧 QQ: 3565989732，也可联系[radiant-abyss](https://github.com/radiant-abyss): 2016307096  
 
 
 🔬 **想加入赛尔实验室，或在赛尔实验室进行科研实习的大二大三学生，可找我了解实验室相关情况~**
