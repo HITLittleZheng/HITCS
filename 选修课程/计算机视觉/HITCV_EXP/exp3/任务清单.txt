@@ -1,0 +1,90 @@
+实验（三）深度学习图像复原（DnCNN）、传统图像分割与医学图像分割（U-Net）
+1. 实验名称
+深度学习图像复原（DnCNN）、传统图像分割与医学图像分割（U-Net）
+
+3. 实验目的
+1)	理解深度卷积神经网络在低层视觉任务中的基本应用流程，掌握图像去噪任务中的退化建模、网络推理、结果评价与参数分析方法；
+2)	理解 DnCNN 的残差学习思想，掌握其通过学习噪声残差实现图像复原的基本原理；
+3)	理解传统图像分割算法的基本思想，掌握阈值分割、Otsu 自适应阈值、Canny 边缘检测、轮廓检测、K-means 聚类分割、区域生长、Watershed 与 Mean Shift 等方法的适用场景；
+4)	掌握传统分割算法中阈值、邻域、种子点、聚类数、形态学操作和距离变换等关键参数对结果的影响；
+5)	理解医学图像语义分割的基本任务形式，掌握 U-Net 编码器—解码器结构、跳跃连接和像素级预测的作用；
+6)	掌握分割任务中 IoU、Accuracy 等评价指标的计算方法，能够结合预测图、标签图和定量指标分析模型效果；
+7)	比较传统图像处理方法与深度学习方法在可解释性、参数依赖、数据依赖、泛化能力和失败案例上的差异。
+
+5. 实验内容与进度安排
+序号	实验任务	知识点
+1	任务一：DnCNN 图像去噪环境配置与代码阅读。进入 KAIR/ 目录，查看 main_test_dncnn.py、models/network_dncnn.py、model_zoo/ 和 testsets/ 的作用，明确输入图像、预训练权重、输出结果和日志文件之间的关系。	图像复原、预训练模型、PyTorch 推理流程、模型参数加载
+2	任务二：DnCNN 去噪实验运行与参数对比。使用 dncnn_15、dncnn_25、dncnn_50 等模型，在 set5、set12 或 bsd68 测试集上运行去噪程序，保存噪声图、复原图和原图，并记录 PSNR、SSIM。	高斯噪声、噪声强度 σ、PSNR、SSIM、残差学习
+3	任务三：传统图像分割代码阅读与运行。进入 Classical-Image-Segmentation/ 目录，阅读 main.py 以及各分割算法脚本，理解输入图像、测试标签、结果保存目录和多算法可视化流程。	阈值分割、Otsu、Canny、轮廓检测、K-means、区域生长、Watershed、Mean Shift
+4	任务四：传统分割结果比较与参数分析。运行 main.py，对 test_data/ 中的微生物图像进行分割，观察 segmentation_results/ 中不同算法的输出差异；修改至少两类算法的关键参数，分析参数变化对分割结果的影响。	二值化、边缘与区域、聚类分割、种子点选择、距离变换、过分割与欠分割
+5	任务五：U-Net 医学图像分割代码阅读。进入 Unet/ 目录，查看 network.py、test_segmentation.py、checkpoint/UNET_model.pth 和 dataset/ 的结构，理解 X-ray 图像、mask 标签和模型输出之间的关系。	语义分割、U-Net、编码器—解码器、跳跃连接、二值 mask
+6	任务六：U-Net 分割推理与指标计算。运行 test_segmentation.py，对测试集 X-ray 图像进行分割，保存 output/ 中的拼接结果图，并记录每张图像的 IoU 与 Accuracy。	DataLoader、Sigmoid 输出、阈值化、IoU、Accuracy
+7	任务七：复原、传统分割与深度分割综合比较。比较 DnCNN 去噪、传统图像分割和 U-Net 医学分割的输入输出、模型假设、参数依赖、评价指标和典型失败案例，完成实验报告。	视觉任务建模、传统方法与深度学习方法比较、实验报告撰写
+6. 实验要求
+1)	正确运行 KAIR/main_test_dncnn.py 或 KAIR/run.sh，至少完成一组 DnCNN 图像去噪实验，生成并保存 results/ 下的输出图像和日志文件；
+2)	至少选择两组不同噪声强度或不同模型权重进行对比，例如 dncnn_15 与 dncnn_25，或 noise_level_img=15 与 noise_level_img=50；
+3)	阅读 models/network_dncnn.py 中的 DnCNN 类，说明网络输入、输出、卷积层数、通道数以及 return x-n 的含义；
+4)	正确运行 Classical-Image-Segmentation/main.py，生成 segmentation_results/ 下的传统分割结果图；
+5)	至少选择 4 种传统分割算法进行比较，其中应包含至少一种基于阈值的方法、一种基于边缘或轮廓的方法、一种基于区域或聚类的方法；
+6)	至少修改两类传统分割算法的关键参数，并给出参数变化前后的结果对比与分析；
+7)	正确运行 Unet/test_segmentation.py 或 Unet/run.sh，生成 output/ 下的 X-ray 原图、预测 mask、真实 mask 拼接结果图；
+8)	记录 U-Net 测试过程中的 IoU 和 Accuracy，至少选取 3 张测试图像进行定性与定量分析；
+9)	阅读 Unet/network.py 中的 U_Net 类，说明下采样、上采样、跳跃连接和 Sigmoid 输出在分割任务中的作用；
+10)	实验报告需包含原始输入、模型/算法输出、中间或最终结果、评价指标、参数对比和失败案例分析；
+11)	不要求重新训练模型，但鼓励在不破坏原始代码的前提下修改测试参数、增加可视化或补充指标统计。
+
+7. 环境配置与运行方式（参考课上视频附件，以下内容仅供参考）
+
+DnCNN 图像去噪任务：
+常用参数示例：
+python main_test_dncnn.py --model_name dncnn_25 --testset_name set5 --noise_level_img 25 --device cpu
+python main_test_dncnn.py --model_name dncnn_50 --testset_name set12 --noise_level_img 50 --device cpu
+输出结果参考：
+KAIR/results/<testset_name>_<model_name>/
+其中通常包含：
+*_L.*  噪声图像
+*_E.*  DnCNN 复原图像
+*_H.*  原始高质量图像
+*.log  PSNR/SSIM 日志
+
+传统图像分割任务：
+cd /root/prj/exp-03/Classical-Image-Segmentation
+pip install -r requirement.txt
+python main.py
+输出结果参考：
+Classical-Image-Segmentation/segmentation_results/
+
+U-Net 医学图像分割任务：
+python test_segmentation.py
+输出结果参考：
+Unet/output/
+每张输出图通常由三部分横向拼接组成：
+X-ray 原图 | U-Net 预测 mask | 人工标注 mask
+
+8. 实验报告提交要求（参考）
+1)	实验过程和结果截图：
+–	DnCNN 至少包含 3 组图像对比，每组展示噪声图、复原图和原图；
+–	传统图像分割至少包含 2 张输入图像与 4 种算法结果对比；
+–	U-Net 至少包含 3 张测试图像的 X-ray 原图、预测 mask 和真实 mask 对比；
+2)	DnCNN 结果表格：至少记录 model_name、testset_name、noise_level_img、平均 PSNR、平均 SSIM，并分析参数变化对复原效果的影响；
+3)	传统分割结果表格：至少记录算法名称、关键参数、主要视觉效果、优点、缺点，并分析与人工标注之间的差异；
+4)	U-Net 结果表格：至少记录测试图像编号、IoU、Accuracy，并分析高分样本与低分样本的视觉差异；
+5)	网络结构与算法原理分析：说明传统分割方法的基本假设，分别说明 DnCNN 和 U-Net 的核心结构，建议配合代码截图或简化结构图；
+6)	结果分析与思考：每个主要任务给出不少于 200 字的分析，不能只贴运行截图；
+7)	代码修改说明：若修改了参数、保存路径、设备设置或可视化方式，需要说明修改位置和原因；
+8)	拓展加分项：
+–	DnCNN：尝试真实噪声图像 real_faces，并讨论无参考图像时为什么无法直接计算 PSNR/SSIM；
+–	传统分割：尝试新增形态学开闭运算、连通域筛选或 Dice/IoU 指标计算；
+–	U-Net：尝试改变阈值、输入尺寸或增加 Dice 系数统计，并分析指标变化；
+–	综合：比较传统滤波/分割方法与深度学习方法在不同图像任务中的差异。
+分析提示：
+•	DnCNN 为什么采用残差学习而不是直接预测干净图像？
+•	噪声强度 σ 与 PSNR/SSIM 之间通常有什么关系？
+•	固定阈值分割和 Otsu 分割分别适合什么样的灰度分布？
+•	Canny 边缘检测得到的是边界信息，为什么它不一定直接等价于完整目标区域？
+•	K-means 聚类数 K 过大或过小会怎样影响分割结果？
+•	区域生长算法为什么对种子点位置和相似性阈值敏感？
+•	Watershed 为什么容易出现过分割？可以用哪些预处理或 marker 策略缓解？
+•	U-Net 中跳跃连接为什么有助于恢复边界和细节？
+•	IoU 与 Accuracy 的侧重点有什么不同？在前景区域很小的分割任务中，为什么只看 Accuracy 可能产生误判？
+•	传统图像处理方法和深度学习方法在可解释性、数据依赖、可迁移性和部署成本方面各有什么优势与局限？
