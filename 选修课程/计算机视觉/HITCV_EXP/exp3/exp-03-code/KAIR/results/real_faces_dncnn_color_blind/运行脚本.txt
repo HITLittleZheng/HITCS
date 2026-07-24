@@ -1,0 +1,1 @@
+python main_test_dncnn.py   --model_name dncnn_color_blind    --testset_name real_faces    --need_degradation False

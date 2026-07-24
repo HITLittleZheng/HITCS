@@ -1,0 +1,20 @@
+26-06-10 08:55:32.882 : Model path: model_zoo/dncnn_50.pth
+26-06-10 08:55:32.882 : Params number: 555137
+26-06-10 08:55:32.882 : model_name:dncnn_50, image sigma:5
+26-06-10 08:55:32.882 : testsets/set5
+26-06-10 08:55:34.010 : baby.bmp - PSNR: 28.43 dB; SSIM: 0.7393.
+26-06-10 08:55:34.466 : bird.bmp - PSNR: 28.40 dB; SSIM: 0.7847.
+26-06-10 08:55:34.692 : butterfly.bmp - PSNR: 27.14 dB; SSIM: 0.8760.
+26-06-10 08:55:34.918 : head.bmp - PSNR: 28.33 dB; SSIM: 0.6018.
+26-06-10 08:55:35.114 : woman.bmp - PSNR: 28.11 dB; SSIM: 0.8371.
+26-06-10 08:55:35.114 : Average PSNR/SSIM(RGB) - set5_dncnn_50 - PSNR: 28.08 dB; SSIM: 0.7678
+26-06-10 13:20:22.531 : Model path: model_zoo/dncnn_50.pth
+26-06-10 13:20:22.531 : Params number: 555137
+26-06-10 13:20:22.531 : model_name:dncnn_50, image sigma:5
+26-06-10 13:20:22.531 : testsets/set5
+26-06-10 13:20:23.513 : baby.bmp - PSNR: 28.43 dB; SSIM: 0.7393.
+26-06-10 13:20:23.736 : bird.bmp - PSNR: 28.40 dB; SSIM: 0.7847.
+26-06-10 13:20:23.927 : butterfly.bmp - PSNR: 27.14 dB; SSIM: 0.8760.
+26-06-10 13:20:24.177 : head.bmp - PSNR: 28.33 dB; SSIM: 0.6018.
+26-06-10 13:20:24.401 : woman.bmp - PSNR: 28.11 dB; SSIM: 0.8371.
+26-06-10 13:20:24.402 : Average PSNR/SSIM(RGB) - set5_dncnn_50 - PSNR: 28.08 dB; SSIM: 0.7678

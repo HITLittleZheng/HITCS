@@ -1,0 +1,65 @@
+(Unet) zxx@zxx:~/HITCV/exp3/exp-03-AutoDL-code/Unet$ python ./dice.py 
+2.11.0+cu128
+4.11.0
+12.2.0
+0.26.0+cu128
+1.26.4
+loading the model from ./checkpoint/UNET_model.pth
+All parameters are initialized using [./checkpoint/UNET_model.pth]
+---------- Size of Parameters  -------------
+[Network UNet] Total number of parameters : 34.526M
+-----------------------------------------------
+Length of dataset： 16
+Sample 1: IoU=0.8186, Dice=0.9002, Acc=0.9461
+Saved: ./output/101.png
+
+Sample 2: IoU=0.7858, Dice=0.8801, Acc=0.9361
+Saved: ./output/102.png
+
+Sample 3: IoU=0.7907, Dice=0.8831, Acc=0.9536
+Saved: ./output/103.png
+
+Sample 4: IoU=0.8133, Dice=0.8970, Acc=0.9554
+Saved: ./output/104.png
+
+Sample 5: IoU=0.7847, Dice=0.8794, Acc=0.9436
+Saved: ./output/105.png
+
+Sample 6: IoU=0.7815, Dice=0.8773, Acc=0.9272
+Saved: ./output/106.png
+
+Sample 7: IoU=0.7873, Dice=0.8810, Acc=0.9378
+Saved: ./output/107.png
+
+Sample 8: IoU=0.7895, Dice=0.8823, Acc=0.9504
+Saved: ./output/108.png
+
+Sample 9: IoU=0.8166, Dice=0.8991, Acc=0.9415
+Saved: ./output/109.png
+
+Sample 10: IoU=0.8364, Dice=0.9109, Acc=0.9552
+Saved: ./output/110.png
+
+Sample 11: IoU=0.8636, Dice=0.9268, Acc=0.9606
+Saved: ./output/111.png
+
+Sample 12: IoU=0.8083, Dice=0.8940, Acc=0.9400
+Saved: ./output/112.png
+
+Sample 13: IoU=0.7981, Dice=0.8877, Acc=0.9178
+Saved: ./output/113.png
+
+Sample 14: IoU=0.8271, Dice=0.9054, Acc=0.9505
+Saved: ./output/114.png
+
+Sample 15: IoU=0.8208, Dice=0.9016, Acc=0.9426
+Saved: ./output/115.png
+
+Sample 16: IoU=0.6592, Dice=0.7946, Acc=0.8861
+Saved: ./output/116.png
+
+========== Overall Results ==========
+Mean IoU : 0.7988
+Mean Dice: 0.8875
+Mean Acc : 0.9403
+
