@@ -1,0 +1,19 @@
+26-06-13 16:45:11.870 : Model path: model_zoo/dncnn_color_blind.pth
+26-06-13 16:45:11.870 : Params number: 668227
+26-06-13 16:45:11.870 : model_name:dncnn_color_blind, image sigma:5
+26-06-13 16:45:11.870 : testsets/real_faces
+26-06-13 16:45:11.982 : face_01.png - PSNR: 40.95 dB; SSIM: 0.9801.
+26-06-13 16:45:12.032 : face_02.png - PSNR: 41.24 dB; SSIM: 0.9763.
+26-06-13 16:45:12.059 : face_03.png - PSNR: 42.46 dB; SSIM: 0.9843.
+26-06-13 16:45:12.128 : face_04.png - PSNR: 43.90 dB; SSIM: 0.9667.
+26-06-13 16:45:12.175 : face_05.png - PSNR: 41.59 dB; SSIM: 0.9806.
+26-06-13 16:45:12.219 : face_06.png - PSNR: 40.82 dB; SSIM: 0.9660.
+26-06-13 16:45:12.271 : face_07.png - PSNR: 42.98 dB; SSIM: 0.9841.
+26-06-13 16:45:12.361 : face_08.png - PSNR: 44.55 dB; SSIM: 0.9845.
+26-06-13 16:45:12.380 : face_09.png - PSNR: 38.93 dB; SSIM: 0.9853.
+26-06-13 16:45:12.419 : face_10.png - PSNR: 43.77 dB; SSIM: 0.9845.
+26-06-13 16:45:12.445 : face_11.png - PSNR: 42.07 dB; SSIM: 0.9843.
+26-06-13 16:45:12.461 : face_12.png - PSNR: 42.45 dB; SSIM: 0.9854.
+26-06-13 16:45:12.478 : face_13.png - PSNR: 42.10 dB; SSIM: 0.9846.
+26-06-13 16:45:12.514 : face_14.png - PSNR: 40.37 dB; SSIM: 0.9733.
+26-06-13 16:45:12.518 : Average PSNR/SSIM(RGB) - real_faces_dncnn_color_blind - PSNR: 42.01 dB; SSIM: 0.9800

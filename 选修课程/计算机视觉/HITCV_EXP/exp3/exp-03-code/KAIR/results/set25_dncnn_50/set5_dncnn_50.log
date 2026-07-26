@@ -1,0 +1,10 @@
+26-06-10 08:52:19.310 : Model path: model_zoo/dncnn_50.pth
+26-06-10 08:52:19.310 : Params number: 555137
+26-06-10 08:52:19.310 : model_name:dncnn_50, image sigma:25
+26-06-10 08:52:19.310 : testsets/set5
+26-06-10 08:52:20.351 : baby.bmp - PSNR: 28.72 dB; SSIM: 0.7512.
+26-06-10 08:52:20.665 : bird.bmp - PSNR: 28.81 dB; SSIM: 0.8011.
+26-06-10 08:52:20.959 : butterfly.bmp - PSNR: 27.21 dB; SSIM: 0.8805.
+26-06-10 08:52:21.172 : head.bmp - PSNR: 28.55 dB; SSIM: 0.6155.
+26-06-10 08:52:21.426 : woman.bmp - PSNR: 28.37 dB; SSIM: 0.8459.
+26-06-10 08:52:21.427 : Average PSNR/SSIM(RGB) - set5_dncnn_50 - PSNR: 28.33 dB; SSIM: 0.7788
