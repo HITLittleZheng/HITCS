@@ -33,17 +33,9 @@
   </a>
 </div>
 
-![Snipaste_2025-06-16_11-31-06](https://github.com/user-attachments/assets/1ef0fb78-dc90-4fa0-8bb8-3df493a83c6f)
 
 
-## :man_technologist: 自我介绍
 
-👨‍🎓 2021级计算学部人工智能专业本科生，2025级社会计算与信息检索研究中心研究生
-
-🐧 QQ: 3565989732，也可联系[radiant-abyss](https://github.com/radiant-abyss): 2016307096  
-
-
-🔬 **想加入赛尔实验室，或在赛尔实验室进行科研实习的大二大三学生，可找我了解实验室相关情况~**
 
 ## :ledger: 计算学部 | 课程资料共享计划
 
