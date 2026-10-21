@@ -41,7 +41,7 @@
 
 📚 受 [浙江大学相关项目](https://github.com/QSCTech/zju-icicles) 、 [清华大学相关项目](https://github.com/PKUanonym/REKCARC-TSC-UHT) 和 [哈工大（深圳）相关项目](https://github.com/HITSZ-OpenCS/HITSZ-OpenCS)启发，创立了本项目
 
-🌟 特别感谢：**[rookiexiong7](https://github.com/rookiexiong7)、 [Ralph-Zhou](https://github.com/Ralph-Zhou)**
+🌟 特别感谢：**[HITLittleZheng](https://github.com/HITLittleZheng)、 [rookiexiong7](https://github.com/rookiexiong7)、 [Ralph-Zhou](https://github.com/Ralph-Zhou)**
 
 🙏 其他贡献者：[skyrimforest](https://github.com/skyrimforest)、[decemberboy04](https://github.com/decemberboy04)、[tloly-Roc](https://github.com/tloly-Roc)、[StellaLin030](https://github.com/StellaLin030)、[cpu095](https://github.com/cpu095)、[ymd2002](https://github.com/ymd2002)、[jielahou](https://github.com/jielahou)、[Mubuky](https://github.com/Mubuky)、[jjuuulll](https://github.com/jjuuulll)、[pmczx](https://github.com/pmczx)、[HITjunle](https://github.com/HITjunle)、[Dodojordi](https://github.com/Dodojordi)、[WhtyBi](https://github.com/WhtyBi)、[wangziyu12](https://github.com/wangziyu12)、[FlyMachinee](https://github.com/FlyMachinee)、[ZephyrVictor](https://github.com/ZephyrVictor)、[wiwyil2tr](https://github.com/wiwyil2tr)、[MarchPhantasia](https://github.com/MarchPhantasia)、[DxAThing](https://github.com/DxAThing)、[LiuzikangHIT](https://github.com/LiuzikangHIT)、[MostlyHarmlessxyz](https://github.com/MostlyHarmlessxyz)、[Ernest Cui](https://github.com/ErnestThePoet)、[HITPaperPlane](https://github.com/HITPaperPlane)、[BoyuXiao](https://github.com/BoyuXiao)、[SkyRainWind](https://github.com/SkyRainWind)、[cloudzhouzi](https://github.com/cloudzhouzi)、[songsanggggg](https://github.com/songsanggggg)、[radiant-abyss](https://github.com/radiant-abyss)
 
@@ -64,10 +64,6 @@
 
 📖 具体贡献方法可以参考 [贡献方法](贡献方法.md)，请注意，上传资源会同步到薪火笔记社
 
-📧 如果您希望匿名贡献，可以 email 至本人邮箱，注明邮件主题即可：wxzheng@ir.hit.edu.cn
-
-📱 或者直接联系本人QQ：3565989732
-
 💡 对此 repo 的组织有任何建议或意见，也欢迎大家提出 Issue 或者 Email，我们一起让这个项目变得更好~
 
 <br>
@@ -87,7 +83,7 @@
 
 🚨 **仓库中包含与成绩考核相关的实验代码，仅供参考，若因抄袭影响成绩，概不负责！**
 
-📞 如果您认为本仓库的一些文件侵犯了您的权益，请联系 QQ: 3565989732 或 email 至本人邮箱。我将会从仓库中彻底清除这些文件。
+📞 如果您认为本仓库的一些文件侵犯了您的权益，请联系项目负责人。我将会从仓库中彻底清除这些文件。
 
 📋 资料仅供参考，课程内容及重点可能发生变化，请以老师上课实际讲授为准。
 
